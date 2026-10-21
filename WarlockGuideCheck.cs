@@ -13,6 +13,16 @@ class WarlockGuideCheck {
  static void Set(Atlas a,string n,object v){typeof(Atlas).GetField(n,flags).SetValue(a,v);}
  static object Call(Atlas a,string n,params object[] args){return typeof(Atlas).GetMethod(n,flags).Invoke(a,args);}
  static void Need(bool ok,string why){if(!ok)throw new Exception(why);}
+ static void CheckBreakpoints(){
+  foreach(string cls in new[]{"Warlock","Amazon","Assassin","Barbarian","Druid","Necromancer","Paladin","Sorceress"})foreach(string kind in new[]{"FCR","FHR","FBR"}){
+   var table=Breakpoints.For(cls,kind);Need(table.Thresholds[0]==0,"Breakpoint zero "+cls+kind);
+   for(int i=1;i<table.Thresholds.Length;i++){int threshold=table.Thresholds[i];Need(threshold>table.Thresholds[i-1],"Ordered "+cls+kind);Need(table.Describe(threshold-1).Contains("need +1%"),"Before threshold "+cls+kind+threshold);Need(table.Describe(threshold).Contains("Current: "+threshold+"%"),"At threshold "+cls+kind+threshold);}
+   Need(table.Describe(9999).Contains("Highest listed"),"Maximum "+cls+kind);
+  }
+  Need(Breakpoints.For("Warlock","FCR").Describe(74).Contains("11 frames")&&Breakpoints.For("Warlock","FCR").Describe(75).Contains("10 frames"),"Warlock FCR");
+  Need(Breakpoints.For("Warlock","FHR").Describe(86).Contains("6 frames")&&Breakpoints.For("Sorceress","FCR").Describe(105).Contains("8 frames"),"Class-specific frames");
+  Need(CuratedBuilds.Warlock.Length>=3&&CuratedBuilds.Warlock.All(x=>x.Details.Contains("REFERENCE")&&x.Details.Contains("SKILL PRIORITIES")),"Curated builds");
+ }
  static void CheckDemonTooltips(List<Skill> skills){
   var b=new Build{Level=99};b.Gear[0]="Test weapon";b.GearSkillBonuses[0]=new ItemSkillBonuses{Lines="Warlock Skills: +10"};
   int goat=skills.FindIndex(s=>s.Name=="Summon Goatman"),master=skills.FindIndex(s=>s.Name=="Demonic Mastery"),oath=skills.FindIndex(s=>s.Name=="Blood Oath"),mark=skills.FindIndex(s=>s.Name=="Death Mark"),tainted=skills.FindIndex(s=>s.Name=="Summon Tainted"),defiler=skills.FindIndex(s=>s.Name=="Summon Defiler");
@@ -41,7 +51,7 @@ class WarlockGuideCheck {
    var xml=XDocument.Load(path);var gearNode=xml.Root.Element("GearSkillBonuses");var inventoryNode=xml.Root.Element("InventorySkillBonuses");if(gearNode!=null)gearNode.Remove();if(inventoryNode!=null)inventoryNode.Remove();xml.Save(path);
    using(var app=new Atlas(dir)){
     Set(app,"loading",true); // UI exercises must never open a save-error dialog.
-    var build=(Build)Field(app,"build");var skills=(List<Skill>)Field(app,"skills");CheckDemonTooltips(skills);
+    var build=(Build)Field(app,"build");var skills=(List<Skill>)Field(app,"skills");CheckDemonTooltips(skills);CheckBreakpoints();
     Need(build.Notes=="Old journal"&&build.Gear[0]=="Old weapon"&&build.Inventory[0]=="Old charm"&&build.Runes[1]==3&&build.Points[0]==1,"Old save migration");
     Need(build.GearSkillBonuses.Length==10&&build.InventorySkillBonuses.Length==40,"New fields not initialized");
     build.GearSkillBonuses[0]=new ItemSkillBonuses{Lines="All Skills: +2\nWarlock Skills: +1\nChaos Skills: +3\nRing of Fire: +2\nFire Skills: +2"};
@@ -71,6 +81,11 @@ class WarlockGuideCheck {
     Need(goatCard.Controls.OfType<Label>().Any(l=>l.Text=="1/20 +10"),"Weapon bonus not visible on skill card");
     Need(new PreviewTooltipSession("Warlock",skills).Render(skills[0],build).Contains("Effective skill level: 11"),"Weapon bonus not applied in tooltip");
     Call(app,"ShowGear");var gearContent=(Panel)Field(app,"content");Need(gearContent.Controls.OfType<Label>().Any(l=>l.Text.Contains("+10 Warlock Skills")),"Active bonus summary missing");
+    Need(gearContent.Controls.OfType<Button>().Any(x=>x.Text=="BREAKPOINTS"),"Equipment breakpoint button");
+    Call(app,"ShowBreakpoints");var breakpointContent=(Panel)Field(app,"content");var fcr=breakpointContent.Controls.OfType<NumericUpDown>().First(x=>x.AccessibleName=="FCR total percentage");fcr.Value=74;
+    Need(breakpointContent.Controls.OfType<Label>().Any(x=>x.AccessibleName=="FCR breakpoint result"&&x.Text.Contains("Next: 75%")),"Interactive breakpoint result");
+    Call(app,"ShowGear");Call(app,"ShowBreakpoints");breakpointContent=(Panel)Field(app,"content");Need(breakpointContent.Controls.OfType<NumericUpDown>().First(x=>x.AccessibleName=="FCR total percentage").Value==74,"Breakpoint total lost while navigating");
+    Call(app,"ShowCuratedBuilds");var curated=(Panel)Field(app,"content");var buildList=curated.Controls.OfType<ListBox>().Single();var buildDetail=curated.Controls.OfType<TextBox>().Single();Need(buildList.Items.Count==3&&buildDetail.Text.Contains("DEMON SUMMONER"),"Build browser");buildList.SelectedIndex=1;Need(buildDetail.Text.Contains("FIRE CASTER")&&build.Points[0]==1,"Build selection changed points");
     Call(app,"ShowGuide");Need(GuideBook.Regions.Select(x=>x.Act).Distinct().Count()==5&&GuideBook.Regions.Length>=25,"Guide does not cover all acts and regions");
     Need(GuideBook.Regions.First(x=>x.Name=="Black Marsh & Forgotten Tower").Details().Contains("Key of Terror"),"In-depth guide information missing");
     var content=(Panel)Field(app,"content");var list=content.Controls.OfType<ListBox>().Single();Need(list.Items.Count>0,"Guide region list empty");
