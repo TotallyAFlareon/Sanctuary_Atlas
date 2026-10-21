@@ -76,7 +76,7 @@ public class Atlas : Form {
  string dataDir=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"SanctuaryAtlas"); string save; string className="Warlock"; static string[] classes={"Warlock","Amazon","Assassin","Barbarian","Druid","Necromancer","Paladin","Sorceress"};
  Build build=new Build(); List<Skill> skills=new List<Skill>(); List<Word> words=new List<Word>(); Panel content; Label budget; NumericUpDown level,quests; SkillTreePanel skillList; ComboBox tree; ListBox results; TextBox search,detail; ToolTip slotTip=new ToolTip(); bool loading=false; int selectedSlot=-1; bool selectedInventory=false, moving=false; CheckBox craftable; List<Cube> cubes=new List<Cube>(); static string[] runeNames="El Eld Tir Nef Eth Ith Tal Ral Ort Thul Amn Sol Shael Dol Hel Io Lum Ko Fal Lem Pul Um Mal Ist Gul Vex Ohm Lo Sur Ber Jah Cham Zod".Split(' ');
  static Font f(float s,FontStyle st=FontStyle.Regular){return new Font("Segoe UI",s,st);} 
- public Atlas():this(null){} public Atlas(string testDataDir){ if(!String.IsNullOrEmpty(testDataDir))dataDir=testDataDir; Icon=Icon.ExtractAssociatedIcon(Application.ExecutablePath); Text="Sanctuary Atlas | D2R companion | Update 23"; Size=new Size(1150,790); MinimumSize=new Size(950,680); BackColor=bg; ForeColor=text; Font=f(10); StartPosition=FormStartPosition.CenterScreen; save=Path.Combine(dataDir,"build.xml"); InitData(); LoadBuild(); MakeShell(); ShowSkills(); }
+ public Atlas():this(null){} public Atlas(string testDataDir){ if(!String.IsNullOrEmpty(testDataDir))dataDir=testDataDir; Icon=Icon.ExtractAssociatedIcon(Application.ExecutablePath); Text="Sanctuary Atlas | D2R companion | Update 24"; Size=new Size(1150,790); MinimumSize=new Size(950,680); BackColor=bg; ForeColor=text; Font=f(10); StartPosition=FormStartPosition.CenterScreen; save=Path.Combine(dataDir,"build.xml"); InitData(); LoadBuild(); MakeShell(); ShowSkills(); }
  void Add(string t,string n,int l,string r,string d){skills.Add(new Skill(t,n,l,r,d));}
  void InitWarlockSkills(){
  Add("Demon","Summon Goatman",1,"","Summons a melee demon ally."); Add("Demon","Demonic Mastery",1,"Summon Goatman","Strengthens summoned and bound demons."); Add("Demon","Blood Oath",6,"Demonic Mastery","Links your protection to your demon."); Add("Demon","Death Mark",6,"Summon Goatman","Directs your demon to an enemy."); Add("Demon","Summon Tainted",12,"Summon Goatman","Summons a ranged demon ally."); Add("Demon","Blood Boil",18,"Death Mark","Erupts your demon's blood to damage nearby enemies."); Add("Demon","Summon Defiler",18,"Summon Tainted","Summons a demon that binds enemy souls."); Add("Demon","Engorge",24,"Blood Boil","Feeds a corpse to heal and empower your demon."); Add("Demon","Consume",30,"Blood Oath","Sacrifices your demon for power."); Add("Demon","Bind Demon",30,"Engorge|Summon Defiler","Turns an injured demon into an ally.");
@@ -520,7 +520,7 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
  void SelectSlot(bool inventory,int index){if(moving && selectedSlot>=0){string from=SlotText(selectedInventory,selectedSlot),to=SlotText(inventory,index);var fromStats=SlotBonuses(selectedInventory,selectedSlot);var toStats=SlotBonuses(inventory,index);PutSlot(selectedInventory,selectedSlot,to);PutSlot(inventory,index,from);PutBonuses(selectedInventory,selectedSlot,toStats);PutBonuses(inventory,index,fromStats);moving=false;Save();}selectedInventory=inventory;selectedSlot=index;ShowGear();}
  void EditSlot(){
   if(selectedSlot<0)return;bool warlock=className=="Warlock";var existing=SlotBonuses(selectedInventory,selectedSlot);
-  using(var dlg=new Form{Text="Edit "+(selectedInventory?"inventory cell":gearNames[selectedSlot]),Size=new Size(570,warlock?460:205),StartPosition=FormStartPosition.CenterParent,FormBorderStyle=FormBorderStyle.FixedDialog,MaximizeBox=false,MinimizeBox=false,BackColor=bg,ForeColor=text}){
+  using(var dlg=new Form{Text="Edit "+(selectedInventory?"inventory cell":gearNames[selectedSlot]),Size=new Size(570,warlock?570:390),StartPosition=FormStartPosition.CenterParent,FormBorderStyle=FormBorderStyle.FixedDialog,MaximizeBox=false,MinimizeBox=false,BackColor=bg,ForeColor=text}){
    dlg.Controls.Add(LabelAt("ITEM NAME OR NOTES",20,20,500,22,9,gold,FontStyle.Bold));
    var entry=new TextBox{Location=new Point(20,48),Width=515,Text=SlotText(selectedInventory,selectedSlot)??"",BackColor=panel,ForeColor=text};dlg.Controls.Add(entry);
    TextBox bonus=null;CheckBox charm=null;
@@ -528,28 +528,33 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
     dlg.Controls.Add(LabelAt("SKILL BONUSES  •  ONE PER LINE",20,85,500,22,9,gold,FontStyle.Bold));
     dlg.Controls.Add(LabelAt("Examples: All Skills: +2   |   Warlock Skills: +1\nDemon, Eldritch, Chaos or Fire Skills: +1   |   Hex: Bane: +3",20,108,515,43,9,muted));
     bonus=new TextBox{Location=new Point(20,153),Size=new Size(515,135),Multiline=true,ScrollBars=ScrollBars.Vertical,BackColor=panel,ForeColor=text,Text=existing==null?"":existing.Lines??""};dlg.Controls.Add(bonus);
-    if(selectedInventory){charm=new CheckBox{Location=new Point(20,300),Size=new Size(510,28),Text="Active charm in inventory",ForeColor=text,Checked=existing!=null&&existing.ActiveCharm};dlg.Controls.Add(charm);}
-    dlg.Controls.Add(LabelAt("Enter the item's actual bonuses. Item names and charges do not add bonuses automatically.",20,330,510,36,8,muted));
    }
-   var ok=Btn("SAVE",385,warlock?373:95,150,35);ok.Click+=(s,e)=>{
+   int speedY=warlock?300:90;
+   dlg.Controls.Add(LabelAt("ITEM SPEED BONUSES (%)",20,speedY,490,22,9,gold,FontStyle.Bold));
+   string[] names={"FCR","FHR","FBR"};int[] stored={existing==null?0:existing.Fcr,existing==null?0:existing.Fhr,existing==null?0:existing.Fbr};var speeds=new NumericUpDown[3];
+   for(int i=0;i<3;i++){int x=20+i*140;dlg.Controls.Add(LabelAt(names[i],x,speedY+25,105,20,9,muted));speeds[i]=new NumericUpDown{Location=new Point(x,speedY+47),Size=new Size(105,28),Minimum=0,Maximum=1000,Value=Math.Max(0,Math.Min(1000,stored[i])),BackColor=panel,ForeColor=text,AccessibleName=names[i]+" item bonus"};dlg.Controls.Add(speeds[i]);}
+   if(selectedInventory){charm=new CheckBox{Location=new Point(20,speedY+83),Size=new Size(510,28),Text="Active charm in inventory",ForeColor=text,Checked=existing!=null&&existing.ActiveCharm};dlg.Controls.Add(charm);}
+   dlg.Controls.Add(LabelAt("Enter the item's actual bonuses. Item names do not automatically fill stats.",20,speedY+115,510,34,8,muted));
+   var ok=Btn("SAVE",385,speedY+154,150,35);ok.Click+=(s,e)=>{
     string item=entry.Text.Trim();ItemSkillBonuses data=existing;
     if(warlock){try{GearSkillBonuses.Parse(bonus.Text,skills);}catch(Exception ex){if(ex is FormatException||ex is OverflowException){MessageBox.Show(ex.Message,"Skill bonuses");return;}throw;}
      if(item.Length==0&&!String.IsNullOrWhiteSpace(bonus.Text)){MessageBox.Show("Enter an item name before adding bonuses.","Skill bonuses");return;}
-     data=new ItemSkillBonuses{Lines=bonus.Text.Trim(),ActiveCharm=selectedInventory?charm.Checked:existing!=null&&existing.ActiveCharm};
     }
+    if(item.Length==0&&speeds.Any(n=>n.Value>0)){MessageBox.Show("Enter an item name before adding bonuses.","Item bonuses");return;}
+    data=new ItemSkillBonuses{Lines=warlock?bonus.Text.Trim():(existing==null?"":existing.Lines),ActiveCharm=selectedInventory?charm.Checked:existing!=null&&existing.ActiveCharm,Fcr=(int)speeds[0].Value,Fhr=(int)speeds[1].Value,Fbr=(int)speeds[2].Value};
     PutSlot(selectedInventory,selectedSlot,item);PutBonuses(selectedInventory,selectedSlot,item.Length==0?null:data);Save();dlg.DialogResult=DialogResult.OK;dlg.Close();
    };dlg.Controls.Add(ok);dlg.AcceptButton=ok;dlg.ShowDialog(this);
   }ShowGear();
  }
- void SlotButton(Panel host,bool inv,int index,int x,int y,int w,int h,ToolTip tips){string value=SlotText(inv,index)??"";string label=inv?(String.IsNullOrEmpty(value)?"":(value.Length>3?value.Substring(0,3):value)):gearNames[index]+"\n"+(String.IsNullOrEmpty(value)?"[ empty ]":value);var b=Btn(label,x,y,w,h);var themed=b as GothicButton;if(themed!=null&&!inv){themed.GearSlot=true;themed.GlyphIndex=index;}b.Font=f(inv?8:8,FontStyle.Regular);b.BackColor=selectedSlot==index && selectedInventory==inv?Color.FromArgb(94,67,40):Color.FromArgb(44,41,40);b.FlatAppearance.BorderColor=Color.FromArgb(101,84,61);var entry=SlotBonuses(inv,index);string slotHelp=(inv?"Inventory cell "+(index+1):gearNames[index])+": "+(value==""?"empty":value);if(entry!=null&&!String.IsNullOrWhiteSpace(entry.Lines))slotHelp+="\n"+entry.Lines+(inv?(entry.ActiveCharm?"\nActive charm":"\nInactive in inventory"):"");tips.SetToolTip(b,slotHelp);b.Click+=(s,e)=>SelectSlot(inv,index);host.Controls.Add(b);}
- void ShowGear(){Header("Character  /  inventory & equipment",className+" equipment","Select an item to edit its name and Warlock skill bonuses, or move it between slots.");
+ void SlotButton(Panel host,bool inv,int index,int x,int y,int w,int h,ToolTip tips){string value=SlotText(inv,index)??"";string label=inv?(String.IsNullOrEmpty(value)?"":(value.Length>3?value.Substring(0,3):value)):gearNames[index]+"\n"+(String.IsNullOrEmpty(value)?"[ empty ]":value);var b=Btn(label,x,y,w,h);var themed=b as GothicButton;if(themed!=null&&!inv){themed.GearSlot=true;themed.GlyphIndex=index;}b.Font=f(inv?8:8,FontStyle.Regular);b.BackColor=selectedSlot==index && selectedInventory==inv?Color.FromArgb(94,67,40):Color.FromArgb(44,41,40);b.FlatAppearance.BorderColor=Color.FromArgb(101,84,61);var entry=SlotBonuses(inv,index);string slotHelp=(inv?"Inventory cell "+(index+1):gearNames[index])+": "+(value==""?"empty":value);if(entry!=null){if(!String.IsNullOrWhiteSpace(entry.Lines))slotHelp+="\n"+entry.Lines;if(entry.Fcr>0||entry.Fhr>0||entry.Fbr>0)slotHelp+="\nFCR: "+entry.Fcr+"%  FHR: "+entry.Fhr+"%  FBR: "+entry.Fbr+"%";if(inv)slotHelp+=entry.ActiveCharm?"\nActive charm":"\nInactive in inventory";}tips.SetToolTip(b,slotHelp);b.Click+=(s,e)=>SelectSlot(inv,index);host.Controls.Add(b);}
+ void ShowGear(){Header("Character  /  inventory & equipment",className+" equipment","Select an item to edit its name and bonuses, or move it between slots.");
  content.Controls.Add(LabelAt("EQUIPMENT",32,153,300,23,10,gold,FontStyle.Bold));content.Controls.Add(LabelAt("INVENTORY  •  10 × 4",480,153,340,23,10,gold,FontStyle.Bold));var tips=slotTip;
  int[] xs={32,302,167,167,32,167,302,32,302,167};int[] ys={259,259,184,259,365,365,365,184,184,440};int[] ws={125,125,125,125,125,125,125,125,125,125};int[] hs={95,95,65,95,65,65,65,65,65,65};for(int i=0;i<10;i++)SlotButton(content,false,i,xs[i],ys[i],ws[i],hs[i],tips);
  for(int i=0;i<40;i++)SlotButton(content,true,i,480+(i%10)*36,184+(i/10)*52,34,49,tips);
  string caption=selectedSlot<0?"Select an equipment slot or inventory cell.":(selectedInventory?"INVENTORY CELL "+(selectedSlot+1):gearNames[selectedSlot].ToUpper())+"\n"+(String.IsNullOrEmpty(SlotText(selectedInventory,selectedSlot))?"Empty":SlotText(selectedInventory,selectedSlot));if(moving)caption="MOVE / SWAP\nSelect the destination slot or cell.";var summary=LabelAt(caption,480,405,360,64,10,text);content.Controls.Add(summary);
  var edit=Btn("EDIT ITEM",480,478,112,36);edit.Enabled=selectedSlot>=0&&!moving;edit.Click+=(s,e)=>EditSlot();content.Controls.Add(edit);var move=Btn(moving?"CANCEL":"MOVE / SWAP",600,478,112,36);move.Enabled=selectedSlot>=0;move.Click+=(s,e)=>{moving=!moving;ShowGear();};content.Controls.Add(move);var clear=Btn("CLEAR",720,478,112,36);clear.Enabled=selectedSlot>=0&&!moving&&!String.IsNullOrEmpty(SlotText(selectedInventory,selectedSlot));clear.Click+=(s,e)=>{if(MessageBox.Show("Clear this slot?","Sanctuary Atlas",MessageBoxButtons.YesNo)==DialogResult.Yes){PutSlot(selectedInventory,selectedSlot,"");Save();ShowGear();}};content.Controls.Add(clear);
  var breakpoints=Btn("BREAKPOINTS",480,610,180,36);breakpoints.Click+=(s,e)=>ShowBreakpoints();content.Controls.Add(breakpoints);
- content.Controls.Add(LabelAt("Enter skill bonuses on each item. Mark inventory charms active to include them. Item sizes and equipment compatibility are not checked.",480,534,360,78,9,muted));string active=className=="Warlock"?GearSkillBonuses.Summary(GearSkillBonuses.ForBuild(build,skills)):"Skill bonuses are currently supported for Warlocks.";content.Controls.Add(LabelAt("ACTIVE BONUSES: "+active+"\nBonuses affect learned skills; a named skill bonus can grant an unlearned skill.",32,665,810,64,9,muted));}
+ content.Controls.Add(LabelAt("Enter speed bonuses on each item. Mark inventory charms active to include them. Item sizes and equipment compatibility are not checked.",480,534,360,78,9,muted));string active=className=="Warlock"?GearSkillBonuses.Summary(GearSkillBonuses.ForBuild(build,skills)):"Skill bonuses are currently supported for Warlocks.";var speedTotals=GearSpeedBonuses.ForBuild(build);content.Controls.Add(LabelAt("ACTIVE SPEED: "+speedTotals.Fcr+"% FCR  /  "+speedTotals.Fhr+"% FHR  /  "+speedTotals.Fbr+"% FBR\nSKILL BONUSES: "+active,32,665,810,64,9,muted));}
  bool updateChecking=false;
  Label updateStatus;
  Button updateButton;
@@ -598,23 +603,26 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
    catch(Exception ex){if(!IsDisposed&&IsHandleCreated)try{BeginInvoke((Action)(()=>{updateChecking=false;SetUpdateStatus("CONTENT UPDATE FAILED",false);MessageBox.Show("Could not download runeword content: "+ex.Message,"App updates");}));}catch(InvalidOperationException){}}});thread.IsBackground=true;thread.Start();
  }
 
- // Breakpoint totals are scratch values for the current session, not calculated from item names.
+ // Optional bonuses outside equipment are scratch values for the current session.
  readonly Dictionary<string,int[]> breakpointTotals=new Dictionary<string,int[]>();
  void ShowBreakpoints(){
-  Header("Character  /  equipment",className+" breakpoints","Enter your character's total rates to see the current animation and next target.");
+  Header("Character  /  equipment",className+" breakpoints","Your entered equipment bonuses count automatically. Add other bonuses if needed.");
   var back=Btn("BACK TO EQUIPMENT",32,145,185,34);back.Click+=(s,e)=>ShowGear();content.Controls.Add(back);
   int[] values;if(!breakpointTotals.TryGetValue(className,out values)){values=new int[3];breakpointTotals[className]=values;}
+  var equipment=GearSpeedBonuses.ForBuild(build);int[] gear={equipment.Fcr,equipment.Fhr,equipment.Fbr};
   string[] kinds={"FCR","FHR","FBR"};
   for(int i=0;i<kinds.Length;i++){
    int index=i,y=195+i*132;var table=Breakpoints.For(className,kinds[i]);
    content.Controls.Add(LabelAt(kinds[i]+"  /  "+table.Name.ToUpperInvariant(),32,y,520,24,10,gold,FontStyle.Bold));
-   var input=new NumericUpDown{Location=new Point(32,y+30),Size=new Size(100,28),Minimum=0,Maximum=9999,Value=values[i],BackColor=panel,ForeColor=text,AccessibleName=kinds[i]+" total percentage"};content.Controls.Add(input);
-   var result=LabelAt(table.Describe(values[i]),150,y+27,420,46,10,text);result.AccessibleName=kinds[i]+" breakpoint result";content.Controls.Add(result);
-   input.ValueChanged+=(s,e)=>{values[index]=(int)input.Value;result.Text=table.Describe(values[index]);};
+   content.Controls.Add(LabelAt("Gear: "+gear[i]+"%",32,y+33,150,24,10,text));
+   content.Controls.Add(LabelAt("Extra: ",190,y+33,62,24,9,muted));
+   var input=new NumericUpDown{Location=new Point(248,y+30),Size=new Size(90,28),Minimum=0,Maximum=9999,Value=values[i],BackColor=panel,ForeColor=text,AccessibleName=kinds[i]+" extra percentage"};content.Controls.Add(input);
+   var result=LabelAt("Total: "+(gear[i]+values[i])+"%  |  "+table.Describe(gear[i]+values[i]),360,y+25,480,47,10,text);result.AccessibleName=kinds[i]+" breakpoint result";content.Controls.Add(result);
+   input.ValueChanged+=(s,e)=>{values[index]=(int)input.Value;result.Text="Total: "+(gear[index]+values[index])+"%  |  "+table.Describe(gear[index]+values[index]);};
    content.Controls.Add(LabelAt("Targets: "+table.Steps(),32,y+65,820,23,9,muted));
    content.Controls.Add(LabelAt(table.Assumption,32,y+89,820,24,8,muted));
   }
-  content.Controls.Add(LabelAt("Totals are entered manually and kept during this session. Breakpoints show full animation frames. IAS depends on weapon and skill and is not calculated here.",32,595,820,55,9,muted));
+  content.Controls.Add(LabelAt("Gear totals include equipped items and active charms. Extra is optional and kept for this session. Enter item stats in Equipment; names alone do not supply stats. IAS depends on weapon and skill.",32,595,820,55,9,muted));
   content.Controls.Add(LabelAt("Reference: d2r.org/tools/breakpoints  •  game animation data 3.3.93847",32,655,820,25,8,muted));
  }
  void ShowCuratedBuilds(){

@@ -9,6 +9,24 @@ using System.Text.RegularExpressions;
 [Serializable] public sealed class ItemSkillBonuses {
  public string Lines="";
  public bool ActiveCharm;
+ public int Fcr, Fhr, Fbr;
+}
+public sealed class SpeedBonusTotals {
+ public int Fcr, Fhr, Fbr;
+}
+public static class GearSpeedBonuses {
+ static void Read(SpeedBonusTotals totals,string item,ItemSkillBonuses data){
+  if(String.IsNullOrWhiteSpace(item)||data==null)return;
+  totals.Fcr+=Math.Max(0,Math.Min(1000,data.Fcr));totals.Fhr+=Math.Max(0,Math.Min(1000,data.Fhr));totals.Fbr+=Math.Max(0,Math.Min(1000,data.Fbr));
+ }
+ public static SpeedBonusTotals ForBuild(Build build){
+  var totals=new SpeedBonusTotals();
+  if(build.Gear!=null&&build.GearSkillBonuses!=null)for(int i=0;i<Math.Min(build.Gear.Length,build.GearSkillBonuses.Length);i++)Read(totals,build.Gear[i],build.GearSkillBonuses[i]);
+  if(build.Inventory!=null&&build.InventorySkillBonuses!=null)for(int i=0;i<Math.Min(build.Inventory.Length,build.InventorySkillBonuses.Length);i++){
+   var data=build.InventorySkillBonuses[i];if(data!=null&&data.ActiveCharm)Read(totals,build.Inventory[i],data);
+  }
+  return totals;
+ }
 }
 public sealed class WarlockBonusTotals {
  public int All,Class,Demon,Eldritch,Chaos,Fire;
