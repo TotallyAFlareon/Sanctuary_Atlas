@@ -12,6 +12,27 @@ using System.Text.RegularExpressions;
  public int Fcr, Fhr, Fbr;
  // Nonempty only for items created from the verified unsocketed-unique list.
  public string VerifiedName="";
+ public List<ItemStat> OtherStats=new List<ItemStat>();
+}
+[Serializable] public sealed class ItemStat {
+ public string Name="";
+ public int Value;
+}
+public sealed class ItemEditorLine {
+ public string SkillLine;
+ public ItemStat Stat;
+ public override string ToString(){return Stat==null?SkillLine:Stat.Name+": "+(Stat.Value>=0?"+":"")+Stat.Value;}
+}
+public static class EquipmentStatOptions {
+ // Common modifiers for manually entered items. A slot alone does not prove
+ // that a particular base, quality, roll or combination can exist.
+ public static string[] ForSlot(string slot){
+  var list=new List<string>{"Fire Resistance (%)","Cold Resistance (%)","Lightning Resistance (%)","Poison Resistance (%)","All Resistances (%)","Life","Mana","Strength","Dexterity","Vitality","Energy","Magic Find (%)"};
+  if(slot=="Weapon"||slot=="Off-hand"||slot=="Gloves"||slot=="Amulet"||slot=="Ring 1"||slot=="Ring 2")list.AddRange(new[]{"Minimum Damage","Maximum Damage","Attack Rating"});
+  if(slot=="Weapon"||slot=="Gloves")list.Add("Increased Attack Speed (%)");
+  if(slot=="Weapon")list.AddRange(new[]{"Enhanced Weapon Damage (%)","Damage to Demons (%)","Damage to Undead (%)","Life Stolen Per Hit (%)","Mana Stolen Per Hit (%)"});
+  return list.ToArray();
+ }
 }
 public sealed class SpeedBonusTotals {
  public int Fcr, Fhr, Fbr;

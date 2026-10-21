@@ -14,7 +14,7 @@ class WarlockGuideCheck {
  static object Call(Atlas a,string n,params object[] args){return typeof(Atlas).GetMethod(n,flags).Invoke(a,args);}
  static void Need(bool ok,string why){if(!ok)throw new Exception(why);}
  static void CheckSpeedBonuses(){
-  var b=new Build();b.Gear[0]="Weapon";b.GearSkillBonuses[0]=new ItemSkillBonuses{Fcr=35,Fhr=20,Lines="Warlock Skills: +2"};
+  var b=new Build();b.Gear[0]="Weapon";b.GearSkillBonuses[0]=new ItemSkillBonuses{Fcr=35,Fhr=20,Lines="Warlock Skills: +2",OtherStats=new List<ItemStat>{new ItemStat{Name="Increased Attack Speed (%)",Value=20}}};
   b.Gear[1]="Shield";b.GearSkillBonuses[1]=new ItemSkillBonuses{Fcr=20,Fbr=15};
   b.GearSkillBonuses[2]=new ItemSkillBonuses{Fcr=99}; // Empty slots never count.
   b.Inventory[0]="Charm";b.InventorySkillBonuses[0]=new ItemSkillBonuses{Fhr=5,ActiveCharm=true};
@@ -22,16 +22,18 @@ class WarlockGuideCheck {
   var v=GearSpeedBonuses.ForBuild(b);Need(v.Fcr==55&&v.Fhr==25&&v.Fbr==15,"Equipment or charm totals");
   b.InventorySkillBonuses[0].ActiveCharm=false;v=GearSpeedBonuses.ForBuild(b);Need(v.Fhr==20,"Inactive charm counted");
   var serializer=new XmlSerializer(typeof(Build));string xml;using(var writer=new StringWriter()){serializer.Serialize(writer,b);xml=writer.ToString();}
-  var doc=XDocument.Parse(xml);foreach(var name in new[]{"Fcr","Fhr","Fbr"})foreach(var element in doc.Descendants(name).ToArray())element.Remove();
+  var doc=XDocument.Parse(xml);foreach(var name in new[]{"Fcr","Fhr","Fbr","OtherStats"})foreach(var element in doc.Descendants(name).ToArray())element.Remove();
   Build old;using(var reader=doc.CreateReader())old=(Build)serializer.Deserialize(reader);Need(old.GearSkillBonuses[0].Lines=="Warlock Skills: +2"&&GearSpeedBonuses.ForBuild(old).Fcr==0,"Older saved item migration");
-  using(var reader=new StringReader(xml))old=(Build)serializer.Deserialize(reader);Need(old.GearSkillBonuses[0].Fcr==35&&old.GearSkillBonuses[1].Fbr==15,"Speed bonuses must survive reload");
+  using(var reader=new StringReader(xml))old=(Build)serializer.Deserialize(reader);Need(old.GearSkillBonuses[0].Fcr==35&&old.GearSkillBonuses[1].Fbr==15&&old.GearSkillBonuses[0].OtherStats.Single().Value==20,"Speed bonuses must survive reload");
  }
  static void CheckBreakpoints(){
   foreach(string cls in new[]{"Warlock","Amazon","Assassin","Barbarian","Druid","Necromancer","Paladin","Sorceress"})foreach(string kind in new[]{"FCR","FHR","FBR"}){
    var table=Breakpoints.For(cls,kind);Need(table.Thresholds[0]==0,"Breakpoint zero "+cls+kind);
-   for(int i=1;i<table.Thresholds.Length;i++){int threshold=table.Thresholds[i];Need(threshold>table.Thresholds[i-1],"Ordered "+cls+kind);Need(table.Describe(threshold-1).Contains("need +1%"),"Before threshold "+cls+kind+threshold);Need(table.Describe(threshold).Contains("Current: "+threshold+"%"),"At threshold "+cls+kind+threshold);}
+   for(int i=1;i<table.Thresholds.Length;i++){int threshold=table.Thresholds[i];Need(threshold>table.Thresholds[i-1],"Ordered "+cls+kind);Need(table.Describe(threshold-1).Contains("need +1%"),"Before threshold "+cls+kind+threshold);Need(table.Describe(threshold).Contains("Reached: "+threshold+"%"),"At threshold "+cls+kind+threshold);}
    Need(table.Describe(9999).Contains("Highest listed"),"Maximum "+cls+kind);
   }
+  Need(Breakpoints.For("Warlock","FCR").Describe(25).Contains("Reached: 18%")&&Breakpoints.For("Warlock","FCR").Describe(25).Contains("need +5%"),"Screenshot FCR breakpoint");
+  Need(EquipmentStatOptions.ForSlot("Weapon").Contains("Increased Attack Speed (%)")&&EquipmentStatOptions.ForSlot("Weapon").Contains("Enhanced Weapon Damage (%)")&&!EquipmentStatOptions.ForSlot("Belt").Contains("Enhanced Weapon Damage (%)"),"Slot-specific stat choices");
   Need(Breakpoints.For("Warlock","FCR").Describe(74).Contains("11 frames")&&Breakpoints.For("Warlock","FCR").Describe(75).Contains("10 frames"),"Warlock FCR");
   Need(Breakpoints.For("Warlock","FHR").Describe(86).Contains("6 frames")&&Breakpoints.For("Sorceress","FCR").Describe(105).Contains("8 frames"),"Class-specific frames");
   Need(CuratedBuilds.Warlock.Length>=3&&CuratedBuilds.Warlock.All(x=>x.Details.Contains("REFERENCE")&&x.Details.Contains("SKILL PRIORITIES")),"Curated builds");
@@ -100,6 +102,7 @@ class WarlockGuideCheck {
     Need((bool)Call(app,"VerifiedFits",preset,false,2)&&!(bool)Call(app,"VerifiedFits",preset,false,0)&&(bool)Call(app,"VerifiedFits",preset,true,0),"Verified slot and inventory rules");
     Need(gearContent.Controls.OfType<Button>().Any(x=>x.Text=="BREAKPOINTS"),"Equipment breakpoint button");
     Call(app,"ShowBreakpoints");var breakpointContent=(Panel)Field(app,"content");var fcr=breakpointContent.Controls.OfType<NumericUpDown>().First(x=>x.AccessibleName=="FCR extra percentage");
+    var targetLabels=breakpointContent.Controls.OfType<Label>().Where(x=>x.Text.StartsWith("Targets:")).OrderBy(x=>x.Top).ToArray();var resultLabels=breakpointContent.Controls.OfType<Label>().Where(x=>x.AccessibleName!=null&&x.AccessibleName.EndsWith("breakpoint result")).OrderBy(x=>x.Top).ToArray();Need(targetLabels.Length==3&&resultLabels.Length==3,"Breakpoint rows");for(int i=0;i<3;i++)Need(!targetLabels[i].Bounds.IntersectsWith(resultLabels[i].Bounds),"Breakpoint targets overlap result");
     Need(breakpointContent.Controls.OfType<Label>().Any(x=>x.AccessibleName=="FCR breakpoint result"&&x.Text.Contains("Total: 55%")&&x.Text.Contains("Next: 75%")),"Equipment breakpoint total");fcr.Value=20;
     Need(breakpointContent.Controls.OfType<Label>().Any(x=>x.AccessibleName=="FCR breakpoint result"&&x.Text.Contains("Total: 75%")&&x.Text.Contains("10 frames")),"Additional bonus breakpoint result");
     Call(app,"ShowGear");Call(app,"ShowBreakpoints");breakpointContent=(Panel)Field(app,"content");Need(breakpointContent.Controls.OfType<NumericUpDown>().First(x=>x.AccessibleName=="FCR extra percentage").Value==20,"Extra lost while navigating");

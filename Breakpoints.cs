@@ -12,7 +12,7 @@ public sealed class BreakpointTable {
  public string Describe(int value){
   int i=0;while(i+1<Thresholds.Length&&value>=Thresholds[i+1])i++;
   string next=i+1<Thresholds.Length?"Next: "+Thresholds[i+1]+"%  (need +"+(Thresholds[i+1]-value)+"%)":"Highest listed breakpoint reached";
-  return "Current: "+Thresholds[i]+"%  |  "+(StartingFrames-i)+" frames\r\n"+next;
+  return "Reached: "+Thresholds[i]+"%  |  "+(StartingFrames-i)+" frames\r\n"+next;
  }
  public string Steps(){return String.Join("  /  ",Thresholds.Select(x=>x+"%").ToArray());}
 }
