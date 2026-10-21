@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 // The user enters bonuses as printed on each item. This does not infer item stats,
 // check slot compatibility, or treat charged skills as permanent skill levels.
@@ -31,10 +32,14 @@ public static class GearSkillBonuses {
  public static WarlockBonusTotals Parse(string lines,List<Skill> skills){
   var total=new WarlockBonusTotals();if(String.IsNullOrWhiteSpace(lines))return total;
   foreach(string raw in lines.Replace("\r","").Split('\n')){
-   string line=raw.Trim();if(line.Length==0)continue;int split=line.LastIndexOf(':');int amount;
-   if(split<1||!Int32.TryParse(line.Substring(split+1).Trim(),NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out amount)||amount<0||amount>100)
-    throw new FormatException("Use one bonus per line, for example: All Skills: +2");
-   Add(total,line.Substring(0,split).Trim(),amount,skills);
+   string line=raw.Trim();if(line.Length==0)continue;int amount;string label;
+   var printed=Regex.Match(line,@"^\+?(\d+)\s+to\s+(.+?)(?:\s*\(Warlock Only\))?$",RegexOptions.IgnoreCase);
+   if(printed.Success){label=printed.Groups[2].Value.Trim();if(!Int32.TryParse(printed.Groups[1].Value,out amount))throw new FormatException("Bonus amount is too large.");}
+   else{var trailing=Regex.Match(line,@"^(.+?)\s+\+(\d+)$");if(trailing.Success){label=trailing.Groups[1].Value.Trim().TrimEnd(':').Trim();if(!Int32.TryParse(trailing.Groups[2].Value,out amount))throw new FormatException("Bonus amount is too large.");}else{int split=line.LastIndexOf(':');if(split<1||!Int32.TryParse(line.Substring(split+1).Trim(),NumberStyles.AllowLeadingSign,CultureInfo.InvariantCulture,out amount))throw new FormatException("Use one bonus per line, for example: Warlock Skills: +10 or +10 to Warlock Skill Levels.");label=line.Substring(0,split).Trim();}}
+   if(amount<0||amount>100)throw new FormatException("Each bonus must be between 0 and 100.");
+   if(label.Equals("All Skill Levels",StringComparison.OrdinalIgnoreCase))label="All Skills";
+   if(label.Equals("Warlock Skill Levels",StringComparison.OrdinalIgnoreCase))label="Warlock Skills";
+   Add(total,label,amount,skills);
   }
   return total;
  }
@@ -65,5 +70,18 @@ public static class GearSkillBonuses {
    if(new[]{"Summon Tainted","Blood Boil","Ring of Fire","Flame Wave","Sigil: Death","Apocalypse"}.Contains(skills[i].Name))levels.SetConditionalBonus(i+1,total.Fire);
    int value;if(total.Individual.TryGetValue(skills[i].Name,out value))levels.SetSkillBonus(i+1,value);
   }
+ }
+ public static SkillLevels LevelsForBuild(Build build,List<Skill> skills){
+  var levels=new SkillLevels{CharacterLevel=build.Level};
+  for(int i=0;i<skills.Count&&i<build.Points.Length;i++)levels.SetHard(i+1,build.Points[i]);
+  Apply(ForBuild(build,skills),skills,levels);return levels;
+ }
+ public static string Summary(WarlockBonusTotals t){
+  var parts=new List<string>();
+  if(t.All>0)parts.Add("+"+t.All+" All Skills");if(t.Class>0)parts.Add("+"+t.Class+" Warlock Skills");
+  if(t.Demon>0)parts.Add("+"+t.Demon+" Demon");if(t.Eldritch>0)parts.Add("+"+t.Eldritch+" Eldritch");if(t.Chaos>0)parts.Add("+"+t.Chaos+" Chaos");if(t.Fire>0)parts.Add("+"+t.Fire+" Fire Skills");
+  foreach(var item in t.Individual.OrderBy(x=>x.Key))if(item.Value>0)parts.Add("+"+item.Value+" "+item.Key);
+  if(t.InvalidItems>0)parts.Add("Some entries need correction");
+  return parts.Count==0?"No active skill bonuses entered.":String.Join(", ",parts.ToArray());
  }
 }

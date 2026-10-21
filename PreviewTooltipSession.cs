@@ -75,13 +75,12 @@ public sealed class PreviewTooltipSession {
    d.Notes.Add("War Cry adds 5% stun length per invested point, up to 10 seconds.");
   }else hasDetails=false;
   d.Notes.Add(hasDetails?"Preview: additional effects are still being added.":"Detailed effects are coming in a future update.");
-  var levels=new SkillLevels{CharacterLevel=build.Level};
-  for(int i=0;i<skills.Count&&i<build.Points.Length;i++)levels.SetHard(i+1,build.Points[i]);
+  SkillLevels levels;
   if(className=="Warlock"){
-   var bonuses=GearSkillBonuses.ForBuild(build,skills);GearSkillBonuses.Apply(bonuses,skills,levels);
+   var bonuses=GearSkillBonuses.ForBuild(build,skills);levels=GearSkillBonuses.LevelsForBuild(build,skills);
    d.Notes.Add("Equipment bonuses are entered manually; only inventory items marked as active charms count.");
    if(bonuses.InvalidItems>0)d.Notes.Add("Some item bonuses could not be read. Check your equipment entries.");
-  }else d.Notes.Add("Equipment bonuses are not included yet.");
+  }else{levels=new SkillLevels{CharacterLevel=build.Level};for(int i=0;i<skills.Count&&i<build.Points.Length;i++)levels.SetHard(i+1,build.Points[i]);d.Notes.Add("Equipment bonuses are not included yet.");}
   return SkillTooltipRenderer.Render(d,levels,null);
  }
 }
