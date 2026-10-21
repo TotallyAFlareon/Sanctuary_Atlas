@@ -4,6 +4,7 @@ using System.Linq;
 
 // Small independently authored preview. Other skills deliberately have no calculated stats.
 // References: https://d2r.org/mechanics/summon-goatman, /ring-of-fire,
+// /demonic-mastery, /blood-oath, /summon-tainted, /summon-defiler,
 // /cold-arrow, /ice-bolt, /frost-nova and /stun (build 3.3.93847).
 public sealed class PreviewTooltipSession {
  readonly string className;
@@ -15,11 +16,42 @@ public sealed class PreviewTooltipSession {
   var d=new SkillTooltipDefinition{Id=Id(skill.Name),Name=skill.Name,Description=skill.Desc,RequiredLevel=skill.Level,Prerequisites=(skill.Requires??"").Replace("|"," + ")};
   bool hasDetails=true;
   if(className=="Warlock"&&skill.Name=="Summon Goatman"){
-   string oath="slvl("+Id("Blood Oath")+")";
+   string oath="slvl("+Id("Blood Oath")+")", mastery="slvl("+Id("Demonic Mastery")+")";
    Stat(d,"Mana Cost: {value}","15+(lvl-1)/2");
    Stat(d,"Defense: {value}","100+20*(lvl-1)",true);
    Stat(d,"Summon life bonus: {value}%","35*(lvl-1)+( "+oath+">0 ? 50+35*("+oath+"-1) : 0)",true);
-   d.Notes.Add("Life is shown as a bonus, not the demon's total life. Blood Oath increases this bonus.");
+   Stat(d,"Damage bonus: +{value}%","10*lvl+10*"+mastery,true);
+   Stat(d,"Flat damage bonus: +{value}","1+2*(lvl-1)",true);
+   Stat(d,"Attack rating bonus: +{value}","100+40*lvl+25*"+mastery,true);
+   Stat(d,"Attack speed bonus: +{value}%","min(9+lvl,25)+("+mastery+">0?min(4+"+mastery+",25):0)",true);
+   Stat(d,"Crushing Blow: {value}%","5+blvl("+Id("Death Mark")+")",true);
+   d.Notes.Add("Life is a bonus, not total life. Damage and attack rating include Demonic Mastery; Crushing Blow uses invested Death Mark points.");
+   d.Notes.Add("Goatman gains Stun at level 2, Berserk at 3, Frenzy at 4, and Cleave at 5.");
+  }else if(className=="Warlock"&&skill.Name=="Demonic Mastery"){
+   Stat(d,"Demon damage bonus: +{value}%","10*lvl",true);
+   Stat(d,"Demon attack speed: +{value}%","min(4+lvl,25)",true);
+   Stat(d,"Demon attack rating: +{value}","25*lvl",true);
+   Stat(d,"Demon run/walk speed: +{value}%","5+idiv(34*min(100,idiv(110*lvl,lvl+6)),100)",true);
+   Stat(d,"Maximum demons: {value}","1+(blvl("+Id("Demonic Mastery")+")>=5?1:0)+(blvl("+Id("Demonic Mastery")+")>=10?1:0)",true);
+   d.Notes.Add("A second demon requires 5 invested points; a third requires 10. Equipment levels do not count toward these thresholds.");
+   d.Notes.Add("The Tainted uses the damage bonus as fire mastery; Defiler damage instead uses invested Mastery points.");
+  }else if(className=="Warlock"&&(skill.Name=="Summon Tainted"||skill.Name=="Summon Defiler")){
+   bool tainted=skill.Name=="Summon Tainted";
+   string oath="slvl("+Id("Blood Oath")+")", mastery="slvl("+Id("Demonic Mastery")+")";
+   Stat(d,"Mana Cost: {value}",(tainted?"25":"35")+"+(lvl-1)/2");
+   Stat(d,"Defense bonus: +{value}",(tainted?"75":"125")+"+20*(lvl-1)",true);
+   Stat(d,"Summon life bonus: +{value}%","35*(lvl-1)+( "+oath+">0 ? 50+35*("+oath+"-1) : 0)",true);
+   if(tainted){
+    Stat(d,"Fire mastery bonus: +{value}%","10*"+mastery,true);
+    Stat(d,"Attack speed bonus: +{value}%","min(9+lvl,25)+("+mastery+">0?min(4+"+mastery+",25):0)",true);
+    Stat(d,"Blood Boil cast level: {value}","blvl("+Id("Blood Boil")+")",true);
+    d.Notes.Add("The Tainted's Blood Boil level uses invested points. Fire Ball damage and Resist Fire are not included yet.");
+   }else{
+    Stat(d,"Damage bonus: +{value}%","10*((lvl-1)+blvl("+Id("Demonic Mastery")+"))",true);
+    Stat(d,"Attack speed bonus: +{value}%",mastery+">0?min(4+"+mastery+",25):0",true);
+    d.Notes.Add("Defiler damage counts invested Demonic Mastery points. Health Link effects are not included yet.");
+   }
+   d.Notes.Add("Life is a bonus, not total life; Blood Oath contributes when learned. Defense is a skill bonus, not total defense.");
   }else if(className=="Warlock"&&skill.Name=="Death Mark"){
    // https://d2r.org/data/skills/death-mark (build 3.3.93847)
    Stat(d,"Mana Cost: {value}","2+lvl/4");
@@ -30,8 +62,10 @@ public sealed class PreviewTooltipSession {
    d.Notes.Add("Requires an active demon. Casting delay: 0.8 seconds.");
   }else if(className=="Warlock"&&skill.Name=="Blood Oath"){
    // https://d2r.org/mechanics/blood-oath (build 3.3.93847)
+   Stat(d,"Damage shared with demon: {value}%","-1+idiv(31*min(100,idiv(110*lvl,lvl+6)),100)",true);
+   Stat(d,"Demon resist all: +{value}%","3+idiv(76*min(100,idiv(110*lvl,lvl+6)),100)",true);
    Stat(d,"Demon life bonus: +{value}%","50+35*(lvl-1)",true);
-   d.Notes.Add("Damage sharing, demon resistances and physical damage reduction are not included yet.");
+   Stat(d,"Demon physical damage reduction: {value}%","1+idiv(11*min(100,idiv(110*lvl,lvl+6)),100)",true);
   }else if(className=="Warlock"&&skill.Name=="Ring of Fire"){
    string syn="(100+10*(blvl("+Id("Flame Wave")+")+blvl("+Id("Apocalypse")+")))";
    string min="6+6*(min(lvl,8)-1)+8*max(min(lvl,16)-8,0)+10*max(min(lvl,22)-16,0)+11*max(min(lvl,28)-22,0)+12*max(lvl-28,0)";
