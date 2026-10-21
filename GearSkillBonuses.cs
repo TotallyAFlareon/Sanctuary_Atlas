@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
  public int Fcr, Fhr, Fbr;
  // Nonempty only for items created from the verified unsocketed-unique list.
  public string VerifiedName="";
+ public string RunewordName="", RunewordBase="", RunewordEffects="";
  public List<ItemStat> OtherStats=new List<ItemStat>();
 }
 [Serializable] public sealed class ItemStat {
