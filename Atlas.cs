@@ -76,7 +76,7 @@ public class Atlas : Form {
  string dataDir=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"SanctuaryAtlas"); string save; string className="Warlock"; static string[] classes={"Warlock","Amazon","Assassin","Barbarian","Druid","Necromancer","Paladin","Sorceress"};
  Build build=new Build(); List<Skill> skills=new List<Skill>(); List<Word> words=new List<Word>(); Panel content; Label budget; NumericUpDown level,quests; SkillTreePanel skillList; ComboBox tree; ListBox results; TextBox search,detail; ToolTip slotTip=new ToolTip(); bool loading=false; int selectedSlot=-1; bool selectedInventory=false, moving=false; CheckBox craftable; List<Cube> cubes=new List<Cube>(); static string[] runeNames="El Eld Tir Nef Eth Ith Tal Ral Ort Thul Amn Sol Shael Dol Hel Io Lum Ko Fal Lem Pul Um Mal Ist Gul Vex Ohm Lo Sur Ber Jah Cham Zod".Split(' ');
  static Font f(float s,FontStyle st=FontStyle.Regular){return new Font("Segoe UI",s,st);} 
- public Atlas(){ Icon=Icon.ExtractAssociatedIcon(Application.ExecutablePath); Text="Sanctuary Atlas | D2R companion | Update 17"; Size=new Size(1150,790); MinimumSize=new Size(950,680); BackColor=bg; ForeColor=text; Font=f(10); StartPosition=FormStartPosition.CenterScreen; save=Path.Combine(dataDir,"build.xml"); InitData(); LoadBuild(); MakeShell(); ShowSkills(); }
+ public Atlas(){ Icon=Icon.ExtractAssociatedIcon(Application.ExecutablePath); Text="Sanctuary Atlas | D2R companion | Update 18"; Size=new Size(1150,790); MinimumSize=new Size(950,680); BackColor=bg; ForeColor=text; Font=f(10); StartPosition=FormStartPosition.CenterScreen; save=Path.Combine(dataDir,"build.xml"); InitData(); LoadBuild(); MakeShell(); ShowSkills(); }
  void Add(string t,string n,int l,string r,string d){skills.Add(new Skill(t,n,l,r,d));}
  void InitWarlockSkills(){
  Add("Demon","Summon Goatman",1,"","Summons a melee demon ally."); Add("Demon","Demonic Mastery",1,"Summon Goatman","Strengthens summoned and bound demons."); Add("Demon","Blood Oath",6,"Demonic Mastery","Links your protection to your demon."); Add("Demon","Death Mark",6,"Summon Goatman","Directs your demon to an enemy."); Add("Demon","Summon Tainted",12,"Summon Goatman","Summons a ranged demon ally."); Add("Demon","Blood Boil",18,"Death Mark","Erupts your demon's blood to damage nearby enemies."); Add("Demon","Summon Defiler",18,"Summon Tainted","Summons a demon that binds enemy souls."); Add("Demon","Engorge",24,"Blood Boil","Feeds a corpse to heal and empower your demon."); Add("Demon","Consume",30,"Blood Oath","Sacrifices your demon for power."); Add("Demon","Bind Demon",30,"Engorge|Summon Defiler","Turns an injured demon into an ally.");
@@ -453,10 +453,34 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
  skillList=new SkillTreePanel{BackgroundOwner=content,Location=new Point(30,322),Size=new Size(850,438),BackColor=Color.FromArgb(19,16,15),AutoScroll=false,Anchor=AnchorStyles.Top|AnchorStyles.Left};content.Controls.Add(skillList);LayoutSkills();tree.SelectedIndex=0; }
  void SwitchClass(string next){if(next==className)return;selectedSlot=-1;moving=false;className=next; skills.Clear();if(next=="Warlock")InitWarlockSkills();else InitOtherClass();save=Path.Combine(dataDir,next=="Warlock"?"build.xml":"build-"+next.ToLowerInvariant()+".xml");LoadBuild();ShowSkills();}
  int Index(string name){return skills.FindIndex(x=>x.Name==name);} int Spent(){return build.Points.Sum();}
- bool Valid(){if(Spent()>build.Level-1+build.Quests)return false;for(int i=0;i<30;i++){var sk=skills[i];if(build.Points[i]>0&&(build.Level<sk.Level || build.Points[i]>Math.Min(20,build.Level-sk.Level+1)))return false;if(build.Points[i]>0&&sk.Requires!="")foreach(string req in sk.Requires.Split('|'))if(build.Points[Index(req)]==0)return false;}return true;}
+ string PrerequisiteProblem(){
+  for(int i=0;i<skills.Count;i++)if(build.Points[i]>0 && skills[i].Requires!="")foreach(string req in skills[i].Requires.Split('|')){
+   int requiredIndex=Index(req);
+   if(requiredIndex<0 || build.Points[requiredIndex]==0)return skills[i].Name+" requires a point in "+req+".";
+  }
+  return null;
+ }
+ string BuildProblem(){
+  int available=build.Level-1+build.Quests;
+  if(Spent()>available)return "This build uses "+Spent()+" points, but only "+available+" are available. Increase your character level or quest points, or remove points.";
+  for(int i=0;i<skills.Count;i++)if(build.Points[i]>0){
+   var sk=skills[i];
+   if(build.Level<sk.Level)return sk.Name+" requires character level "+sk.Level+".";
+   int max=Math.Min(20,build.Level-sk.Level+1);
+   if(build.Points[i]>max)return sk.Name+" can have at most "+max+" point(s) at character level "+build.Level+". Reach level "+(sk.Level+build.Points[i]-1)+" to add this point.";
+  }
+  return PrerequisiteProblem();
+ }
+ bool Valid(){return BuildProblem()==null;}
  void DrawSkills(){if(skillList==null||tree==null)return;budget.Text="POINTS  "+Spent()+" / "+(build.Level-1+build.Quests)+(Valid()?"":"    • Check level or quest points");budget.ForeColor=Valid()?gold:Color.Salmon;var scroll=skillList.AutoScrollPosition;skillList.AutoScrollPosition=Point.Empty;skillList.ClearSkills();int rowIndex=0;foreach(int tier in new int[]{1,6,12,18,24,30}){int y=rowIndex++*112;skillList.Controls.Add(LabelAt("LV\n"+tier,4,y+24,35,54,9,gold,FontStyle.Bold));var items=skills.Where(x=>x.Tree==(string)tree.SelectedItem&&x.Level==tier).ToList();for(int j=0;j<items.Count;j++){var sk=items[j];int idx=Index(sk.Name);var card=new GothicPanel{Location=new Point(42+j*250,y+2),Size=new Size(244,102),BackColor=Color.FromArgb(35,27,23)};card.Controls.Add(LabelAt(sk.Name,10,8,220,23,10,text,FontStyle.Bold));string requirement=sk.Requires==""?"No prerequisite":"Requires: "+sk.Requires.Replace("|"," + ");card.Controls.Add(LabelAt(requirement,10,31,220,30,8,muted));slotTip.SetToolTip(card,sk.Name+"\n"+sk.Desc+"\n"+requirement);var minus=Btn("−",10,66,35,27);var count=LabelAt(build.Points[idx]+" / 20",52,70,70,22,9,gold,FontStyle.Bold);var plus=Btn("+",129,66,35,27);minus.Click+=(s,e)=>Change(idx,-1);plus.Click+=(s,e)=>Change(idx,1);card.Controls.Add(minus);card.Controls.Add(count);card.Controls.Add(plus);skillList.Controls.Add(card);}} skillList.FinishSkills(-scroll.Y); }
- bool PrerequisitesValid(){for(int i=0;i<skills.Count;i++)if(build.Points[i]>0 && skills[i].Requires!="")foreach(string req in skills[i].Requires.Split('|'))if(Index(req)<0 || build.Points[Index(req)]==0)return false;return true;}
- void Change(int i,int delta){int old=build.Points[i]; if(old+delta<0||old+delta>20)return; build.Points[i]+=delta;if((delta>0&&!Valid())||(delta<0&&!PrerequisitesValid())){build.Points[i]=old;MessageBox.Show("This change would exceed your available points, character-level limit, or a skill prerequisite. Adjust your level or quest points, or invest in prerequisites first.","Cannot allocate point");return;}Save();DrawSkills();}
+ bool PrerequisitesValid(){return PrerequisiteProblem()==null;}
+ void Change(int i,int delta){
+  int old=build.Points[i]; if(old+delta<0||old+delta>20)return;
+  build.Points[i]+=delta;
+  string problem=delta>0?BuildProblem():PrerequisiteProblem();
+  if(problem!=null){build.Points[i]=old;MessageBox.Show("Skill: "+skills[i].Name+"\n\n"+problem,"Cannot change skill point");return;}
+  Save();DrawSkills();
+ }
  static string[] gearNames={"Weapon","Off-hand","Helm","Armor","Gloves","Belt","Boots","Amulet","Ring 1","Ring 2"};
  string SlotText(bool inventory,int index){return inventory?build.Inventory[index]:build.Gear[index];}
  void PutSlot(bool inventory,int index,string value){if(inventory)build.Inventory[index]=value;else build.Gear[index]=value;}
