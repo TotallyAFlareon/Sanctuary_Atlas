@@ -76,7 +76,7 @@ public class Atlas : Form {
  string dataDir=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"SanctuaryAtlas"); string save; string className="Warlock"; static string[] classes={"Warlock","Amazon","Assassin","Barbarian","Druid","Necromancer","Paladin","Sorceress"};
  Build build=new Build(); List<Skill> skills=new List<Skill>(); List<Word> words=new List<Word>(); Panel content; Label budget; NumericUpDown level,quests; SkillTreePanel skillList; ComboBox tree; ListBox results; TextBox search,detail; ToolTip slotTip=new ToolTip(); bool loading=false; int selectedSlot=-1; bool selectedInventory=false, moving=false; CheckBox craftable; List<Cube> cubes=new List<Cube>(); static string[] runeNames="El Eld Tir Nef Eth Ith Tal Ral Ort Thul Amn Sol Shael Dol Hel Io Lum Ko Fal Lem Pul Um Mal Ist Gul Vex Ohm Lo Sur Ber Jah Cham Zod".Split(' ');
  static Font f(float s,FontStyle st=FontStyle.Regular){return new Font("Segoe UI",s,st);} 
- public Atlas():this(null){} public Atlas(string testDataDir){ if(!String.IsNullOrEmpty(testDataDir))dataDir=testDataDir; Icon=Icon.ExtractAssociatedIcon(Application.ExecutablePath); Text="Sanctuary Atlas | D2R companion | Update 28"; Size=new Size(1150,790); MinimumSize=new Size(950,680); BackColor=bg; ForeColor=text; Font=f(10); StartPosition=FormStartPosition.CenterScreen; save=Path.Combine(dataDir,"build.xml"); InitData(); LoadBuild(); MakeShell(); ShowSkills(); }
+ public Atlas():this(null){} public Atlas(string testDataDir){ if(!String.IsNullOrEmpty(testDataDir))dataDir=testDataDir; Icon=Icon.ExtractAssociatedIcon(Application.ExecutablePath); Text="Sanctuary Atlas | D2R companion | Update 29"; Size=new Size(1150,790); MinimumSize=new Size(950,680); BackColor=bg; ForeColor=text; Font=f(10); StartPosition=FormStartPosition.CenterScreen; save=Path.Combine(dataDir,"build.xml"); InitData(); LoadBuild(); MakeShell(); ShowSkills(); }
  void Add(string t,string n,int l,string r,string d){skills.Add(new Skill(t,n,l,r,d));}
  void InitWarlockSkills(){
  Add("Demon","Summon Goatman",1,"","Summons a melee demon ally."); Add("Demon","Demonic Mastery",1,"Summon Goatman","Strengthens summoned and bound demons."); Add("Demon","Blood Oath",6,"Demonic Mastery","Links your protection to your demon."); Add("Demon","Death Mark",6,"Summon Goatman","Directs your demon to an enemy."); Add("Demon","Summon Tainted",12,"Summon Goatman","Summons a ranged demon ally."); Add("Demon","Blood Boil",18,"Death Mark","Erupts your demon's blood to damage nearby enemies."); Add("Demon","Summon Defiler",18,"Summon Tainted","Summons a demon that binds enemy souls."); Add("Demon","Engorge",24,"Blood Boil","Feeds a corpse to heal and empower your demon."); Add("Demon","Consume",30,"Blood Oath","Sacrifices your demon for power."); Add("Demon","Bind Demon",30,"Engorge|Summon Defiler","Turns an injured demon into an ally.");
@@ -412,6 +412,8 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
  LoadWordEffects();InitCube();
  }
  string contentHash;
+ List<GuideRegion> guideRegions=new List<GuideRegion>(GuideBook.Regions);
+ ListBox guideList;
  string ContentPath(){return Path.Combine(dataDir,"runeword-effects-"+AtlasUpdates.CurrentVersion+".xml");}
  Dictionary<string,string> ParseWordEffects(byte[] data){
   if(data==null||data.Length==0||data.Length>2000000)throw new InvalidOperationException("Invalid runeword content size.");
@@ -425,16 +427,16 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
   }if(result.Count!=words.Count)throw new InvalidOperationException("The runeword content is incomplete.");return result;
  }
  static string ContentDigest(byte[] data){using(var sha=System.Security.Cryptography.SHA256.Create())return BitConverter.ToString(sha.ComputeHash(data)).Replace("-","");}
- void SetWordEffects(Dictionary<string,string> effects,byte[] data){foreach(var word in words)word.Effects=effects[word.Name];contentHash=ContentDigest(data);}
+ void SetWordEffects(Dictionary<string,string> effects,List<GuideRegion> guides,byte[] data){foreach(var word in words)word.Effects=effects[word.Name];guideRegions=guides;contentHash=ContentDigest(data);}
  void LoadWordEffects(){
-  byte[] data=null;try{if(File.Exists(ContentPath())){data=File.ReadAllBytes(ContentPath());SetWordEffects(ParseWordEffects(data),data);return;}}catch{}
+  byte[] data=null;try{if(File.Exists(ContentPath())){data=File.ReadAllBytes(ContentPath());SetWordEffects(ParseWordEffects(data),GuideContent.Parse(data),data);return;}}catch{}
   using(var stream=Assembly.GetExecutingAssembly().GetManifestResourceStream("RunewordEffects")){if(stream==null)throw new InvalidOperationException("Runeword effects data is missing.");using(var ms=new MemoryStream()){stream.CopyTo(ms);data=ms.ToArray();}}
-  SetWordEffects(ParseWordEffects(data),data);
+  SetWordEffects(ParseWordEffects(data),GuideContent.Parse(data),data);
  }
  void ApplyWordContent(byte[] data){
-  var effects=ParseWordEffects(data);Directory.CreateDirectory(dataDir);string path=ContentPath(),temp=path+"."+Guid.NewGuid().ToString("N")+".tmp";
+  var effects=ParseWordEffects(data);var guides=GuideContent.Parse(data);Directory.CreateDirectory(dataDir);string path=ContentPath(),temp=path+"."+Guid.NewGuid().ToString("N")+".tmp";
   try{File.WriteAllBytes(temp,data);if(File.Exists(path))File.Replace(temp,path,null);else File.Move(temp,path);}finally{if(File.Exists(temp))File.Delete(temp);}
-  SetWordEffects(effects,data);if(search!=null&&!search.IsDisposed&&search.Parent==content){string selected=results.SelectedItem as string;FilterWords();if(selected!=null&&results.Items.Contains(selected))results.SelectedItem=selected;}
+  SetWordEffects(effects,guides,data);if(search!=null&&!search.IsDisposed&&search.Parent==content){string selected=results.SelectedItem as string;FilterWords();if(selected!=null&&results.Items.Contains(selected))results.SelectedItem=selected;}if(guideList!=null&&!guideList.IsDisposed&&guideList.Parent==content){string selected=(guideList.SelectedItem as GuideRegion)==null?null:((GuideRegion)guideList.SelectedItem).Name;RefreshGuideList(selected);}
  }
  void W(string n,string r,string b,string a){words.Add(new Word(n,r,b,a));}
  Label LabelAt(string s,int x,int y,int w,int h,float size,Color c,FontStyle st=FontStyle.Regular){var a=new Label{Text=s,Location=new Point(x,y),Size=new Size(w,h),ForeColor=c,Font=f(size,st),AutoEllipsis=true,BackColor=Color.Transparent};return a;}
@@ -604,7 +606,7 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
   var repository=new TextBox{Location=new Point(32,240),Width=390,Text=UpdateRepository(),BackColor=panel,ForeColor=text};content.Controls.Add(repository);
   var save=Btn("SAVE SOURCE",32,282,180,36);content.Controls.Add(save);
   var check=Btn("CHECK FOR UPDATES",220,282,200,36);content.Controls.Add(check);
-  var info=LabelAt(UpdateRepository()==""?"Automatic update checks are off. Save a public release repository to enable them.":"The app checks this repository when it starts. Use the corner button to install updates. Runeword content can refresh immediately; program updates restart the app. The repository and releases must be public.",32,340,780,85,10,muted);content.Controls.Add(info);
+  var info=LabelAt(UpdateRepository()==""?"Automatic update checks are off. Save a public release repository to enable them.":"The app checks this repository when it starts. Use the corner button to install updates. Guide and runeword content can refresh immediately; program updates restart the app. The repository and releases must be public.",32,340,780,85,10,muted);content.Controls.Add(info);
   save.Click+=(sender,e)=>{string value=repository.Text.Trim();if(value!=""&&!AtlasUpdates.ValidRepository(value)){MessageBox.Show("Enter the repository as owner/repository.","App updates");return;}Directory.CreateDirectory(dataDir);if(value==""){File.WriteAllText(UpdateRepositoryPath(),"");info.Text="Automatic update checks are off.";}else{File.WriteAllText(UpdateRepositoryPath(),value);info.Text="Release source saved. The app will check when it starts.";}};
   check.Click+=(sender,e)=>{string value=repository.Text.Trim();if(value!=UpdateRepository()){MessageBox.Show("Save the release source first.","App updates");return;}CheckForUpdates(true);};
  }
@@ -617,7 +619,7 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
    if(IsDisposed||!IsHandleCreated)return;
    BeginInvoke((Action)(()=>{if(IsDisposed)return;
     if(release.Version>AtlasUpdates.CurrentVersion){if(manual){SetUpdateStatus("DOWNLOADING UPDATE "+release.Version+"...",true);DownloadUpdate(release);}else{updateChecking=false;SetUpdateStatus("UPDATE "+release.Version+" AVAILABLE",false);}return;}
-    if(release.Version==AtlasUpdates.CurrentVersion&&release.ContentHash!=null&&!String.Equals(release.ContentHash,contentHash,StringComparison.OrdinalIgnoreCase)){if(manual){SetUpdateStatus("UPDATING RUNEWORDS...",true);DownloadWordContent(release);}else{updateChecking=false;SetUpdateStatus("CONTENT UPDATE AVAILABLE",false);}return;}
+    if(release.Version==AtlasUpdates.CurrentVersion&&release.ContentHash!=null&&!String.Equals(release.ContentHash,contentHash,StringComparison.OrdinalIgnoreCase)){if(manual){SetUpdateStatus("UPDATING CONTENT...",true);DownloadWordContent(release);}else{updateChecking=false;SetUpdateStatus("CONTENT UPDATE AVAILABLE",false);}return;}
     updateChecking=false;SetUpdateStatus("UP TO DATE  •  UPDATE "+AtlasUpdates.CurrentVersion,false);
    }));
   }catch(Exception ex){if(!IsDisposed&&IsHandleCreated)try{BeginInvoke((Action)(()=>{updateChecking=false;SetUpdateStatus("UPDATE CHECK FAILED",false);if(manual&&!IsDisposed)MessageBox.Show("Could not check for updates: "+ex.Message,"App updates");}));}catch(InvalidOperationException){}}});
@@ -629,8 +631,8 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
  }
  void ApplyPendingUpdate(){if(pendingInstaller==null)return;try{System.Diagnostics.Process.Start(pendingInstaller,"--apply-update "+System.Diagnostics.Process.GetCurrentProcess().Id);pendingInstaller=null;Close();}catch(Exception ex){SetUpdateStatus("UPDATE READY  •  RETRY",false);MessageBox.Show("Could not start the update: "+ex.Message,"App updates");}}
  void DownloadWordContent(UpdateRelease release){
-  var thread=new System.Threading.Thread(()=>{try{byte[] data=AtlasUpdates.DownloadContent(release);if(IsDisposed||!IsHandleCreated)return;BeginInvoke((Action)(()=>{try{ApplyWordContent(data);updateChecking=false;SetUpdateStatus("RUNEWORDS UPDATED",false);}catch(Exception ex){updateChecking=false;SetUpdateStatus("CONTENT UPDATE FAILED",false);MessageBox.Show("Could not apply runeword content: "+ex.Message,"App updates");}}));}
-   catch(Exception ex){if(!IsDisposed&&IsHandleCreated)try{BeginInvoke((Action)(()=>{updateChecking=false;SetUpdateStatus("CONTENT UPDATE FAILED",false);MessageBox.Show("Could not download runeword content: "+ex.Message,"App updates");}));}catch(InvalidOperationException){}}});thread.IsBackground=true;thread.Start();
+  var thread=new System.Threading.Thread(()=>{try{byte[] data=AtlasUpdates.DownloadContent(release);if(IsDisposed||!IsHandleCreated)return;BeginInvoke((Action)(()=>{try{ApplyWordContent(data);updateChecking=false;SetUpdateStatus("CONTENT UPDATED",false);}catch(Exception ex){updateChecking=false;SetUpdateStatus("CONTENT UPDATE FAILED",false);MessageBox.Show("Could not apply updated content: "+ex.Message,"App updates");}}));}
+   catch(Exception ex){if(!IsDisposed&&IsHandleCreated)try{BeginInvoke((Action)(()=>{updateChecking=false;SetUpdateStatus("CONTENT UPDATE FAILED",false);MessageBox.Show("Could not download updated content: "+ex.Message,"App updates");}));}catch(InvalidOperationException){}}});thread.IsBackground=true;thread.Start();
  }
 
  // Optional bonuses outside equipment are scratch values for the current session.
@@ -720,6 +722,7 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
  }
  void ShowCube(){Header("The horadric archive  /  "+cubes.Count+" entries","Cube recipes","Search by material or result. Read each recipe's restrictions before transmuting.");var q=new TextBox{Location=new Point(32,155),Width=390,BackColor=panel,ForeColor=text,BorderStyle=BorderStyle.FixedSingle};var list=new ListBox{Location=new Point(32,190),Size=new Size(390,440),BackColor=panel,ForeColor=text,BorderStyle=BorderStyle.None,Font=f(10),IntegralHeight=false};var info=new TextBox{Location=new Point(450,190),Size=new Size(400,440),Multiline=true,ReadOnly=true,BackColor=panel,ForeColor=text,BorderStyle=BorderStyle.None,Font=f(11),ScrollBars=ScrollBars.Vertical};content.Controls.Add(q);content.Controls.Add(list);content.Controls.Add(info);Action filter=()=>{list.Items.Clear();foreach(var c in cubes.Where(x=>(x.Name+" "+x.Formula).ToLowerInvariant().Contains(q.Text.ToLowerInvariant())))list.Items.Add(c.Name);if(list.Items.Count>0)list.SelectedIndex=0;else info.Text="No matching recipes.";};list.SelectedIndexChanged+=(s,e)=>{if(list.SelectedItem==null)return;var c=cubes.Find(x=>x.Name==(string)list.SelectedItem);info.Text=c.Name.ToUpper()+"\r\n\r\nINGREDIENTS\r\n"+c.Formula+"\r\n\r\n"+c.Note;};q.TextChanged+=(s,e)=>filter();filter();}
  int guideAct=1;
+ void RefreshGuideList(string selected){if(guideList==null||guideList.IsDisposed)return;guideList.Items.Clear();foreach(var region in guideRegions)if(region.Act==guideAct)guideList.Items.Add(region);int index=-1;for(int i=0;i<guideList.Items.Count;i++)if(((GuideRegion)guideList.Items[i]).Name==selected){index=i;break;}if(guideList.Items.Count>0)guideList.SelectedIndex=index<0?0:index;}
  void ShowGuide(){
   Header("Sanctuary  /  travel & quests","Guide book","Choose an act and region for quest landmarks and farming ideas, or open your saved notes.");
   string[] acts={"ACT I","ACT II","ACT III","ACT IV","ACT V"};
@@ -727,10 +730,10 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
   var notes=Btn("MY NOTES",562,150,125,34);notes.Click+=(s,e)=>ShowGuideNotes();content.Controls.Add(notes);
   content.Controls.Add(LabelAt("REGIONS",32,200,235,22,9,gold,FontStyle.Bold));
   var list=new ListBox{Location=new Point(32,226),Size=new Size(240,350),BackColor=panel,ForeColor=text,BorderStyle=BorderStyle.FixedSingle,Font=f(10),IntegralHeight=false};
-  foreach(var region in GuideBook.Regions)if(region.Act==guideAct)list.Items.Add(region);
+  guideList=list;
   var details=new TextBox{Location=new Point(290,226),Size=new Size(550,420),Multiline=true,ReadOnly=true,ScrollBars=ScrollBars.Vertical,BackColor=panel,ForeColor=text,BorderStyle=BorderStyle.FixedSingle,Font=f(10)};
   list.SelectedIndexChanged+=(s,e)=>{var region=list.SelectedItem as GuideRegion;details.Text=region==null?"":region.Details();};
-  content.Controls.Add(list);content.Controls.Add(details);if(list.Items.Count>0)list.SelectedIndex=0;
+  content.Controls.Add(list);content.Controls.Add(details);RefreshGuideList(null);
   content.Controls.Add(LabelAt("A curated starting guide; more regions and details can be added over time.",32,590,240,55,9,muted));
  }
  void ShowGuideNotes(){

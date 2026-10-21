@@ -1,0 +1,1932 @@
+<?xml version="1.0" encoding="utf-8"?>
+<runewords>
+  <word name="Ancients' Pledge">
+    <group>
+      <effect>+50% Enhanced Defense</effect>
+      <effect>Cold Resist +43%</effect>
+      <effect>Fire Resist +48%</effect>
+      <effect>Lightning Resist +48%</effect>
+      <effect>Poison Resist +48%</effect>
+      <effect>10% Damage Goes To Mana</effect>
+    </group>
+  </word>
+  <word name="Authority">
+    <group>
+      <effect>2% Chance to cast level 10 Psychic Ward when struck</effect>
+      <effect>10% Chance to cast level 15 Miasma Chain on striking</effect>
+      <effect>+2 to Warlock Skill Levels</effect>
+      <effect>+40-60% Enhanced Damage</effect>
+      <effect>Requirements -15%</effect>
+      <effect>+20% Faster Hit Recovery</effect>
+      <effect>Fire Resist +30%</effect>
+    </group>
+  </word>
+  <word name="Beast">
+    <group>
+      <effect>Level 9 Fanaticism Aura When Equipped</effect>
+      <effect>+40% Increased Attack Speed</effect>
+      <effect>+240-270% Enhanced Damage (varies)</effect>
+      <effect>20% Chance of Crushing Blow</effect>
+      <effect>25% Chance of Open Wounds</effect>
+      <effect>+3 To Werebear</effect>
+      <effect>+3 To Lycanthropy</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>+25-40 To Strength (varies)</effect>
+      <effect>+10 To Energy</effect>
+      <effect>+2 To Mana After Each Kill</effect>
+      <effect>Level 13 Summon Grizzly (5 Charges)</effect>
+    </group>
+  </word>
+  <word name="Black">
+    <group>
+      <effect>+120% Enhanced Damage</effect>
+      <effect>40% Chance Of Crushing Blow</effect>
+      <effect>+200 To Attack Rating</effect>
+      <effect>Adds 3-14 Cold Damage - Cold Duration 3 Seconds</effect>
+      <effect>+10 To Vitality</effect>
+      <effect>15% Increased Attack Speed</effect>
+      <effect>Knockback</effect>
+      <effect>Magic Damage Reduced By 2</effect>
+      <effect>Level 4 Corpse Explosion (12 Charges)</effect>
+    </group>
+  </word>
+  <word name="Bone">
+    <group>
+      <effect>15% Chance To Cast level 10 Bone Armor When Struck</effect>
+      <effect>15% Chance To Cast level 10 Bone Spear On Striking</effect>
+      <effect>+2 To Necromancer Skill Levels</effect>
+      <effect>+100-150 To Mana (varies)</effect>
+      <effect>All Resistances +30</effect>
+      <effect>Damage Reduced By 7</effect>
+    </group>
+  </word>
+  <word name="Bramble">
+    <group>
+      <effect>Level 15-21 Thorns Aura When Equipped (varies)</effect>
+      <effect>+50% Faster Hit Recovery</effect>
+      <effect>+25-50% To Poison Skill Damage (varies)</effect>
+      <effect>+300 Defense</effect>
+      <effect>Increase Maximum Mana 5%</effect>
+      <effect>Regenerate Mana 15%</effect>
+      <effect>+5% To Maximum Cold Resist</effect>
+      <effect>Fire Resist +30%</effect>
+      <effect>Poison Resist +100%</effect>
+      <effect>+13 Life After Each Kill</effect>
+      <effect>Level 13 Spirit of Barbs (33 Charges)</effect>
+    </group>
+  </word>
+  <word name="Brand">
+    <group>
+      <effect>35% Chance To Cast Level 14 Amplify Damage When Struck</effect>
+      <effect>100% Chance To Cast Level 18 Bone Spear On Striking</effect>
+      <effect>+260-340% Enhanced Damage (varies)</effect>
+      <effect>Ignore Target's Defense</effect>
+      <effect>20% Bonus to Attack Rating</effect>
+      <effect>+280-330% Damage To Demons (varies)</effect>
+      <effect>20% Deadly Strike</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>Knockback</effect>
+      <effect>Fires Explosive Arrows or Bolts (15)</effect>
+    </group>
+  </word>
+  <word name="Breath of the Dying">
+    <group>
+      <effect>50% Chance To Cast Level 20 Poison Nova When You Kill An Enemy</effect>
+      <effect>Indestructible</effect>
+      <effect>+60% Increased Attack Speed</effect>
+      <effect>+350-400% Enhanced Damage (varies)</effect>
+      <effect>+200% Damage To Undead</effect>
+      <effect>-25% Target Defense</effect>
+      <effect>+50 To Attack Rating</effect>
+      <effect>+50 To Attack Rating Against Undead</effect>
+      <effect>7% Mana Stolen Per Hit</effect>
+      <effect>12-15% Life Stolen Per Hit (varies)</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>+30 To All Attributes</effect>
+      <effect>+1 To Light Radius</effect>
+      <effect>Requirements -20%</effect>
+    </group>
+  </word>
+  <word name="Bulwark">
+    <group>
+      <effect>+20% Faster Hit Recovery</effect>
+      <effect>+4-6% Life stolen per hit</effect>
+      <effect>+75-100% Enhanced Defense</effect>
+      <effect>+10 to Vitality</effect>
+      <effect>Increase Maximum Life 5%</effect>
+      <effect>Replenish Life +30</effect>
+      <effect>Damage Reduced by 7</effect>
+      <effect>Physical Damage Received Reduced by 10-15%</effect>
+    </group>
+  </word>
+  <word name="Call to Arms">
+    <group>
+      <effect>+1 To All Skills</effect>
+      <effect>+40% Increased Attack Speed</effect>
+      <effect>+250-290% Enhanced Damage (varies)</effect>
+      <effect>Adds 5-30 Fire Damage</effect>
+      <effect>7% Life Stolen Per Hit</effect>
+      <effect>+2-6 To Battle Command (varies)</effect>
+      <effect>+1-6 To Battle Orders (varies)</effect>
+      <effect>+1-4 To Battle Cry (varies)</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>Replenish Life +12</effect>
+      <effect>30% Better Chance of Getting Magic Items</effect>
+    </group>
+  </word>
+  <word name="Chains of Honor">
+    <group>
+      <effect>+2 To All Skills</effect>
+      <effect>+200% Damage To Demons</effect>
+      <effect>+100% Damage To Undead</effect>
+      <effect>8% Life Stolen Per Hit</effect>
+      <effect>+70% Enhanced Defense</effect>
+      <effect>+20 To Strength</effect>
+      <effect>Replenish Life +7</effect>
+      <effect>All Resistances +65</effect>
+      <effect>Damage Reduced By 8%</effect>
+      <effect>25% Better Chance of Getting Magic Items</effect>
+    </group>
+  </word>
+  <word name="Chaos">
+    <group>
+      <effect>9% Chance To Cast Level 11 Frozen Orb On Striking</effect>
+      <effect>11% Chance To Cast Level 9 Charged Bolt On Striking</effect>
+      <effect>+35% Increased Attack Speed</effect>
+      <effect>+290-340% Enhanced Damage (varies)</effect>
+      <effect>Adds 216-471 Magic Damage</effect>
+      <effect>25% Chance of Open Wounds</effect>
+      <effect>+1 To Whirlwind</effect>
+      <effect>+10 To Strength</effect>
+      <effect>+15 Life After Each Demon Kill</effect>
+    </group>
+  </word>
+  <word name="Coven">
+    <group>
+      <effect>5% Chance to cast level 10 Sigil Lethargy when struck</effect>
+      <effect>+1 to All Skills</effect>
+      <effect>+20% Faster Cast Rate</effect>
+      <effect>+30-50% Enhanced Defense</effect>
+      <effect>+1-5 Life after each Kill</effect>
+      <effect>26-40% Better Chance of Getting Magic Items</effect>
+      <effect>Fire Resist +30%</effect>
+      <effect>+10 to Vitality</effect>
+    </group>
+  </word>
+  <word name="Crescent Moon">
+    <group>
+      <effect>10% Chance To Cast Level 17 Chain Lightning On Striking</effect>
+      <effect>7% Chance To Cast Level 13 Static Field On Striking</effect>
+      <effect>+20% Increased Attack Speed</effect>
+      <effect>+180-220% Enhanced Damage (varies)</effect>
+      <effect>Ignore Target's Defense</effect>
+      <effect>-35% To Enemy Lightning Resistance</effect>
+      <effect>25% Chance of Open Wounds</effect>
+      <effect>+9-11 Magic Absorb (varies)</effect>
+      <effect>+2 To Mana After Each Kill</effect>
+      <effect>Level 18 Summon Spirit Wolf (30 Charges)</effect>
+    </group>
+  </word>
+  <word name="Cure">
+    <group>
+      <effect>Level 1 Cleansing Aura when Equipped</effect>
+      <effect>+20% Faster Hit Recovery</effect>
+      <effect>+75-100% Enhanced Defense</effect>
+      <effect>+10 to Vitality</effect>
+      <effect>Increase Maximum Life 5%</effect>
+      <effect>Poison Resist +40-60%</effect>
+      <effect>Poison Length Reduced by 50%</effect>
+    </group>
+  </word>
+  <word name="Death">
+    <group>
+      <effect>100% Chance To Cast Level 44 Chain Lightning When You Die</effect>
+      <effect>25% Chance To Cast Level 18 Glacial Spike On Attack</effect>
+      <effect>Indestructible</effect>
+      <effect>+300-385% Enhanced Damage (varies)*</effect>
+      <effect>20% Bonus To Attack Rating</effect>
+      <effect>+50 To Attack Rating</effect>
+      <effect>Adds 1-50 Lightning Damage</effect>
+      <effect>7% Mana Stolen Per Hit</effect>
+      <effect>50% Chance of Crushing Blow</effect>
+      <effect>+(0.5 per Character Level) 0.5-49.5% Deadly Strike (Based on Character Level)</effect>
+      <effect>+1 To Light Radius</effect>
+      <effect>Level 22 Blood Golem  (15 Charges)</effect>
+      <effect>Requirements -20%</effect>
+    </group>
+  </word>
+  <word name="Delirium">
+    <group>
+      <effect>1% Chance To Cast Level 50 Delirium* (morph) When Struck</effect>
+      <effect>6% Chance To Cast Level 14 Mind Blast When Struck</effect>
+      <effect>14% Chance To Cast Level 13 Terror When Struck</effect>
+      <effect>11% Chance To Cast Level 18 Confuse On Striking</effect>
+      <effect>+2 To All Skills</effect>
+      <effect>+261 Defense</effect>
+      <effect>+10 To Vitality</effect>
+      <effect>50% Extra Gold From Monsters</effect>
+      <effect>25% Better Chance of Getting Magic Items</effect>
+      <effect>Level 17 Attract (60 Charges)</effect>
+    </group>
+  </word>
+  <word name="Destruction">
+    <group>
+      <effect>23% Chance To Cast Level 12 Volcano On Striking</effect>
+      <effect>5% Chance To Cast Level 23 Molten Boulder On Striking</effect>
+      <effect>100% Chance To Cast level 45 Meteor When You Die</effect>
+      <effect>15% Chance To Cast Level 22 Nova On Attack</effect>
+      <effect>+350% Enhanced Damage</effect>
+      <effect>Ignore Target's Defense</effect>
+      <effect>Adds 100-180 Magic Damage</effect>
+      <effect>7% Mana Stolen Per Hit</effect>
+      <effect>20% Chance Of Crushing Blow</effect>
+      <effect>20% Deadly Strike</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>+10 To Dexterity</effect>
+    </group>
+  </word>
+  <word name="Doom">
+    <group>
+      <effect>5% Chance To Cast Level 18 Volcano On Striking</effect>
+      <effect>Level 12 Holy Freeze Aura When Equipped</effect>
+      <effect>+2 To All Skills</effect>
+      <effect>+45% Increased Attack Speed</effect>
+      <effect>+330-370% Enhanced Damage (varies)</effect>
+      <effect>-(40-60)% To Enemy Cold Resistance (varies)</effect>
+      <effect>20% Deadly Strike</effect>
+      <effect>25% Chance of Open Wounds</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>Freezes Target +3</effect>
+      <effect>Requirements -20%</effect>
+    </group>
+  </word>
+  <word name="Dragon">
+    <group>
+      <effect>20% Chance to Cast Level 18 Venom When Struck</effect>
+      <effect>12% Chance To Cast Level 15 Hydra On Striking</effect>
+      <effect>Level 14 Holy Fire Aura When Equipped</effect>
+      <effect>+360 Defense</effect>
+      <effect>+230 Defense Vs. Missile</effect>
+      <effect>+3-5 To All Attributes (varies)</effect>
+      <effect>+0.375-37.125 To Strength (Based on Character Level)</effect>
+      <effect>Increase Maximum Mana 5% (Armor Only)</effect>
+      <effect>+50 To Mana (Shields Only)</effect>
+      <effect>+5% To Maximum Lightning Resist</effect>
+      <effect>Damage Reduced by 7</effect>
+    </group>
+  </word>
+  <word name="Dream">
+    <group>
+      <effect>10% Chance To Cast Level 15 Confuse When Struck</effect>
+      <effect>Level 15 Holy Shock Aura When Equipped</effect>
+      <effect>+20-30% Faster Hit Recovery (varies)</effect>
+      <effect>+30% Enhanced Defense</effect>
+      <effect>+150-220 Defense (varies)</effect>
+      <effect>+10 To Vitality</effect>
+      <effect>Increase Maximum Life 5% (Helms Only)</effect>
+      <effect>+50 To Life (Shields Only)</effect>
+      <effect>+0.625-61.875 To Mana (Based On Character Level)</effect>
+      <effect>All Resistances +5-20 (varies)</effect>
+      <effect>12-25% Better Chance of Getting Magic Items (varies)</effect>
+    </group>
+  </word>
+  <word name="Duress">
+    <group>
+      <effect>+40% Faster Hit Recovery</effect>
+      <effect>+10-20% Enhanced Damage (varies)</effect>
+      <effect>Adds 37-133 Cold Damage 2 sec. Duration (Normal)</effect>
+      <effect>15% Chance of Crushing Blow</effect>
+      <effect>33% Chance of Open Wounds</effect>
+      <effect>+150-200% Enhanced Defense (varies)</effect>
+      <effect>-20% Slower Stamina Drain</effect>
+      <effect>Cold Resist +45%</effect>
+      <effect>Lightning Resist +15%</effect>
+      <effect>Fire Resist +15%</effect>
+      <effect>Poison Resist +15%</effect>
+    </group>
+  </word>
+  <word name="Edge">
+    <group>
+      <effect>Level 15 Thorns Aura When Equipped</effect>
+      <effect>+35% Increased Attack Speed</effect>
+      <effect>+320-380% Damage To Demons (varies)</effect>
+      <effect>+280% Damage To Undead</effect>
+      <effect>+75 Poison Damage Over 5 Seconds</effect>
+      <effect>7% Life Stolen Per Hit</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>+5-10 To All Attributes (varies)</effect>
+      <effect>+2 To Mana After Each Kill</effect>
+      <effect>Reduces All Vendor Prices 15%!!!</effect>
+    </group>
+  </word>
+  <word name="Enigma">
+    <group>
+      <effect>+2 To All Skills</effect>
+      <effect>+45% Faster Run/Walk</effect>
+      <effect>+1 To Teleport</effect>
+      <effect>+750-775 Defense (varies)</effect>
+      <effect>+ (0.75 Per Character Level) +0-74 To Strength (Based On Character Level)</effect>
+      <effect>Increase Maximum Life 5%</effect>
+      <effect>Damage Reduced By 8%</effect>
+      <effect>+14 Life After Each Kill</effect>
+      <effect>15% Damage Taken Goes To Mana</effect>
+      <effect>+ (1 Per Character Level) +1-99% Better Chance of Getting Magic Items (Based On Character Level)</effect>
+    </group>
+  </word>
+  <word name="Enlightenment">
+    <group>
+      <effect>5% Chance To Cast Level 15 Blaze When Struck</effect>
+      <effect>5% Chance To Cast level 15 Fire Ball On Striking</effect>
+      <effect>+2 To Sorceress Skill Levels</effect>
+      <effect>+1 To Warmth</effect>
+      <effect>+30% Enhanced Defense</effect>
+      <effect>Fire Resist +30%</effect>
+      <effect>Damage Reduced By 7</effect>
+    </group>
+  </word>
+  <word name="Eternity">
+    <group>
+      <effect>Indestructible</effect>
+      <effect>+260-310% Enhanced Damage (varies)</effect>
+      <effect>+9 To Minimum Damage</effect>
+      <effect>7% Life Stolen Per Hit</effect>
+      <effect>20% Chance of Crushing Blow</effect>
+      <effect>Hit Blinds Target</effect>
+      <effect>Slows Target By 33%</effect>
+      <effect>Regenerate Mana 16%</effect>
+      <effect>Replenish Life +16</effect>
+      <effect>Cannot Be Frozen</effect>
+      <effect>30% Better Chance Of Getting Magic Items</effect>
+      <effect>Level 8 Revive (88 Charges)</effect>
+    </group>
+  </word>
+  <word name="Exile">
+    <group>
+      <effect>15% Chance To Cast Level 5 Life Tap On Striking</effect>
+      <effect>Level 13-16 Defiance Aura When Equipped (varies)</effect>
+      <effect>+2 To Offensive Auras (Paladin Only)</effect>
+      <effect>+30% Faster Block Rate</effect>
+      <effect>Freezes Target</effect>
+      <effect>+220-260% Enhanced Defense (varies)</effect>
+      <effect>Replenish Life +7</effect>
+      <effect>+5% To Maximum Cold Resist</effect>
+      <effect>+5% To Maximum Fire Resist</effect>
+      <effect>25% Better Chance Of Getting Magic Items</effect>
+      <effect>Repairs 1 Durability in 4 Seconds</effect>
+    </group>
+  </word>
+  <word name="Faith">
+    <group>
+      <effect>Level 12-15 Fanaticism Aura When Equipped (varies)</effect>
+      <effect>+1-2 To All Skills (varies)</effect>
+      <effect>+330% Enhanced Damage</effect>
+      <effect>Ignore Target's Defense</effect>
+      <effect>300% Bonus To Attack Rating</effect>
+      <effect>+75% Damage To Undead</effect>
+      <effect>+50 To Attack Rating Against Undead</effect>
+      <effect>+120 Fire Damage</effect>
+      <effect>All Resistances +15</effect>
+      <effect>10% Reanimate As: Returned</effect>
+      <effect>75% Extra Gold From Monsters</effect>
+    </group>
+  </word>
+  <word name="Famine">
+    <group>
+      <effect>+30% Increased Attack Speed</effect>
+      <effect>+320-370% Enhanced Damage (varies)</effect>
+      <effect>Ignore Target's Defense</effect>
+      <effect>Adds 180-200 Magic Damage</effect>
+      <effect>Adds 50-200 Fire Damage</effect>
+      <effect>Adds 51-250 Lightning Damage</effect>
+      <effect>Adds 50-200 Cold Damage</effect>
+      <effect>12% Life Stolen Per Hit</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>+10 To Strength</effect>
+    </group>
+  </word>
+  <word name="Flickering Flame">
+    <group>
+      <effect>Level 4-8 Resist Fire Aura When Equipped (varies)</effect>
+      <effect>+3 To Fire Skills</effect>
+      <effect>-10-15% to Enemy Fire Resistance (varies)</effect>
+      <effect>+30% Enhanced Defense</effect>
+      <effect>+30 Defense Vs. Missile</effect>
+      <effect>+50-75 To Mana (varies)</effect>
+      <effect>Half Freeze Duration</effect>
+      <effect>+5% To Maximum Fire Resist</effect>
+      <effect>Poison Length Reduced by 50%</effect>
+    </group>
+  </word>
+  <word name="Fortitude">
+    <group bases="Weapons">
+      <effect>20% Chance To Cast Level 15 Chilling Armor when Struck</effect>
+      <effect>+25% Faster Cast Rate</effect>
+      <effect>+300% Enhanced Damage</effect>
+      <effect>+9 To Minimum Damage</effect>
+      <effect>+50 To Attack Rating</effect>
+      <effect>20% Deadly Strike</effect>
+      <effect>Hit Causes Monster To Flee 25%</effect>
+      <effect>+200% Enhanced Defense</effect>
+      <effect>+X To Life (Based on Character Level)*</effect>
+      <effect>All Resistances +25-30 (varies)</effect>
+      <effect>12% Damage Taken Goes To Mana</effect>
+      <effect>+1 To Light Radius</effect>
+    </group>
+    <group bases="Body Armors">
+      <effect>20% Chance To Cast Level 15 Chilling Armor when Struck</effect>
+      <effect>+25% Faster Cast Rate</effect>
+      <effect>+300% Enhanced Damage</effect>
+      <effect>+200% Enhanced Defense</effect>
+      <effect>+15 Defense</effect>
+      <effect>+X To Life (Based on Character Level)*</effect>
+      <effect>Replenish Life +7</effect>
+      <effect>+5% To Maximum Lightning Resist</effect>
+      <effect>All Resistances +25-30 (varies)</effect>
+      <effect>Damage Reduced By 7</effect>
+      <effect>12% Damage Taken Goes To Mana</effect>
+      <effect>+1 To Light Radius</effect>
+    </group>
+  </word>
+  <word name="Fury">
+    <group>
+      <effect>+209% Enhanced Damage</effect>
+      <effect>40% Increased Attack Speed</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>66% Chance Of Open Wounds</effect>
+      <effect>33% Deadly Strike</effect>
+      <effect>Ignore Target's Defense</effect>
+      <effect>-25% Target Defense</effect>
+      <effect>20% Bonus To Attack Rating</effect>
+      <effect>6% Life Stolen Per Hit</effect>
+      <effect>+5 To Frenzy (Barbarian Only)</effect>
+    </group>
+  </word>
+  <word name="Gloom">
+    <group>
+      <effect>15% Chance To Cast Level 3 Dim Vision When Struck</effect>
+      <effect>+10% Faster Hit Recovery</effect>
+      <effect>+200-260% Enhanced Defense (varies)</effect>
+      <effect>+10 To Strength</effect>
+      <effect>All Resistances +45</effect>
+      <effect>Half Freeze Duration</effect>
+      <effect>5% Damage Taken Goes To Mana</effect>
+      <effect>-3 To Light Radius</effect>
+    </group>
+  </word>
+  <word name="Grief">
+    <group>
+      <effect>35% Chance To Cast Level 15 Venom On Striking</effect>
+      <effect>+30-40% Increased Attack Speed (varies)</effect>
+      <effect>Damage +340-400 (varies)</effect>
+      <effect>Ignore Target's Defense</effect>
+      <effect>-25% Target Defense</effect>
+      <effect>+(1.875 per character level) 1.875-185.625% Damage To Demons (Based on Character Level)</effect>
+      <effect>Adds 5-30 Fire Damage</effect>
+      <effect>-20-25% To Enemy Poison Resistance (varies)</effect>
+      <effect>20% Deadly Strike</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>+2 To Mana After Each Kill</effect>
+      <effect>+10-15 Life After Each Kill (varies)</effect>
+    </group>
+  </word>
+  <word name="Ground">
+    <group>
+      <effect>+20% Faster Hit Recovery</effect>
+      <effect>+75-100% Enhanced Defense</effect>
+      <effect>+10 to Vitality</effect>
+      <effect>Increase Maximum Life 5%</effect>
+      <effect>Lightning Resist +40-60%</effect>
+      <effect>Lightning Absorb +10-15%</effect>
+    </group>
+  </word>
+  <word name="Hand of Justice">
+    <group>
+      <effect>100% Chance To Cast Level 36 Blaze When You Level-Up</effect>
+      <effect>100% Chance To Cast Level 48 Meteor When You Die</effect>
+      <effect>Level 16 Holy Fire Aura When Equipped</effect>
+      <effect>+33% Increased Attack Speed</effect>
+      <effect>+280-330% Enhanced Damage (varies)</effect>
+      <effect>Ignore Target's Defense</effect>
+      <effect>7% Life Stolen Per Hit</effect>
+      <effect>-20% To Enemy Fire Resistance</effect>
+      <effect>20% Deadly Strike</effect>
+      <effect>Hit Blinds Target</effect>
+      <effect>Freezes Target +3</effect>
+    </group>
+  </word>
+  <word name="Harmony">
+    <group>
+      <effect>Level 10 Vigor Aura When Equipped</effect>
+      <effect>+200-275% Enhanced Damage (varies)</effect>
+      <effect>+9 To Minimum Damage</effect>
+      <effect>+9 To Maximum Damage</effect>
+      <effect>Adds 55-160 Lightning Damage</effect>
+      <effect>Adds 55-160 Fire Damage</effect>
+      <effect>Adds 55-160 Cold Damage</effect>
+      <effect>+2-6 To Valkyrie (varies)</effect>
+      <effect>+10 To Dexterity</effect>
+      <effect>Regenerate Mana 20%</effect>
+      <effect>+2 To Mana After Each Kill</effect>
+      <effect>+2 To Light Radius</effect>
+      <effect>Level 20 Revive (25 Charges)</effect>
+    </group>
+  </word>
+  <word name="Heart of the Oak">
+    <group>
+      <effect>+3 To All Skills</effect>
+      <effect>+40% Faster Cast Rate</effect>
+      <effect>+75% Damage To Demons</effect>
+      <effect>+100 To Attack Rating Against Demons</effect>
+      <effect>Adds 3-14 Cold Damage, 3 sec. Duration (Normal)</effect>
+      <effect>7% Mana Stolen Per Hit</effect>
+      <effect>+10 To Dexterity</effect>
+      <effect>Replenish Life +20</effect>
+      <effect>Increase Maximum Mana 15%</effect>
+      <effect>All Resistances +30-40 (varies)</effect>
+      <effect>Level 4 Oak Sage (25 Charges)</effect>
+      <effect>Level 14 Raven (60 Charges)</effect>
+    </group>
+  </word>
+  <word name="Hearth">
+    <group>
+      <effect>+20% Faster Hit Recovery</effect>
+      <effect>+75-100% Enhanced Defense</effect>
+      <effect>+10 to Vitality</effect>
+      <effect>Increase Maximum Life 5%</effect>
+      <effect>Cold Resist +40-60%</effect>
+      <effect>Cold Absorb +10-15%</effect>
+      <effect>Cannot be Frozen</effect>
+    </group>
+  </word>
+  <word name="Holy Thunder">
+    <group>
+      <effect>+60% Enhanced Damage</effect>
+      <effect>-25% Target Defense</effect>
+      <effect>Adds 5-30 Fire Damage</effect>
+      <effect>Adds 21-110 Lightning Damage</effect>
+      <effect>+75 Poison Damage Over 5 Seconds</effect>
+      <effect>+10 To Maximum Damage</effect>
+      <effect>Lightning Resistance +60%</effect>
+      <effect>+5 To Maximum Lightning Resistance</effect>
+      <effect>+3 To Holy Shock (Paladin Only)</effect>
+      <effect>Level 7 Chain Lightning (60 Charges)</effect>
+    </group>
+  </word>
+  <word name="Honor">
+    <group>
+      <effect>+160% Enhanced Damage</effect>
+      <effect>+9 To Minimum Damage</effect>
+      <effect>+9 To Maximum Damage</effect>
+      <effect>25% Deadly Strike</effect>
+      <effect>+250 To Attack Rating</effect>
+      <effect>+1 to All Skills</effect>
+      <effect>7% Life Stolen Per Hit</effect>
+      <effect>Replenish Life +10</effect>
+      <effect>+10 To Strength</effect>
+      <effect>+1 To Light Radius</effect>
+      <effect>+2 To Mana After Each Kill</effect>
+    </group>
+  </word>
+  <word name="Hysteria">
+    <group>
+      <effect>+65% Faster Run/Walk</effect>
+      <effect>+40% Increased Attack Speed</effect>
+      <effect>+20% Faster Hit Recovery</effect>
+      <effect>+6 to Evade</effect>
+      <effect>+10 to Dexterity</effect>
+      <effect>50% Slower Stamina Drain</effect>
+      <effect>All Resistances +10</effect>
+    </group>
+  </word>
+  <word name="Ice">
+    <group>
+      <effect>100% Chance To Cast Level 40 Blizzard When You Level-up</effect>
+      <effect>25% Chance To Cast Level 22 Frost Nova On Striking</effect>
+      <effect>Level 18 Holy Freeze Aura When Equipped</effect>
+      <effect>+20% Increased Attack Speed</effect>
+      <effect>+140-210% Enhanced Damage (varies)</effect>
+      <effect>Ignore Target's Defense</effect>
+      <effect>+25-30% To Cold Skill Damage (varies)</effect>
+      <effect>-20% To Enemy Cold Resistance</effect>
+      <effect>7% Life Stolen Per Hit</effect>
+      <effect>20% Deadly Strike</effect>
+      <effect>3.125-309.375 Extra Gold From Monsters (Based on Character Level)</effect>
+    </group>
+  </word>
+  <word name="Infinity">
+    <group>
+      <effect>50% Chance To Cast Level 20 Chain Lightning When You Kill An Enemy</effect>
+      <effect>Level 12 Conviction Aura When Equipped</effect>
+      <effect>+35% Faster Run/Walk</effect>
+      <effect>+255-325% Enhanced Damage (varies)</effect>
+      <effect>-(45-55)% To Enemy Lightning Resistance (varies)</effect>
+      <effect>40% Chance of Crushing Blow</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>0.5-49.5 To Vitality (Based on Character Level)</effect>
+      <effect>30% Better Chance of Getting Magic Items</effect>
+      <effect>Level 21 Cyclone Armor (30 Charges)</effect>
+    </group>
+  </word>
+  <word name="Insight">
+    <group>
+      <effect>Level 12-17 Meditation Aura When Equipped (varies)</effect>
+      <effect>+35% Faster Cast Rate</effect>
+      <effect>+200-260% Enhanced Damage (varies)</effect>
+      <effect>+9 To Minimum Damage</effect>
+      <effect>180-250% Bonus to Attack Rating (varies)</effect>
+      <effect>Adds 5-30 Fire Damage</effect>
+      <effect>+75 Poison Damage Over 5 Seconds</effect>
+      <effect>+1-6 To Critical Strike (varies)</effect>
+      <effect>+5 To All Attributes</effect>
+      <effect>+2 To Mana After Each Kill</effect>
+      <effect>23% Better Chance of Getting Magic Items</effect>
+    </group>
+  </word>
+  <word name="King's Grace">
+    <group>
+      <effect>+100% Enhanced Damage</effect>
+      <effect>+100% Damage To Demons</effect>
+      <effect>+50% Damage To Undead</effect>
+      <effect>Adds 5-30 Fire Damage</effect>
+      <effect>Adds 3-14 Cold Damage - 3 Second Duration</effect>
+      <effect>+150 To Attack Rating</effect>
+      <effect>+100 To Attack Rating Against Demons</effect>
+      <effect>+100 To Attack Rating Against Undead</effect>
+      <effect>7% Life Stolen Per Hit</effect>
+    </group>
+  </word>
+  <word name="Kingslayer">
+    <group>
+      <effect>+30% Increased Attack Speed</effect>
+      <effect>+230-270% Enhanced Damage (varies)</effect>
+      <effect>-25% Target Defense</effect>
+      <effect>20% Bonus To Attack Rating</effect>
+      <effect>33% Chance of Crushing Blow</effect>
+      <effect>50% Chance of Open Wounds</effect>
+      <effect>+1 To Vengeance</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>+10 To Strength</effect>
+      <effect>40% Extra Gold From Monsters</effect>
+    </group>
+  </word>
+  <word name="Last Wish">
+    <group>
+      <effect>6% Chance To Cast Level 11 Fade When Struck</effect>
+      <effect>10% Chance To Cast Level 18 Life Tap On Striking</effect>
+      <effect>20% Chance To Cast Level 20 Charged Bolt On Attack</effect>
+      <effect>Level 17 Might Aura When Equipped</effect>
+      <effect>+330-375% Enhanced Damage (varies)</effect>
+      <effect>Ignore Target's Defense</effect>
+      <effect>60-70% Chance of Crushing Blow (varies)</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>Hit Blinds Target</effect>
+      <effect>+(0.5 per character level) 0.5-49.5% Chance of Getting Magic Items (Based on Character Level)</effect>
+    </group>
+  </word>
+  <word name="Lawbringer">
+    <group>
+      <effect>20% Chance To Cast Level 15 Decrepify On Striking</effect>
+      <effect>Level 16-18 Sanctuary Aura When Equipped (varies)</effect>
+      <effect>-50% Target Defense</effect>
+      <effect>Adds 150-210 Fire Damage</effect>
+      <effect>Adds 130-180 Cold Damage</effect>
+      <effect>7% Life Stolen Per Hit</effect>
+      <effect>Slain Monsters Rest In Peace</effect>
+      <effect>+200-250 Defense Vs. Missile (varies)</effect>
+      <effect>+10 To Dexterity</effect>
+      <effect>75% Extra Gold From Monsters</effect>
+    </group>
+  </word>
+  <word name="Leaf">
+    <group>
+      <effect>Adds 5-30 Fire Damage</effect>
+      <effect>+3 To Fire Skills</effect>
+      <effect>+3 To Fire Bolt (Sorceress Only)</effect>
+      <effect>+3 To Inferno (Sorceress Only)</effect>
+      <effect>+3 To Warmth (Sorceress Only)</effect>
+      <effect>+2 To Mana After Each Kill</effect>
+      <effect>+ (2 Per Character Level) +2-198 To Defense (Based On Character Level)</effect>
+      <effect>Cold Resist +33%</effect>
+    </group>
+  </word>
+  <word name="Lionheart">
+    <group>
+      <effect>+20% Enhanced Damage</effect>
+      <effect>Requirements -15%</effect>
+      <effect>+25 To Strength</effect>
+      <effect>+10 To Energy</effect>
+      <effect>+20 To Vitality</effect>
+      <effect>+15 To Dexterity</effect>
+      <effect>+50 To Life</effect>
+      <effect>All Resistances +30</effect>
+    </group>
+  </word>
+  <word name="Lore">
+    <group>
+      <effect>+1 To All Skill Levels</effect>
+      <effect>+10 To Energy</effect>
+      <effect>+2 To Mana After Each Kill</effect>
+      <effect>Lightning Resist +30%</effect>
+      <effect>Damage Reduced By 7</effect>
+      <effect>+2 To Light Radius</effect>
+    </group>
+  </word>
+  <word name="Malice">
+    <group>
+      <effect>+33% Enhanced Damage</effect>
+      <effect>+9 To Maximum Damage</effect>
+      <effect>100% Chance Of Open Wounds</effect>
+      <effect>-25% Target Defense</effect>
+      <effect>-100 To Monster Defense Per Hit</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>+50 To Attack Rating</effect>
+      <effect>Drain Life -5</effect>
+    </group>
+  </word>
+  <word name="Mania">
+    <group>
+      <effect>5% Chance to cast level 1 Burst of Speed on striking</effect>
+      <effect>Level 1 Fanaticism Aura When Equipped</effect>
+      <effect>+30% Increased Attack Speed</effect>
+      <effect>+180-200% Enhanced Damage</effect>
+      <effect>+75% Damage to Undead</effect>
+      <effect>+50 to Attack Rating against Undead</effect>
+      <effect>+10 to Dexterity</effect>
+    </group>
+  </word>
+  <word name="Melody">
+    <group>
+      <effect>+50% Enhanced Damage</effect>
+      <effect>+300% Damage To Undead</effect>
+      <effect>+3 To Bow and Crossbow Skills (Amazon Only)</effect>
+      <effect>+3 To Critical Strike (Amazon Only)</effect>
+      <effect>+3 To Dodge (Amazon Only)</effect>
+      <effect>+3 To Slow Missiles (Amazon Only)</effect>
+      <effect>20% Increased Attack Speed</effect>
+      <effect>+10 To Dexterity</effect>
+      <effect>Knockback</effect>
+    </group>
+  </word>
+  <word name="Memory">
+    <group>
+      <effect>+3 to Sorceress Skill Levels</effect>
+      <effect>33% Faster Cast Rate</effect>
+      <effect>Increase Maximum Mana 20%</effect>
+      <effect>+3 Energy Shield (Sorceress Only)</effect>
+      <effect>+2 Static Field (Sorceress Only)</effect>
+      <effect>+10 To Energy</effect>
+      <effect>+10 To Vitality</effect>
+      <effect>+9 To Minimum Damage</effect>
+      <effect>-25% Target Defense</effect>
+      <effect>Magic Damage Reduced By 7</effect>
+      <effect>+50% Enhanced Defense</effect>
+    </group>
+  </word>
+  <word name="Metamorphosis">
+    <group>
+      <effect>100% Chance to cast level 1 Mark of the Wolf on striking</effect>
+      <effect>100% Chance to cast level 1 Mark of the Bear on striking</effect>
+      <effect>+5 to Shape Shifting Skills (Druid only)</effect>
+      <effect>+25% Chance of Crushing Blow</effect>
+      <effect>+50-80% Enhanced Defense</effect>
+      <effect>+10 to Strength</effect>
+      <effect>+10 to Vitality</effect>
+      <effect>All Resistances +10</effect>
+      <effect>Cannot be Frozen</effect>
+    </group>
+  </word>
+  <word name="Mist">
+    <group>
+      <effect>Level 8-12 Concentration Aura When Equipped (varies)</effect>
+      <effect>+3 To All Skills</effect>
+      <effect>20% Increased Attack Speed</effect>
+      <effect>+100% Piercing Attack</effect>
+      <effect>+325-375% Enhanced Damage (varies)</effect>
+      <effect>+9 To Maximum Damage</effect>
+      <effect>20% Bonus to Attack Rating</effect>
+      <effect>Adds 3-14 Cold Damage</effect>
+      <effect>Freeze Target +3</effect>
+      <effect>+24 Vitality</effect>
+      <effect>All Resistances +40</effect>
+    </group>
+  </word>
+  <word name="Mosaic">
+    <group>
+      <effect>+50% chance for finishing moves to not consume charges</effect>
+      <effect>+2 to Martial Arts (Assassin only)</effect>
+      <effect>+20% Increased Attack Speed</effect>
+      <effect>+200-250% Enhanced Damage</effect>
+      <effect>+20% Bonus to Attack Rating</effect>
+      <effect>7% Life Steal</effect>
+      <effect>+8-15% to Cold Skill Damage</effect>
+      <effect>+8-15% to Lightning Skill Damage</effect>
+      <effect>+8-15% to Fire Skill Damage</effect>
+      <effect>Prevent Monster Heal</effect>
+    </group>
+  </word>
+  <word name="Myth">
+    <group>
+      <effect>3% Chance To Cast Level 1 Howl When Struck</effect>
+      <effect>10% Chance To Cast Level 1 Taunt On Striking</effect>
+      <effect>+2 To Barbarian Skill Levels</effect>
+      <effect>+30 Defense Vs. Missile</effect>
+      <effect>Replenish Life +10</effect>
+      <effect>Attacker Takes Damage of 14</effect>
+      <effect>Requirements -15%</effect>
+    </group>
+  </word>
+  <word name="Nadir">
+    <group>
+      <effect>+50% Enhanced Defense</effect>
+      <effect>+10 Defense</effect>
+      <effect>+30 Defense vs. Missile</effect>
+      <effect>Level 13 Cloak of Shadows (9 Charges)</effect>
+      <effect>+2 To Mana After Each Kill</effect>
+      <effect>+5 To Strength</effect>
+      <effect>-33% Extra Gold From Monsters</effect>
+      <effect>-3 To Light Radius</effect>
+    </group>
+  </word>
+  <word name="Oath">
+    <group>
+      <effect>30% Chance To Cast Level 20 Bone Spirit On Striking</effect>
+      <effect>Indestructible</effect>
+      <effect>+50% Increased Attack Speed</effect>
+      <effect>+210-340% Enhanced Damage (varies)</effect>
+      <effect>+75% Damage To Demons</effect>
+      <effect>+100 To Attack Rating Against Demons</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>+10 To Energy</effect>
+      <effect>+10-15 Magic Absorb (varies)</effect>
+      <effect>Level 16 Heart Of Wolverine (20 Charges)</effect>
+      <effect>Level 17 Iron Golem (14 Charges)</effect>
+    </group>
+  </word>
+  <word name="Obedience">
+    <group>
+      <effect>30% Chance To Cast Level 21 Enchant When You Kill An Enemy</effect>
+      <effect>40% Faster Hit Recovery</effect>
+      <effect>+370% Enhanced Damage</effect>
+      <effect>-25% Target Defense</effect>
+      <effect>Adds 3-14 Cold Damage 3 Second Duration (Normal)</effect>
+      <effect>-25% To Enemy Fire Resistance</effect>
+      <effect>40% Chance of Crushing Blow</effect>
+      <effect>+200-300 Defense (varies)</effect>
+      <effect>+10 To Strength</effect>
+      <effect>+10 To Dexterity</effect>
+      <effect>All Resistances +20-30 (varies)</effect>
+      <effect>Requirements -20%</effect>
+    </group>
+  </word>
+  <word name="Obsession">
+    <group>
+      <effect>Indestructible</effect>
+      <effect>24% Chance to cast level 10 Weaken when struck</effect>
+      <effect>+4 To All Skills</effect>
+      <effect>+65% Faster Cast Rate</effect>
+      <effect>+60% Faster Hit Recovery</effect>
+      <effect>Knockback</effect>
+      <effect>+10 To Vitality</effect>
+      <effect>+10 To Energy</effect>
+      <effect>Increase Maximum Life 15-25% (varies)</effect>
+      <effect>Regenerate Mana 15-30% (varies)</effect>
+      <effect>All Resistances +60-70 (varies)</effect>
+      <effect>75% Extra Gold from Monsters</effect>
+      <effect>30% Better Chance of Getting Magic Items</effect>
+    </group>
+  </word>
+  <word name="Passion">
+    <group>
+      <effect>+25% Increased Attack Speed</effect>
+      <effect>+160-210% Enhanced Damage (varies)</effect>
+      <effect>50-80% Bonus To Attack Rating (varies)</effect>
+      <effect>+75% Damage To Undead</effect>
+      <effect>+50 To Attack Rating Against Undead</effect>
+      <effect>Adds 1-50 Lightning Damage</effect>
+      <effect>+1 To Berserk</effect>
+      <effect>+1 To Zeal</effect>
+      <effect>Hit Blinds Target +10</effect>
+      <effect>Hit Causes Monster To Flee 25%</effect>
+      <effect>75% Extra Gold From Monsters</effect>
+      <effect>Level 3 Heart of Wolverine (12 Charges)</effect>
+    </group>
+  </word>
+  <word name="Pattern">
+    <group>
+      <effect>+30% Faster Block Rate</effect>
+      <effect>+40-80% Enhanced Damage (varies)</effect>
+      <effect>10% Bonus to Attack Rating</effect>
+      <effect>Adds 17-62 Fire Damage</effect>
+      <effect>Adds 1-50 Lightning Damage</effect>
+      <effect>Adds 3-14 Cold Damage</effect>
+      <effect>+75 Poison Damage Over 5 Seconds</effect>
+      <effect>+6 to Strength</effect>
+      <effect>+6 to Dexterity</effect>
+      <effect>All Resistances +15</effect>
+    </group>
+  </word>
+  <word name="Peace">
+    <group>
+      <effect>4% Chance To Cast Level 5 Slow Missiles When Struck</effect>
+      <effect>2% Chance To Cast level 15 Valkyrie On Striking</effect>
+      <effect>+2 To Amazon Skill Levels</effect>
+      <effect>+20% Faster Hit Recovery</effect>
+      <effect>+2 To Critical Strike</effect>
+      <effect>Cold Resist +30%</effect>
+      <effect>Attacker Takes Damage of 14</effect>
+    </group>
+  </word>
+  <word name="Phoenix">
+    <group bases="Weapons">
+      <effect>100% Chance To Cast level 40 Blaze When You Level-up</effect>
+      <effect>40% Chance To Cast Level 22 Firestorm On Striking</effect>
+      <effect>Level 10-15 Redemption Aura When Equipped (varies)</effect>
+      <effect>+350-400% Enhanced Damage (varies)</effect>
+      <effect>Ignores Target's Defense</effect>
+      <effect>14% Mana Stolen Per Hit</effect>
+      <effect>-28% To Enemy Fire Resistance</effect>
+      <effect>20% Deadly Strike</effect>
+      <effect>+350-400 Defense Vs. Missile (varies)</effect>
+      <effect>+15-21 Fire Absorb (varies)</effect>
+    </group>
+    <group bases="Shields">
+      <effect>100% Chance To Cast level 40 Blaze When You Level-up</effect>
+      <effect>40% Chance To Cast Level 22 Firestorm On Striking</effect>
+      <effect>Level 10-15 Redemption Aura When Equipped (varies)</effect>
+      <effect>+350-400 Defense Vs. Missile (varies)</effect>
+      <effect>+350-400% Enhanced Damage (varies)</effect>
+      <effect>-28% To Enemy Fire Resistance</effect>
+      <effect>+50 To Life</effect>
+      <effect>+5% To Maximum Lightning Resist</effect>
+      <effect>+10% To Maximum Fire Resist</effect>
+      <effect>+15-21 Fire Absorb (varies)</effect>
+    </group>
+  </word>
+  <word name="Plague">
+    <group>
+      <effect>20% Chance to Cast level 12 Lower Resist when struck</effect>
+      <effect>25% Chance to Cast level 15 Poison Nova on striking</effect>
+      <effect>Level 13-17 Cleansing Aura When Equipped (varies)</effect>
+      <effect>+1-2 All Skills</effect>
+      <effect>+20% Increased Attack Speed</effect>
+      <effect>+220-320% Enhanced Damage (varies)</effect>
+      <effect>-23% To Enemy Poison Resistance</effect>
+      <effect>0.3% (0-29.7) Deadly Strike (Based on Character Level)</effect>
+      <effect>+25% Chance of Open Wounds</effect>
+      <effect>Freezes Target +3</effect>
+    </group>
+  </word>
+  <word name="Pride">
+    <group>
+      <effect>25% Chance To Cast Level 17 Fire Wall When Struck</effect>
+      <effect>Level 16-20 Concentration Aura When Equipped (varies)</effect>
+      <effect>260-300% Bonus To Attack Rating (varies)</effect>
+      <effect>+1-99% Damage To Demons (Based on Character Level)</effect>
+      <effect>Adds 50-280 Lightning Damage</effect>
+      <effect>20% Deadly Strike</effect>
+      <effect>Hit Blinds Target</effect>
+      <effect>Freezes Target +3</effect>
+      <effect>+10 To Vitality</effect>
+      <effect>Replenish Life +8</effect>
+      <effect>1.875-185.625% Extra Gold From Monsters (Based on Character Level)</effect>
+    </group>
+  </word>
+  <word name="Principle">
+    <group>
+      <effect>100% Chance To Cast Level 5 Holy Bolt On Striking</effect>
+      <effect>+2 To Paladin Skill Levels</effect>
+      <effect>15% Slower Stamina Drain</effect>
+      <effect>+5% To Maximum Poison Resist</effect>
+      <effect>Fire Resist +30%</effect>
+    </group>
+  </word>
+  <word name="Prudence">
+    <group>
+      <effect>+25% Faster Hit Recovery</effect>
+      <effect>+140-170% Enhanced Defense (varies)</effect>
+      <effect>All Resistances +25-35 (varies)</effect>
+      <effect>Damage Reduced by 3</effect>
+      <effect>Magic Damage Reduced by 17</effect>
+      <effect>+2 To Mana After Each Kill</effect>
+      <effect>+1 To Light Radius</effect>
+      <effect>Repairs Durability 1 In 4 Seconds</effect>
+    </group>
+  </word>
+  <word name="Radiance">
+    <group>
+      <effect>+75% Enhanced Defense</effect>
+      <effect>+30 Defense Vs. Missile</effect>
+      <effect>+10 To Energy</effect>
+      <effect>+10 To Vitality</effect>
+      <effect>15% Damage Goes To Mana</effect>
+      <effect>Magic Damage Reduced By 3</effect>
+      <effect>+33 To Mana</effect>
+      <effect>Damage Reduced By 7</effect>
+      <effect>+5 To Light Radius</effect>
+    </group>
+  </word>
+  <word name="Rain">
+    <group>
+      <effect>5% Chance To Cast Level 15 Cyclone Armor When Struck</effect>
+      <effect>5% Chance To Cast Level 15 Twister On Striking</effect>
+      <effect>+2 To Druid Skills</effect>
+      <effect>+100-150 To Mana (varies)</effect>
+      <effect>Lightning Resist +30%</effect>
+      <effect>Magic Damage Reduced By 7</effect>
+      <effect>15% Damage Taken Goes to Mana</effect>
+    </group>
+  </word>
+  <word name="Rhyme">
+    <group>
+      <effect>20% Increased Chance of Blocking</effect>
+      <effect>40% Faster Block Rate</effect>
+      <effect>All Resistances +25</effect>
+      <effect>Regenerate Mana 15%</effect>
+      <effect>Cannot Be Frozen</effect>
+      <effect>50% Extra Gold From Monsters</effect>
+      <effect>25% Better Chance Of Getting Magic Items</effect>
+    </group>
+  </word>
+  <word name="Rift">
+    <group>
+      <effect>20% Chance To Cast Level 16 Tornado On Striking</effect>
+      <effect>16% Chance To Cast Level 21 Frozen Orb On Attack</effect>
+      <effect>20% Bonus To Attack Rating</effect>
+      <effect>Adds 160-250 Magic Damage</effect>
+      <effect>Adds 60-180 Fire Damage</effect>
+      <effect>+5-10 To All Stats (varies)</effect>
+      <effect>+10 To Dexterity</effect>
+      <effect>38% Damage Taken Goes To Mana</effect>
+      <effect>75% Extra Gold From Monsters</effect>
+      <effect>Level 15 Iron Maiden (40 Charges)</effect>
+      <effect>Requirements -20%</effect>
+    </group>
+  </word>
+  <word name="Ritual">
+    <group>
+      <effect>13% Chance to cast level 1 Sigil Death when struck</effect>
+      <effect>+40% Increased Attack Speed</effect>
+      <effect>+250-320% Enhanced Damage</effect>
+      <effect>+150-250% Damage to Demons</effect>
+      <effect>+200-260% Bonus to Attack Rating</effect>
+      <effect>+3-5 Life after each Kill</effect>
+      <effect>Slain Monsters Rest in Peace</effect>
+      <effect>7% Life stolen per hit</effect>
+    </group>
+  </word>
+  <word name="Sanctuary">
+    <group>
+      <effect>+20% Faster Hit Recovery</effect>
+      <effect>+20% Faster Block Rate</effect>
+      <effect>20% Increased Chance of Blocking</effect>
+      <effect>+130-160% Enhanced Defense (varies)</effect>
+      <effect>+250 Defense vs. Missile</effect>
+      <effect>+20 To Dexterity</effect>
+      <effect>All Resistances +50-70 (varies)</effect>
+      <effect>Magic Damage Reduced By 7</effect>
+      <effect>Level 12 Slow Missiles (60 Charges)</effect>
+    </group>
+  </word>
+  <word name="Silence">
+    <group>
+      <effect>200% Enhanced Damage</effect>
+      <effect>+75% Damage To Undead</effect>
+      <effect>Requirements -20%</effect>
+      <effect>20% Increased Attack Speed</effect>
+      <effect>+50 To Attack Rating Against Undead</effect>
+      <effect>+2 To All Skills</effect>
+      <effect>All Resistances +75</effect>
+      <effect>20% Faster Hit Recovery</effect>
+      <effect>11% Mana Stolen Per Hit</effect>
+      <effect>Hit Causes Monster To Flee 25%</effect>
+      <effect>Hit Blinds Target +33</effect>
+      <effect>+2 To Mana After Each Kill</effect>
+      <effect>30% Better Chance Of Getting Magic Items</effect>
+    </group>
+  </word>
+  <word name="Smoke">
+    <group>
+      <effect>+75% Enhanced Defense</effect>
+      <effect>+280 Defense Vs. Missile</effect>
+      <effect>All Resistances +50</effect>
+      <effect>20% Faster Hit Recovery</effect>
+      <effect>Level 6 Weaken (18 Charges)</effect>
+      <effect>+10 To Energy</effect>
+      <effect>-1 To Light Radius</effect>
+    </group>
+  </word>
+  <word name="Spirit">
+    <group bases="Swords">
+      <effect>+2 To All Skills</effect>
+      <effect>+25-35% Faster Cast Rate (varies)</effect>
+      <effect>+55% Faster Hit Recovery</effect>
+      <effect>Adds 1-50 Lightning Damage</effect>
+      <effect>Adds 3-14 Cold Damage 3 Second Duration (Normal)</effect>
+      <effect>+75 Poison Damage Over 5 Seconds</effect>
+      <effect>7% Life Stolen Per Hit</effect>
+      <effect>+250 Defense Vs. Missile</effect>
+      <effect>+22 To Vitality</effect>
+      <effect>+89-112 To Mana (varies)</effect>
+      <effect>+3-8 Magic Absorb (varies)</effect>
+    </group>
+    <group bases="Shields">
+      <effect>+2 To All Skills</effect>
+      <effect>+25-35% Faster Cast Rate (varies)</effect>
+      <effect>+55% Faster Hit Recovery</effect>
+      <effect>+250 Defense Vs. Missile</effect>
+      <effect>+22 To Vitality</effect>
+      <effect>+89-112 To Mana (varies)</effect>
+      <effect>Cold Resist +35%</effect>
+      <effect>Lightning Resist +35%</effect>
+      <effect>Poison Resist +35%</effect>
+      <effect>+3-8 Magic Absorb (varies)</effect>
+      <effect>Attacker Takes Damage of 14</effect>
+    </group>
+  </word>
+  <word name="Splendor">
+    <group>
+      <effect>+1 To All Skills</effect>
+      <effect>+10% Faster Cast Rate</effect>
+      <effect>+20% Faster Block Rate</effect>
+      <effect>+60-100% Enhanced Defense (varies)</effect>
+      <effect>+10 To Energy</effect>
+      <effect>Regenerate Mana 15%</effect>
+      <effect>50% Extra Gold From Monsters</effect>
+      <effect>20% Better Chance of Getting Magic Items</effect>
+      <effect>+3 To Light Radius</effect>
+    </group>
+  </word>
+  <word name="Stealth">
+    <group>
+      <effect>Magic Damage Reduced By 3</effect>
+      <effect>+6 To Dexterity</effect>
+      <effect>+15 To Maximum Stamina</effect>
+      <effect>Poison Resist +30%</effect>
+      <effect>Regenerate Mana 15%</effect>
+      <effect>25% Faster Run/Walk</effect>
+      <effect>25% Faster Cast Rate</effect>
+      <effect>25% Faster Hit Recovery</effect>
+    </group>
+  </word>
+  <word name="Steel">
+    <group>
+      <effect>20% Enhanced Damage</effect>
+      <effect>+3 To Minimum Damage</effect>
+      <effect>+3 To Maximum Damage</effect>
+      <effect>+50 To Attack Rating</effect>
+      <effect>50% Chance Of Open Wounds</effect>
+      <effect>25% Increased Attack Speed</effect>
+      <effect>+2 To Mana After Each Kill</effect>
+      <effect>+1 To Light Radius</effect>
+    </group>
+  </word>
+  <word name="Stone">
+    <group>
+      <effect>+60% Faster Hit Recovery</effect>
+      <effect>+250-290% Enhanced Defense (varies)</effect>
+      <effect>+300 Defense Vs. Missile</effect>
+      <effect>+16 To Strength</effect>
+      <effect>+16 To Vitality</effect>
+      <effect>+10 To Energy</effect>
+      <effect>All Resistances +15</effect>
+      <effect>Level 16 Molten Boulder (80 Charges)</effect>
+      <effect>Level 16 Clay Golem (16 Charges)</effect>
+    </group>
+  </word>
+  <word name="Strength">
+    <group>
+      <effect>35% Enhanced Damage</effect>
+      <effect>25% Chance Of Crushing Blow</effect>
+      <effect>7% Life Stolen Per Hit</effect>
+      <effect>+2 To Mana After Each Kill</effect>
+      <effect>+20 To Strength</effect>
+      <effect>+10 To Vitality</effect>
+    </group>
+  </word>
+  <word name="Temper">
+    <group>
+      <effect>+20% Faster Hit Recovery</effect>
+      <effect>+75-100% Enhanced Defense</effect>
+      <effect>+10 to Vitality</effect>
+      <effect>Increase Maximum Life 5%</effect>
+      <effect>Fire Resist +40-60%</effect>
+      <effect>Fire Absorb +10-15%</effect>
+    </group>
+  </word>
+  <word name="Treachery">
+    <group>
+      <effect>5% Chance To Cast Level 15 Fade When Struck</effect>
+      <effect>25% Chance To Cast level 15 Venom On Striking</effect>
+      <effect>+2 To Assassin Skills</effect>
+      <effect>+45% Increased Attack Speed</effect>
+      <effect>+20% Faster Hit Recovery</effect>
+      <effect>Cold Resist +30%</effect>
+      <effect>50% Extra Gold From Monsters</effect>
+    </group>
+  </word>
+  <word name="Unbending Will">
+    <group>
+      <effect>18% Chance to cast Level 18 Taunt on striking</effect>
+      <effect>+3 To Combat Skills (Barbarian Only)</effect>
+      <effect>+20-30% Increased Attack Speed (varies)</effect>
+      <effect>+300-350% Enhanced Damage (varies)</effect>
+      <effect>+9 To Maximum Damage</effect>
+      <effect>+50 To Attack Rating</effect>
+      <effect>+75% Damage to Undead</effect>
+      <effect>+50 Attack Rating Against Undead</effect>
+      <effect>8-10% Life Stolen Per Hit (varies)</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>+10 To Strength</effect>
+      <effect>+10 To Vitality</effect>
+      <effect>Damage Reduced By 8</effect>
+      <effect>+1 Light Radius</effect>
+      <effect>Requirements -20%</effect>
+    </group>
+  </word>
+  <word name="Venom">
+    <group>
+      <effect>Hit Causes Monster To Flee 25%</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>Ignore Target's Defense</effect>
+      <effect>7% Mana Stolen Per Hit</effect>
+      <effect>Level 15 Poison Explosion (27 Charges)</effect>
+      <effect>Level 13 Poison Nova (11 Charges)</effect>
+      <effect>+273 Poison Damage Over 6 seconds</effect>
+    </group>
+  </word>
+  <word name="Vigilance">
+    <group>
+      <effect>5% Chance to cast level 10 Ring of Fire when struck</effect>
+      <effect>+10% Faster Run/Walk</effect>
+      <effect>+30% Faster Block Rate</effect>
+      <effect>+20-40 to Life</effect>
+      <effect>+20-40 to Mana</effect>
+      <effect>All Resistances +25-35</effect>
+      <effect>+75-100% Enhanced Defense</effect>
+      <effect>Replenish Life +7</effect>
+      <effect>+5% to Maximum Poison Resist</effect>
+    </group>
+  </word>
+  <word name="Voice of Reason">
+    <group>
+      <effect>15% Chance To Cast Level 13 Frozen Orb On Striking</effect>
+      <effect>18% Chance To Cast Level 20 Ice Blast On Striking</effect>
+      <effect>+50 To Attack Rating</effect>
+      <effect>+220-350% Damage To Demons</effect>
+      <effect>+355-375% Damage To Undead (varies)</effect>
+      <effect>+50 To Attack Rating Against Undead</effect>
+      <effect>Adds 100-220 Cold Damage</effect>
+      <effect>-24% To Enemy Cold Resistance</effect>
+      <effect>+10 To Dexterity</effect>
+      <effect>Cannot Be Frozen</effect>
+      <effect>75% Extra Gold From Monsters</effect>
+      <effect>+1 To Light Radius</effect>
+    </group>
+  </word>
+  <word name="Void">
+    <group>
+      <effect>+2 to All Skills</effect>
+      <effect>+40% Faster Cast Rate</effect>
+      <effect>+10-15% to Magic Skill Damage</effect>
+      <effect>+1-3 to Abyss</effect>
+      <effect>+8-12 to all Attributes</effect>
+      <effect>Level 4 Decrepify (35/35 Charges)</effect>
+      <effect>Adds 3-14 Cold Damage</effect>
+      <effect>Indestructible</effect>
+      <effect>30% Better Chance of Getting Magic Items</effect>
+    </group>
+  </word>
+  <word name="Wealth">
+    <group>
+      <effect>300% Extra Gold From Monsters</effect>
+      <effect>100% Better Chance Of Getting Magic Items</effect>
+      <effect>+2 To Mana After Each Kill</effect>
+      <effect>+10 To Dexterity</effect>
+    </group>
+  </word>
+  <word name="White">
+    <group>
+      <effect>Hit Causes Monster To Flee 25%</effect>
+      <effect>+10 To Vitality</effect>
+      <effect>+3 To Poison And Bone Skills (Necromancer Only)</effect>
+      <effect>+3 To Bone Armor (Necromancer Only)</effect>
+      <effect>+2 To Bone Spear (Necromancer Only)</effect>
+      <effect>+4 To Skeleton Mastery (Necromancer Only)</effect>
+      <effect>Magic Damage Reduced By 4</effect>
+      <effect>20% Faster Cast Rate</effect>
+      <effect>+13 To Mana</effect>
+    </group>
+  </word>
+  <word name="Wind">
+    <group>
+      <effect>10% Chance To Cast Level 9 Tornado On Striking</effect>
+      <effect>+20% Faster Run/Walk</effect>
+      <effect>+40% Increased Attack Speed</effect>
+      <effect>+15% Faster Hit Recovery</effect>
+      <effect>+120-160% Enhanced Damage (varies)</effect>
+      <effect>-50% Target Defense</effect>
+      <effect>+50 To Attack Rating</effect>
+      <effect>Hit Blinds Target</effect>
+      <effect>+1 To Light Radius</effect>
+      <effect>Level 13 Twister (127 Charges)</effect>
+    </group>
+  </word>
+  <word name="Wisdom">
+    <group>
+      <effect>+33% Piercing Attack</effect>
+      <effect>+15-25% Bonus to Attack Rating (varies)</effect>
+      <effect>4-8% Mana Stolen Per Hit (varies)</effect>
+      <effect>+30% Enhanced Defense</effect>
+      <effect>+10 Energy</effect>
+      <effect>15% Slower Stamina Drain</effect>
+      <effect>Cannot Be Frozen</effect>
+      <effect>+5 Mana After Each Kill</effect>
+      <effect>15% Damage Taken Goes to Mana</effect>
+    </group>
+  </word>
+  <word name="Wrath">
+    <group>
+      <effect>30% Chance To Cast Level 1 Decrepify On Striking</effect>
+      <effect>5% Chance To Cast Level 10 Life Tap On Striking</effect>
+      <effect>+375% Damage To Demons</effect>
+      <effect>+100 To Attack Rating Against Demons</effect>
+      <effect>+250-300% Damage To Undead (varies)</effect>
+      <effect>Adds 85-120 Magic Damage</effect>
+      <effect>Adds 41-240 Lightning Damage</effect>
+      <effect>20% Chance of Crushing Blow</effect>
+      <effect>Prevent Monster Heal</effect>
+      <effect>+10 To Energy</effect>
+      <effect>Cannot Be Frozen</effect>
+    </group>
+  </word>
+  <word name="Zephyr">
+    <group>
+      <effect>+33% Enhanced Damage</effect>
+      <effect>+66 To Attack Rating</effect>
+      <effect>Adds 1-50 Lightning Damage</effect>
+      <effect>-25% Target Defense</effect>
+      <effect>+25 Defense</effect>
+      <effect>25% Faster Run/Walk</effect>
+      <effect>25% Increased Attack Speed</effect>
+      <effect>7% Chance To Cast Level 1 Twister When Struck</effect>
+    </group>
+  </word>
+  <guidebook>
+    <region act="1" name="Blood Moor &amp; Den of Evil">
+      <details>BLOOD MOOR &amp; DEN OF EVIL
+
+POINTS OF INTEREST
+Find the Den entrance in the Blood Moor outside the Rogue Encampment.
+
+QUESTS
+Den of Evil: clear every monster inside, then speak to Akara for a skill point.
+
+FARMING TIPS
+A useful early place to gain experience and find basic equipment. Use the remaining-monsters counter to find stragglers.
+
+ROUTE
+Rogue Encampment → Blood Moor → Den of Evil. Look for the cave entrance outdoors; the Den has no waypoint.
+
+REWARD
+Akara grants one skill point and one free respecialization per difficulty after the quest. Save the respec until you need it.
+
+WATCH FOR
+Fallen shamans can revive Fallen, so clear the shamans and check dead ends before leaving.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="1" name="Cold Plains &amp; Burial Grounds">
+      <details>COLD PLAINS &amp; BURIAL GROUNDS
+
+POINTS OF INTEREST
+The Cold Plains waypoint leads toward the Burial Grounds and its crypts.
+
+QUESTS
+Sisters' Burial Grounds: defeat Blood Raven and return to Kashya for a Rogue mercenary.
+
+FARMING TIPS
+Visit the Burial Grounds and nearby crypts for monsters and early gear; choose a difficulty your build can clear safely.
+
+ROUTE
+Take the Cold Plains waypoint and explore the area for the Burial Grounds entrance. The Crypt and Mausoleum are optional side areas beside the cemetery.
+
+REWARD
+After Blood Raven dies, speak to Kashya for a Rogue mercenary. A new hire replaces your current mercenary.
+
+HELL FARM
+The Mausoleum is a familiar undead-heavy Hell farming stop; check monster immunities and prioritize safety over clearing speed.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="1" name="Stony Field &amp; Dark Wood">
+      <details>STONY FIELD &amp; DARK WOOD
+
+POINTS OF INTEREST
+Find the Cairn Stones in the Stony Field and the Tree of Inifuss in the Dark Wood, through the Underground Passage.
+
+QUESTS
+The Search for Cain: bring the scroll to Akara, activate the stones in the indicated order, and rescue Cain in Tristram.
+
+FARMING TIPS
+Tristram contains groups of monsters and unique enemies. Revisit it for early experience and items.
+
+ROUTE
+Stony Field → Underground Passage → Dark Wood. The passage has two levels; use level 1 to reach the Dark Wood. Return to Stony Field with Akara's translated scroll.
+
+REWARD
+Rescuing Cain gives you a convenient identification service. Click his cage in Tristram and speak to him and Akara in town.
+
+OPTIONAL
+Underground Passage level 2 became a level 85 area on Hell in patch 2.4.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="1" name="Black Marsh &amp; Forgotten Tower">
+      <details>BLACK MARSH &amp; FORGOTTEN TOWER
+
+POINTS OF INTEREST
+Find the Forgotten Tower in the Black Marsh; the Countess is on the fifth cellar level.
+
+QUESTS
+The Forgotten Tower: explore the tower and defeat the Countess.
+
+FARMING TIPS
+The Countess is a popular repeat target for runes. Her possible drops change with difficulty; use the Black Marsh waypoint to start a run.
+
+ROUTE
+Use the Black Marsh waypoint, find the tower and descend five cellar levels. The Countess is on the last level.
+
+TARGETS
+Repeat Countess runs for early runeword ingredients. On Hell she may also drop a Key of Terror. Her special rune table and ordinary monster drops have different limits; do not assume a particular rune is guaranteed.
+
+CAUTION
+Tower packs can be dangerous in tight corridors, and resistances or immunities change with difficulty.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+RUNEWORD PLANNING
+Use the rune stash and Runeword Library to compare the runes you have with recipes. The stash check does not verify your base item.</details>
+    </region>
+    <region act="1" name="Monastery &amp; Catacombs">
+      <details>MONASTERY &amp; CATACOMBS
+
+POINTS OF INTEREST
+Look for the Barracks, Jail, Inner Cloister and Catacombs; Andariel waits on Catacombs level 4.
+
+QUESTS
+Tools of the Trade: recover the Horadric Malus in the Barracks. Sisters to the Slaughter: defeat Andariel.
+
+FARMING TIPS
+Andariel is a repeatable act boss for item farming. Poison resistance and antidotes help against her attacks.
+
+ROUTE
+Outer Cloister → Barracks → Jail → Inner Cloister → Cathedral → Catacombs. Take the Catacombs level 2 waypoint for repeat Andariel runs.
+
+REWARDS
+Return the Malus to Charsi for one imbue. Defeat Andariel, then speak to Warriv to travel east. Check an item carefully before using the imbue reward.
+
+PREPARATION
+Stock antidote potions, clear nearby packs, and leave room to move around Andariel.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="2" name="Lut Gholein Sewers">
+      <details>LUT GHOLEIN SEWERS
+
+POINTS OF INTEREST
+The sewers beneath Lut Gholein contain Radament on level 3.
+
+QUESTS
+Radament's Lair: defeat Radament and use the Book of Skill; find the Horadric Scroll nearby.
+
+FARMING TIPS
+Clear the area for experience while pursuing the quest. Poison resistance can help against undead attacks.
+
+ROUTE
+Enter the sewers from Lut Gholein. Take the level 2 waypoint and find Radament on level 3.
+
+REWARD
+Use the Book of Skill to gain a skill point. Pick up the Horadric Scroll from the nearby chest and bring it to Cain to begin the staff investigation.
+
+WATCH FOR
+Radament can revive nearby undead; try to clear space and avoid fighting an entire room at once.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="2" name="Halls, Maggot Lair &amp; Viper Temple">
+      <details>HALLS, MAGGOT LAIR &amp; VIPER TEMPLE
+
+POINTS OF INTEREST
+The Halls of the Dead contain the Horadric Cube; the Maggot Lair holds the staff, and the Claw Viper Temple holds the amulet.
+
+QUESTS
+The Horadric Staff and Tainted Sun: collect the pieces, transmute the staff and destroy the altar.
+
+FARMING TIPS
+Keep the Cube for recipes. Narrow tunnels can be awkward for summons; reposition carefully and progress patiently.
+
+ROUTE
+Dry Hills → Halls of the Dead level 3 for the Cube. Far Oasis → Maggot Lair level 3 for the Staff of Kings. Lost City → Valley of Snakes → Claw Viper Temple level 2 for the amulet.
+
+NEXT STEP
+Put the staff and amulet in the Cube and transmute them. Keep the finished Horadric Staff for the true tomb. The Halls level 2 has a waypoint; the Maggot Lair and Viper Temple do not.
+
+WARLOCK TIP
+Narrow Maggot Lair corridors can block your demon's path. Pull monsters into wider rooms where possible.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="2" name="Arcane Sanctuary &amp; Tombs">
+      <details>ARCANE SANCTUARY &amp; TOMBS
+
+POINTS OF INTEREST
+The Palace leads to the Arcane Sanctuary. The Summoner's journal reveals the true tomb symbol.
+
+QUESTS
+The Summoner and The Seven Tombs: defeat the Summoner, identify the tomb and use the completed staff to reach Duriel.
+
+FARMING TIPS
+The Summoner and Duriel can be revisited. Prepare for Duriel's cold aura and close-quarters fight.
+
+ROUTE
+Palace Cellar → Arcane Sanctuary. Search its four branches for the Summoner and read the journal. The red portal takes you to the Canyon of the Magi; activate its waypoint.
+
+QUEST
+The journal reveals the true tomb symbol. Find the matching entrance, use the staff in the Orifice, defeat Duriel, and speak to the person beyond him before returning to town.
+
+FARM
+On Hell the Summoner may drop a Key of Hate. Duriel is dangerous at close range; thawing potions and cold resistance can help.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="3" name="Spider Forest &amp; Flayer Jungle">
+      <details>SPIDER FOREST &amp; FLAYER JUNGLE
+
+POINTS OF INTEREST
+The Spider Cavern holds Khalim's Eye; the Flayer Dungeon holds his Brain. The Gidbinn is in the Flayer Jungle.
+
+QUESTS
+Khalim's Will: collect the relics. Blade of the Old Religion: recover the Gidbinn and return it to Ormus.
+
+FARMING TIPS
+Dense groups can reward area damage, but small fast enemies can overwhelm fragile characters.
+
+ROUTE
+Collect Khalim's Eye from Spider Cavern in Spider Forest and his Brain from Flayer Dungeon level 3 in Flayer Jungle. Spider Cavern and Arachnid Lair are different entrances.
+
+SIDE QUEST
+Find the Gidbinn in Flayer Jungle, defeat the guardian, then return the blade to Ormus and speak with Asheara.
+
+FARM
+Blizzard raised Arachnid Lair and all three Swampy Pit levels to area level 85 on Hell in patch 2.4. Check for dangerous monster combinations.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="3" name="Kurast Bazaar &amp; Sewers">
+      <details>KURAST BAZAAR &amp; SEWERS
+
+POINTS OF INTEREST
+The Ruined Temple contains Lam Esen's Tome; Khalim's Heart is in the Kurast Sewers.
+
+QUESTS
+Lam Esen's Tome: return the book to Alkor for attribute points. Collect the Heart for Khalim's Will.
+
+FARMING TIPS
+Explore the temples and sewers for monsters and chests. Pack space and a town portal make longer runs easier.
+
+ROUTE
+Explore Kurast Bazaar for the Ruined Temple and Lam Esen's Tome. Find the Kurast Sewers entrance in the Kurast area and descend to Khalim's Heart.
+
+REWARD
+Return Lam Esen's Tome to Alkor for five attribute points per difficulty. Keep the Heart for the Khalim's Will transmutation.
+
+FARM
+The Ruined Temple and Kurast Sewers level 1 are level 85 on Hell under Blizzard's patch 2.4 area changes.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="3" name="Travincal &amp; Durance of Hate">
+      <details>TRAVINCAL &amp; DURANCE OF HATE
+
+POINTS OF INTEREST
+The High Council guards Travincal. After opening the way, the Durance leads to Mephisto on level 3.
+
+QUESTS
+The Blackened Temple: defeat the Council. Khalim's Will opens the Durance. The Guardian: defeat Mephisto.
+
+FARMING TIPS
+The Council and Mephisto are popular repeat targets for loot. Bring fire resistance for the Council and watch for dangerous Durance monsters.
+
+ROUTE
+Collect Khalim's Eye, Brain, Heart and Flail, then transmute them in the Cube. Equip Khalim's Will and smash the Compelling Orb in Travincal. Take the Durance level 2 waypoint.
+
+QUEST
+Defeat the Council and Mephisto; enter the red portal beyond Mephisto to reach Act IV. D2R patch 2.4 made completing Khalim's Will a proper Act III requirement.
+
+FARM
+Council runs can yield gold and items; Mephisto is a boss target for gear. Watch Council Hydras and dangerous Durance packs.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="4" name="Plains of Despair">
+      <details>PLAINS OF DESPAIR
+
+POINTS OF INTEREST
+Search the Plains of Despair for Izual.
+
+QUESTS
+The Fallen Angel: defeat Izual and speak to Tyrael for two skill points.
+
+FARMING TIPS
+The open area has many monsters, but its layout and enemy groups vary. Finish the reward on each difficulty.
+
+ROUTE
+Pandemonium Fortress → Outer Steppes → Plains of Despair. Search the Plains for Izual; there is no waypoint in the Plains.
+
+REWARD
+After the fight, speak to the released spirit and then Tyrael for two skill points. Repeat this on each difficulty.
+
+PREPARATION
+Expect a long fight if your damage is low; leave room to retreat from surrounding packs.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="4" name="River of Flame &amp; Hellforge">
+      <details>RIVER OF FLAME &amp; HELLFORGE
+
+POINTS OF INTEREST
+The Hellforge and Hephasto are in the River of Flame; the river also leads toward the Chaos Sanctuary.
+
+QUESTS
+The Hellforge: use the Hellforge Hammer to destroy Mephisto's Soulstone.
+
+FARMING TIPS
+The Hellforge quest awards gems and a rune in the expansion; the rune range depends on difficulty. This is a quest reward, not a repeatable drop per character and difficulty.
+
+ROUTE
+City of the Damned → River of Flame. Activate the River waypoint before searching for Hephasto and the Hellforge.
+
+QUEST REWARD
+Take Mephisto's Soulstone, defeat Hephasto, equip the Hellforge Hammer, place the stone on the forge and strike it. Expansion rune ranges: El–Amn in Normal, Sol–Um in Nightmare, Hel–Gul in Hell. The quest reward is once per character per difficulty.
+
+WATCH FOR
+The river can contain dangerous mixed packs; do not rush into unexplored areas.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="4" name="Chaos Sanctuary">
+      <details>CHAOS SANCTUARY
+
+POINTS OF INTEREST
+Five seals surround Diablo's sanctuary. Opening them releases dangerous seal guardians.
+
+QUESTS
+Terror's End: open the seals and defeat Diablo.
+
+FARMING TIPS
+A popular late-game run for experience and items. Expect mixed damage types and immunities on higher difficulties.
+
+ROUTE
+Start at the River of Flame waypoint and follow the river to the sanctuary. Open all five seals and defeat the seal guardians to summon Diablo.
+
+FARM
+Clear packs and seal bosses for experience and items; Diablo adds an act-boss kill at the end. Faster clear speed matters more than piling on magic find if your damage becomes too low.
+
+PREPARATION
+Keep fire and lightning resistance high, and watch for curses and enemy immunities.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="5" name="Bloody Foothills &amp; Frigid Highlands">
+      <details>BLOODY FOOTHILLS &amp; FRIGID HIGHLANDS
+
+POINTS OF INTEREST
+Shenk the Overseer is in the Bloody Foothills; imprisoned soldiers are in the Frigid Highlands.
+
+QUESTS
+Siege on Harrogath: defeat Shenk and return to Larzuk. Rescue on Mount Arreat: free the soldiers for Qual-Kehk.
+
+FARMING TIPS
+Shenk and nearby Eldritch are commonly visited from the Frigid Highlands waypoint for quick monster kills.
+
+ROUTE
+Harrogath → Bloody Foothills → Frigid Highlands. Shenk is near the transition; the Frigid Highlands waypoint makes later runs shorter. Find and open all three soldier pens in the Highlands.
+
+REWARDS
+Speak to Larzuk after Shenk for his socketing reward. Speak to Qual-Kehk after the rescue for Tal, Ral and Ort runes. Socket counts depend on the item; research the base first.
+
+FARM
+Eldritch and Shenk can be combined into a quick repeat run, but do not stand under the falling projectiles after Shenk dies.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="5" name="Frozen River &amp; Halls of Vaught">
+      <details>FROZEN RIVER &amp; HALLS OF VAUGHT
+
+POINTS OF INTEREST
+Anya is trapped in the Frozen River. Nihlathak is in the Halls of Vaught, reached through Anya's portal after her rescue.
+
+QUESTS
+Prison of Ice: rescue Anya. Betrayal of Harrogath: defeat Nihlathak.
+
+FARMING TIPS
+Nihlathak is a repeat target for keys in Hell difficulty. His corpse explosions can be deadly; keep distance and control corpses where possible.
+
+ROUTE
+Crystalline Passage → Frozen River for Anya. Bring Malah's potion back to Anya, return to town and speak with Malah and Anya. Anya's red portal leads toward Nihlathak.
+
+REWARDS
+Use Malah's Scroll of Resistance for +10 all resistances per difficulty. Anya also gives a class-specific item and offers personalization after Nihlathak.
+
+FARM
+Hell Nihlathak may drop a Key of Destruction. His corpse explosions are a major danger. Activate waypoints deliberately; portal behavior depends on quest progression.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="5" name="Arreat Summit &amp; Worldstone Keep">
+      <details>ARREAT SUMMIT &amp; WORLDSTONE KEEP
+
+POINTS OF INTEREST
+The Ancients guard Arreat Summit; the Worldstone Keep leads to the Throne of Destruction and Baal.
+
+QUESTS
+Rite of Passage: defeat the Ancients. Eve of Destruction: defeat Baal. Ancients require level 20/40/60 in Normal/Nightmare/Hell for quest credit.
+
+FARMING TIPS
+Baal and his waves are common experience and item targets. Prepare for varied monsters and resistances.
+
+ROUTE
+Ancients' Way → Arreat Summit. After defeating the Ancients, enter the Worldstone Keep and look for the level 2 waypoint, then continue to the Throne of Destruction.
+
+QUEST
+The Ancients require level 20 / 40 / 60 for quest credit on Normal / Nightmare / Hell. Defeat Baal's waves and enter the chamber to fight Baal.
+
+FARM
+The waves and Baal are useful repeat targets for experienced characters. Enemy combinations can vary, so adapt to immunities and retreat when needed.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="1" name="Tamoe Highland &amp; The Pit">
+      <details>TAMOE HIGHLAND &amp; THE PIT
+
+POINTS OF INTEREST
+The Pit is a two-level optional dungeon in the Tamoe Highland, reachable from the Outer Cloister side of the monastery.
+
+QUESTS
+No main quest requires The Pit. Save the Outer Cloister waypoint for repeat trips.
+
+FARMING TIPS
+A popular Hell item-farming area with many boss packs. Archers and mixed immunities can be dangerous; bring a second damage source or rely on your demon where appropriate.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="1" name="Secret Cow Level">
+      <details>SECRET COW LEVEL
+
+POINTS OF INTEREST
+After completing the final act quest on the current difficulty, collect Wirt's Leg in Tristram and transmute it with a Tome of Town Portal in the Rogue Encampment.
+
+QUESTS
+The portal leads to an optional area; it is separate from the main quest line. Use ingredients obtained for the current difficulty.
+
+FARMING TIPS
+Dense packs make the area a popular target for experience, socketable bases and runes. Keep a retreat route and avoid surrounding your character.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="2" name="Rocky Waste &amp; Stony Tomb">
+      <details>ROCKY WASTE &amp; STONY TOMB
+
+POINTS OF INTEREST
+Find the Stony Tomb in the Rocky Waste outside Lut Gholein. It has two levels and no waypoint.
+
+QUESTS
+Optional side dungeon; it is not needed for the Horadric Staff.
+
+FARMING TIPS
+Both Stony Tomb levels became area level 85 on Hell in patch 2.4. A useful alternative to repeatedly farming act bosses, provided your build can clear its monsters safely.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="2" name="Lost City &amp; Ancient Tunnels">
+      <details>LOST CITY &amp; ANCIENT TUNNELS
+
+POINTS OF INTEREST
+The Ancient Tunnels entrance is in the Lost City; use the Lost City waypoint and look for a trapdoor.
+
+QUESTS
+Optional side dungeon. The Lost City also connects toward the Valley of Snakes for the Tainted Sun quest.
+
+FARMING TIPS
+A well-known Hell farming area for monster packs and chests. Check resistances on individual bosses rather than assuming every monster can be damaged by your main element.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="3" name="Golden Bird &amp; Kurast Docks">
+      <details>GOLDEN BIRD &amp; KURAST DOCKS
+
+POINTS OF INTEREST
+The Jade Figurine can be found from a unique monster in Act III. Bring it to Meshif, then follow the town conversations to Alkor.
+
+QUESTS
+The Golden Bird: trade the figurine for the Golden Bird, then receive and use Alkor's Potion of Life for a permanent life reward.
+
+FARMING TIPS
+Complete this while progressing through the jungle; there is no need to stop for a dedicated farming run. The reward can be earned again on each difficulty.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="3" name="Lower Kurast">
+      <details>LOWER KURAST
+
+POINTS OF INTEREST
+Use the Lower Kurast waypoint to reach its buildings, containers and surrounding monsters.
+
+QUESTS
+There is no major quest objective in Lower Kurast itself. It lies on the route toward the Kurast Bazaar.
+
+FARMING TIPS
+Players often check the chests and other containers in the huts. Results are random and affected by game conditions; clear or avoid enemies according to your build.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="5" name="Nihlathak's Temple &amp; Pindleskin">
+      <details>NIHLATHAK'S TEMPLE &amp; PINDLESKIN
+
+POINTS OF INTEREST
+After rescuing Anya, her red portal leads to Nihlathak's Temple. Pindleskin and his pack guard the entrance to the Halls.
+
+QUESTS
+The temple is on the route for Betrayal of Harrogath. Pindleskin is an optional target.
+
+FARMING TIPS
+A short run while the red portal is available. His pack can charge suddenly, so summon your demon and prepare defenses before entering.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+    <region act="5" name="Terror Zones">
+      <details>TERROR ZONES
+
+POINTS OF INTEREST
+Once Terror Zones are enabled for your game, the active region is announced in game and marked on the waypoint menu.
+
+QUESTS
+Terror Zones are an optional endgame activity; availability depends on your difficulty and game progress.
+
+FARMING TIPS
+A terrorized area's monster levels can increase with the player level, subject to difficulty caps. Check the current zone in game and choose one your build can clear safely; the guide does not predict the live rotation.
+
+Maps vary between games; rewards and drops depend on difficulty and game mode.
+
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+    </region>
+  </guidebook>
+</runewords>

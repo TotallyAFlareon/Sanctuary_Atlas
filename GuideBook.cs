@@ -7,9 +7,10 @@ using System.Collections.Generic;
 public sealed class GuideRegion {
  public int Act;
  public string Name, Points, Quests, Farming;
+ public string UpdatedDetails;
  public GuideRegion(int act,string name,string points,string quests,string farming){Act=act;Name=name;Points=points;Quests=quests;Farming=farming;}
  public override string ToString(){return Name;}
- public string Details(){return Name.ToUpperInvariant()+"\r\n\r\nPOINTS OF INTEREST\r\n"+Points+"\r\n\r\nQUESTS\r\n"+Quests+"\r\n\r\nFARMING TIPS\r\n"+Farming+GuideDetails.For(Name)+"\r\n\r\nMaps vary between games; rewards and drops depend on difficulty and game mode.\r\n\r\nSources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.";}
+ public string Details(){if(!String.IsNullOrEmpty(UpdatedDetails))return UpdatedDetails;return Name.ToUpperInvariant()+"\r\n\r\nPOINTS OF INTEREST\r\n"+Points+"\r\n\r\nQUESTS\r\n"+Quests+"\r\n\r\nFARMING TIPS\r\n"+Farming+GuideDetails.For(Name)+"\r\n\r\nMaps vary between games; rewards and drops depend on difficulty and game mode.\r\n\r\nSources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.";}
 }
 public static class GuideBook {
  public static readonly GuideRegion[] Regions={
