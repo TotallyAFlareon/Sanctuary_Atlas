@@ -95,6 +95,9 @@ class WarlockGuideCheck {
     Need(goatCard.Controls.OfType<Label>().Any(l=>l.Text=="1/20 +10"),"Weapon bonus not visible on skill card");
     Need(new PreviewTooltipSession("Warlock",skills).Render(skills[0],build).Contains("Effective skill level: 11"),"Weapon bonus not applied in tooltip");
     Call(app,"ShowGear");var gearContent=(Panel)Field(app,"content");Need(gearContent.Controls.OfType<Label>().Any(l=>l.Text.Contains("+10 Warlock Skills")),"Active bonus summary missing");
+    Need(gearContent.Controls.OfType<Button>().Any(x=>x.Text=="UNIQUE PRESETS"),"Unique presets button missing");
+    var preset=VerifiedEquipment.Bonuses(VerifiedEquipment.Find("Harlequin Crest"));
+    Need((bool)Call(app,"VerifiedFits",preset,false,2)&&!(bool)Call(app,"VerifiedFits",preset,false,0)&&(bool)Call(app,"VerifiedFits",preset,true,0),"Verified slot and inventory rules");
     Need(gearContent.Controls.OfType<Button>().Any(x=>x.Text=="BREAKPOINTS"),"Equipment breakpoint button");
     Call(app,"ShowBreakpoints");var breakpointContent=(Panel)Field(app,"content");var fcr=breakpointContent.Controls.OfType<NumericUpDown>().First(x=>x.AccessibleName=="FCR extra percentage");
     Need(breakpointContent.Controls.OfType<Label>().Any(x=>x.AccessibleName=="FCR breakpoint result"&&x.Text.Contains("Total: 55%")&&x.Text.Contains("Next: 75%")),"Equipment breakpoint total");fcr.Value=20;

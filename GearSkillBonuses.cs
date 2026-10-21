@@ -10,6 +10,8 @@ using System.Text.RegularExpressions;
  public string Lines="";
  public bool ActiveCharm;
  public int Fcr, Fhr, Fbr;
+ // Nonempty only for items created from the verified unsocketed-unique list.
+ public string VerifiedName="";
 }
 public sealed class SpeedBonusTotals {
  public int Fcr, Fhr, Fbr;
