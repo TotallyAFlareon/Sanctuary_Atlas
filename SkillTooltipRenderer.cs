@@ -32,12 +32,12 @@ public static class SkillTooltipRenderer {
   sb.AppendLine(skill.Name);if(!String.IsNullOrWhiteSpace(skill.Description))sb.AppendLine(skill.Description);
   sb.AppendLine("Character level required: "+skill.RequiredLevel);
   sb.AppendLine(String.IsNullOrEmpty(skill.Prerequisites)?"No prerequisite":"Requires: "+skill.Prerequisites);
-  sb.AppendLine("Invested points: "+hard+" / 20");if(hard>0&&hard!=effective)sb.AppendLine("Effective skill level: "+effective);
+  sb.AppendLine("Invested points: "+hard+" / 20");if(effective>0&&hard!=effective)sb.AppendLine("Effective skill level: "+effective);
   if(skill.Stats.Count>0){
-   if(hard==0){var first=levels.Clone();first.SetHard(skill.Id,1);sb.AppendLine("\nFirst point preview:");RenderLines(sb,skill,skill.Stats,first,modifiers(first));}
+   if(effective==0){var first=levels.Clone();first.SetHard(skill.Id,1);sb.AppendLine("\nFirst point preview:");RenderLines(sb,skill,skill.Stats,first,modifiers(first));}
    else{sb.AppendLine("\nCurrent values:");RenderLines(sb,skill,skill.Stats,levels,modifiers(levels));if(hard<20){var next=levels.Clone();next.SetHard(skill.Id,hard+1);sb.AppendLine("\nNext point:");RenderLines(sb,skill,skill.Stats,next,modifiers(next));}}
   }
-  if(skill.Synergies.Count>0){var preview=levels.Clone();if(hard==0)preview.SetHard(skill.Id,1);sb.AppendLine("\nSynergy descriptions:");RenderLines(sb,skill,skill.Synergies,preview,modifiers(preview));}
+  if(skill.Synergies.Count>0){var preview=levels.Clone();if(effective==0)preview.SetHard(skill.Id,1);sb.AppendLine("\nSynergy descriptions:");RenderLines(sb,skill,skill.Synergies,preview,modifiers(preview));}
   foreach(string note in skill.Notes)sb.AppendLine(note);
   return sb.ToString().TrimEnd();
  }

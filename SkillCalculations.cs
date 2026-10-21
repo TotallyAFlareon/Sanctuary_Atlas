@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-// A skill has invested points and separate bonuses. No bonus unlocks an unlearned skill.
+// Direct +skill modifiers can grant an unlearned skill; general bonuses alone cannot.
 public sealed class SkillLevels {
  readonly Dictionary<int,int> hard = new Dictionary<int,int>();
  readonly Dictionary<int,int> individualBonus = new Dictionary<int,int>();
+ readonly Dictionary<int,int> conditionalBonus = new Dictionary<int,int>();
  readonly Dictionary<int,int> treeBonus = new Dictionary<int,int>();
  readonly Dictionary<int,int> trees = new Dictionary<int,int>();
  public int AllSkillsBonus { get; set; }
@@ -13,11 +14,12 @@ public sealed class SkillLevels {
  public void SetTree(int skillId,int treeId){trees[skillId]=treeId;}
  public void SetHard(int skillId,int value){if(value<0||value>20)throw new ArgumentOutOfRangeException("value");hard[skillId]=value;}
  public void SetSkillBonus(int skillId,int value){if(value<0)throw new ArgumentOutOfRangeException("value");individualBonus[skillId]=value;}
+ public void SetConditionalBonus(int skillId,int value){if(value<0)throw new ArgumentOutOfRangeException("value");conditionalBonus[skillId]=value;}
  public void SetTreeBonus(int treeId,int value){if(value<0)throw new ArgumentOutOfRangeException("value");treeBonus[treeId]=value;}
  static int Get(Dictionary<int,int> data,int key){int value;return data.TryGetValue(key,out value)?value:0;}
  public int Hard(int skillId){return Get(hard,skillId);}
- public int Effective(int skillId){int h=Hard(skillId);if(h==0)return 0;int tree;int bonus=trees.TryGetValue(skillId,out tree)?Get(treeBonus,tree):0;return checked(h+Math.Max(0,AllSkillsBonus)+bonus+Get(individualBonus,skillId));}
- public SkillLevels Clone(){var c=new SkillLevels{AllSkillsBonus=AllSkillsBonus,CharacterLevel=CharacterLevel};foreach(var pair in hard)c.hard.Add(pair.Key,pair.Value);foreach(var pair in individualBonus)c.individualBonus.Add(pair.Key,pair.Value);foreach(var pair in treeBonus)c.treeBonus.Add(pair.Key,pair.Value);foreach(var pair in trees)c.trees.Add(pair.Key,pair.Value);return c;}
+ public int Effective(int skillId){int h=Hard(skillId),direct=Get(individualBonus,skillId);if(h==0&&direct==0)return 0;int tree;int bonus=trees.TryGetValue(skillId,out tree)?Get(treeBonus,tree):0;return checked(h+Math.Max(0,AllSkillsBonus)+bonus+direct+Get(conditionalBonus,skillId));}
+ public SkillLevels Clone(){var c=new SkillLevels{AllSkillsBonus=AllSkillsBonus,CharacterLevel=CharacterLevel};foreach(var pair in hard)c.hard.Add(pair.Key,pair.Value);foreach(var pair in individualBonus)c.individualBonus.Add(pair.Key,pair.Value);foreach(var pair in conditionalBonus)c.conditionalBonus.Add(pair.Key,pair.Value);foreach(var pair in treeBonus)c.treeBonus.Add(pair.Key,pair.Value);foreach(var pair in trees)c.trees.Add(pair.Key,pair.Value);return c;}
 }
 
 // Strict arithmetic, never executes code. Unsupported data fails closed.
@@ -75,7 +77,7 @@ public sealed class SkillPointPreview {
  public int CurrentEffective { get; private set; }
  public static SkillPointPreview Calculate(string formula,int skillId,SkillLevels levels,IDictionary<string,decimal> modifiers){
   int hard=levels.Hard(skillId);var result=new SkillPointPreview{CurrentHard=hard,CurrentEffective=levels.Effective(skillId)};
-  if(hard>0)result.Current=SkillFormula.Evaluate(formula,skillId,levels,modifiers);
+  if(result.CurrentEffective>0)result.Current=SkillFormula.Evaluate(formula,skillId,levels,modifiers);
   if(hard<20){var next=levels.Clone();next.SetHard(skillId,hard+1);result.Next=SkillFormula.Evaluate(formula,skillId,next,modifiers);}
   return result;
  }
