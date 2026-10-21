@@ -76,7 +76,7 @@ public class Atlas : Form {
  string dataDir=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"SanctuaryAtlas"); string save; string className="Warlock"; static string[] classes={"Warlock","Amazon","Assassin","Barbarian","Druid","Necromancer","Paladin","Sorceress"};
  Build build=new Build(); List<Skill> skills=new List<Skill>(); List<Word> words=new List<Word>(); Panel content; Label budget; NumericUpDown level,quests; SkillTreePanel skillList; ComboBox tree; ListBox results; TextBox search,detail; ToolTip slotTip=new ToolTip(); bool loading=false; int selectedSlot=-1; bool selectedInventory=false, moving=false; CheckBox craftable; List<Cube> cubes=new List<Cube>(); static string[] runeNames="El Eld Tir Nef Eth Ith Tal Ral Ort Thul Amn Sol Shael Dol Hel Io Lum Ko Fal Lem Pul Um Mal Ist Gul Vex Ohm Lo Sur Ber Jah Cham Zod".Split(' ');
  static Font f(float s,FontStyle st=FontStyle.Regular){return new Font("Segoe UI",s,st);} 
- public Atlas():this(null){} public Atlas(string testDataDir){ if(!String.IsNullOrEmpty(testDataDir))dataDir=testDataDir; Icon=Icon.ExtractAssociatedIcon(Application.ExecutablePath); Text="Sanctuary Atlas | D2R companion | Update 24"; Size=new Size(1150,790); MinimumSize=new Size(950,680); BackColor=bg; ForeColor=text; Font=f(10); StartPosition=FormStartPosition.CenterScreen; save=Path.Combine(dataDir,"build.xml"); InitData(); LoadBuild(); MakeShell(); ShowSkills(); }
+ public Atlas():this(null){} public Atlas(string testDataDir){ if(!String.IsNullOrEmpty(testDataDir))dataDir=testDataDir; Icon=Icon.ExtractAssociatedIcon(Application.ExecutablePath); Text="Sanctuary Atlas | D2R companion | Update 25"; Size=new Size(1150,790); MinimumSize=new Size(950,680); BackColor=bg; ForeColor=text; Font=f(10); StartPosition=FormStartPosition.CenterScreen; save=Path.Combine(dataDir,"build.xml"); InitData(); LoadBuild(); MakeShell(); ShowSkills(); }
  void Add(string t,string n,int l,string r,string d){skills.Add(new Skill(t,n,l,r,d));}
  void InitWarlockSkills(){
  Add("Demon","Summon Goatman",1,"","Summons a melee demon ally."); Add("Demon","Demonic Mastery",1,"Summon Goatman","Strengthens summoned and bound demons."); Add("Demon","Blood Oath",6,"Demonic Mastery","Links your protection to your demon."); Add("Demon","Death Mark",6,"Summon Goatman","Directs your demon to an enemy."); Add("Demon","Summon Tainted",12,"Summon Goatman","Summons a ranged demon ally."); Add("Demon","Blood Boil",18,"Death Mark","Erupts your demon's blood to damage nearby enemies."); Add("Demon","Summon Defiler",18,"Summon Tainted","Summons a demon that binds enemy souls."); Add("Demon","Engorge",24,"Blood Boil","Feeds a corpse to heal and empower your demon."); Add("Demon","Consume",30,"Blood Oath","Sacrifices your demon for power."); Add("Demon","Bind Demon",30,"Engorge|Summon Defiler","Turns an injured demon into an ally.");
@@ -523,11 +523,20 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
   using(var dlg=new Form{Text="Edit "+(selectedInventory?"inventory cell":gearNames[selectedSlot]),Size=new Size(570,warlock?570:390),StartPosition=FormStartPosition.CenterParent,FormBorderStyle=FormBorderStyle.FixedDialog,MaximizeBox=false,MinimizeBox=false,BackColor=bg,ForeColor=text}){
    dlg.Controls.Add(LabelAt("ITEM NAME OR NOTES",20,20,500,22,9,gold,FontStyle.Bold));
    var entry=new TextBox{Location=new Point(20,48),Width=515,Text=SlotText(selectedInventory,selectedSlot)??"",BackColor=panel,ForeColor=text};dlg.Controls.Add(entry);
-   TextBox bonus=null;CheckBox charm=null;
+   ListBox bonus=null;CheckBox charm=null;
    if(warlock){
-    dlg.Controls.Add(LabelAt("SKILL BONUSES  •  ONE PER LINE",20,85,500,22,9,gold,FontStyle.Bold));
-    dlg.Controls.Add(LabelAt("Examples: All Skills: +2   |   Warlock Skills: +1\nDemon, Eldritch, Chaos or Fire Skills: +1   |   Hex: Bane: +3",20,108,515,43,9,muted));
-    bonus=new TextBox{Location=new Point(20,153),Size=new Size(515,135),Multiline=true,ScrollBars=ScrollBars.Vertical,BackColor=panel,ForeColor=text,Text=existing==null?"":existing.Lines??""};dlg.Controls.Add(bonus);
+    dlg.Controls.Add(LabelAt("SKILL BONUSES  •  CHOOSE A STAT AND VALUE",20,85,500,22,9,gold,FontStyle.Bold));
+    var choices=new ComboBox{Location=new Point(20,112),Width=300,DropDownStyle=ComboBoxStyle.DropDownList,BackColor=panel,ForeColor=text,AccessibleName="Skill bonus type"};
+    choices.Items.AddRange(new object[]{"All Skills","Warlock Skills","Demon Skills","Eldritch Skills","Chaos Skills","Fire Skills"});
+    foreach(var skill in skills)choices.Items.Add(skill.Name);
+    choices.SelectedIndex=0;dlg.Controls.Add(choices);
+    var amount=new NumericUpDown{Location=new Point(330,112),Size=new Size(70,28),Minimum=1,Maximum=100,Value=1,BackColor=panel,ForeColor=text,AccessibleName="Skill bonus amount"};dlg.Controls.Add(amount);
+    bonus=new ListBox{Location=new Point(20,154),Size=new Size(380,134),BackColor=panel,ForeColor=text,AccessibleName="Item skill bonuses"};
+    if(existing!=null&&!String.IsNullOrWhiteSpace(existing.Lines))foreach(string line in existing.Lines.Replace("\r","").Split('\n'))if(!String.IsNullOrWhiteSpace(line))bonus.Items.Add(line.Trim());
+    dlg.Controls.Add(bonus);
+    var addBonus=Btn("ADD",410,109,125,30);addBonus.Click+=(s,e)=>{bonus.Items.Add(choices.SelectedItem+": +"+amount.Value);};dlg.Controls.Add(addBonus);
+    var removeBonus=Btn("REMOVE",410,154,125,30);removeBonus.Click+=(s,e)=>{if(bonus.SelectedIndex>=0)bonus.Items.RemoveAt(bonus.SelectedIndex);};dlg.Controls.Add(removeBonus);
+    dlg.Controls.Add(LabelAt("Select an entry to remove or replace it.",410,193,125,65,8,muted));
    }
    int speedY=warlock?300:90;
    dlg.Controls.Add(LabelAt("ITEM SPEED BONUSES (%)",20,speedY,490,22,9,gold,FontStyle.Bold));
@@ -537,11 +546,12 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
    dlg.Controls.Add(LabelAt("Enter the item's actual bonuses. Item names do not automatically fill stats.",20,speedY+115,510,34,8,muted));
    var ok=Btn("SAVE",385,speedY+154,150,35);ok.Click+=(s,e)=>{
     string item=entry.Text.Trim();ItemSkillBonuses data=existing;
-    if(warlock){try{GearSkillBonuses.Parse(bonus.Text,skills);}catch(Exception ex){if(ex is FormatException||ex is OverflowException){MessageBox.Show(ex.Message,"Skill bonuses");return;}throw;}
-     if(item.Length==0&&!String.IsNullOrWhiteSpace(bonus.Text)){MessageBox.Show("Enter an item name before adding bonuses.","Skill bonuses");return;}
+    string bonusLines=warlock?String.Join("\n",bonus.Items.Cast<object>().Select(x=>x.ToString()).ToArray()):(existing==null?"":existing.Lines);
+    if(warlock){try{GearSkillBonuses.Parse(bonusLines,skills);}catch(Exception ex){if(ex is FormatException||ex is OverflowException){MessageBox.Show(ex.Message,"Skill bonuses");return;}throw;}
+     if(item.Length==0&&!String.IsNullOrWhiteSpace(bonusLines)){MessageBox.Show("Enter an item name before adding bonuses.","Skill bonuses");return;}
     }
     if(item.Length==0&&speeds.Any(n=>n.Value>0)){MessageBox.Show("Enter an item name before adding bonuses.","Item bonuses");return;}
-    data=new ItemSkillBonuses{Lines=warlock?bonus.Text.Trim():(existing==null?"":existing.Lines),ActiveCharm=selectedInventory?charm.Checked:existing!=null&&existing.ActiveCharm,Fcr=(int)speeds[0].Value,Fhr=(int)speeds[1].Value,Fbr=(int)speeds[2].Value};
+    data=new ItemSkillBonuses{Lines=bonusLines,ActiveCharm=selectedInventory?charm.Checked:existing!=null&&existing.ActiveCharm,Fcr=(int)speeds[0].Value,Fhr=(int)speeds[1].Value,Fbr=(int)speeds[2].Value};
     PutSlot(selectedInventory,selectedSlot,item);PutBonuses(selectedInventory,selectedSlot,item.Length==0?null:data);Save();dlg.DialogResult=DialogResult.OK;dlg.Close();
    };dlg.Controls.Add(ok);dlg.AcceptButton=ok;dlg.ShowDialog(this);
   }ShowGear();
