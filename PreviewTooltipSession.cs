@@ -12,6 +12,7 @@ public sealed class PreviewTooltipSession {
  public PreviewTooltipSession(string className,List<Skill> skills){this.className=className;this.skills=skills;}
  int Id(string name){int n=skills.FindIndex(s=>s.Name==name);if(n<0)throw new InvalidOperationException("Missing skill: "+name);return n+1;}
  static void Stat(SkillTooltipDefinition d,string template,string formula,bool whole=false,string end=null){d.Stats.Add(new SkillTooltipStat{Template=template,Formula=formula,FormulaEnd=end,WholeNumber=whole});}
+ static void Flag(SkillTooltipDefinition d,string template,string formula){d.Stats.Add(new SkillTooltipStat{Template=template,Formula=formula,Boolean=true});}
  public string Render(Skill skill,Build build){
   var d=new SkillTooltipDefinition{Id=Id(skill.Name),Name=skill.Name,Description=skill.Desc,RequiredLevel=skill.Level,Prerequisites=(skill.Requires??"").Replace("|"," + ")};
   bool hasDetails=true;
@@ -60,6 +61,62 @@ public sealed class PreviewTooltipSession {
    Stat(d,"Physical damage taken per hit: +{value}","5+2*(lvl-1)",true);
    Stat(d,"Magic damage taken per hit: +{value}","5+2*(lvl-1)",true);
    d.Notes.Add("Requires an active demon. Casting delay: 0.8 seconds.");
+  }else if(className=="Warlock"&&skill.Name=="Blood Boil"){
+   // Data-table build 3.3.93847: https://d2r.org/mechanics/blood-boil
+   string oath="blvl("+Id("Blood Oath")+")",engorge="blvl("+Id("Engorge")+")";
+   string low="10+8*(min(lvl,8)-1)+10*max(min(lvl,16)-8,0)+12*max(min(lvl,22)-16,0)+16*max(min(lvl,28)-22,0)+20*max(lvl-28,0)";
+   string high="20+10*(min(lvl,8)-1)+12*max(min(lvl,16)-8,0)+18*max(min(lvl,22)-16,0)+26*max(min(lvl,28)-22,0)+30*max(lvl-28,0)";
+   Stat(d,"Mana cost: {value}","3.75+(lvl-1)/4");
+   Stat(d,"Radius: {value} yards","lvl>=10?7:(lvl>=5?6:5)",true);
+   Stat(d,"Fire damage: {value}","idiv(("+low+")*(100+20*"+oath+"),100)",true,"idiv(("+high+")*(100+20*"+oath+"),100)");
+   Stat(d,"Physical damage: {value}","idiv(("+low+")*(100+20*"+engorge+"),100)",true,"idiv(("+high+")*(100+20*"+engorge+"),100)");
+   Stat(d,"Life cost with one demon: {value}%","max(16-lvl,5)",true);
+   Stat(d,"Life cost per demon with two: {value}%","max(idiv(16-lvl,2),5)",true);
+   Stat(d,"Life cost per demon with three: {value}%","max(idiv(16-lvl,3),5)",true);
+   d.Notes.Add("Blood Oath adds 20% fire damage and Engorge adds 20% physical damage per invested point. Other damage bonuses and enemy defenses are not included.");
+   d.Notes.Add("Requires a demon. Life costs depend on the number of demons out and have a 5% floor per demon.");
+  }else if(className=="Warlock"&&skill.Name=="Engorge"){
+   // https://d2r.org/mechanics/engorge
+   string oath="blvl("+Id("Blood Oath")+")";
+   Stat(d,"Mana cost: {value}","3+(lvl-1)/4");
+   Stat(d,"Duration: {value} seconds","5+3*(lvl-1)",true);
+   Stat(d,"Demon life healed: {value}%","30+lvl-1",true);
+   Stat(d,"Demon life steal: +{value}%","15+2*(lvl-1)",true);
+   Stat(d,"Demon attack speed: +{value}%","min(14+lvl,35)",true);
+   Stat(d,"Demon physical damage reduction: {value}%","5",true);
+   Stat(d,"Demon defense from Blood Oath: +{value}","25*"+oath,true);
+   Stat(d,"Demon regeneration from Blood Oath: +{value}","5*"+oath,true);
+   d.Notes.Add("Requires a corpse and a demon. Blood Oath's defense and regeneration bonuses use invested points, not equipment levels.");
+  }else if(className=="Warlock"&&skill.Name=="Consume"){
+   // https://d2r.org/mechanics/consume
+   Stat(d,"Mana cost: {value}","24+lvl",true);
+   Stat(d,"Duration: {value} seconds","20+20*lvl",true);
+   Stat(d,"Maximum life: +{value}%","4+lvl",true);
+   Stat(d,"Run/walk speed: +{value}%","10+idiv(36*min(100,idiv(110*lvl,lvl+6)),100)",true);
+   Stat(d,"If Tainted: fire skill damage +{value}%","min(lvl+9,20)",true);
+   Stat(d,"If Tainted: enemy fire resistance -{value}%","min(lvl+4,15)",true);
+   Stat(d,"If Defiler: magic skill damage +{value}%","min(lvl+9,20)",true);
+   Stat(d,"If Defiler: enemy magic resistance -{value}%","min(lvl+4,10)",true);
+   Stat(d,"If Goatman: damage bonus in Normal +{value}%","20+lvl",true);
+   Stat(d,"If Goatman: damage bonus in Nightmare +{value}%","20+3*lvl",true);
+   Stat(d,"If Goatman: damage bonus in Hell +{value}%","20+5*lvl",true);
+   Stat(d,"If Goatman: crushing blow +{value}%","5+blvl("+Id("Death Mark")+")",true);
+   d.Notes.Add("Consumes one demon. Only the lines for the consumed demon apply; Goatman damage uses the difficulty where it was summoned. Bound demons have their own bonuses, which are not calculated here.");
+  }else if(className=="Warlock"&&skill.Name=="Bind Demon"){
+   // https://d2r.org/mechanics/bind-demon; omit disputed chance scaling.
+   string mastery="slvl("+Id("Demonic Mastery")+")",hard="blvl("+Id("Bind Demon")+")";
+   Stat(d,"Flat demon damage bonus: +{value}","50+25*(lvl-1)",true);
+   Stat(d,"Demon damage bonus (including Mastery): +{value}%","75+5*(lvl-1)+10*"+mastery,true);
+   Stat(d,"Demon defense bonus: +{value}","100+5*(lvl-1)",true);
+   Flag(d,"Champion binding unlocked: {value}",hard+">=10?1:0");
+   Flag(d,"Unique binding unlocked: {value}",hard+">=15?1:0");
+   Flag(d,"Super Unique binding unlocked: {value}",hard+">=20?1:0");
+   Flag(d,"Extra Strong unlocked: {value}","lvl>=5?1:0");
+   Flag(d,"Extra Fast unlocked: {value}","lvl>=10?1:0");
+   Flag(d,"Spectral Hit unlocked: {value}","lvl>=15?1:0");
+   Flag(d,"Aura Enchanted unlocked: {value}","lvl>=20?1:0");
+   d.Notes.Add("The binding-quality thresholds require invested Bind Demon points. The demon modifiers use effective skill level, including gear. Not every demon can be bound.");
+   d.Notes.Add("Bind chance depends on the target and its remaining life; a reliable final chance is not calculated here.");
   }else if(className=="Warlock"&&skill.Name=="Blood Oath"){
    // https://d2r.org/mechanics/blood-oath (build 3.3.93847)
    Stat(d,"Damage shared with demon: {value}%","-1+idiv(31*min(100,idiv(110*lvl,lvl+6)),100)",true);
@@ -118,3 +175,4 @@ public sealed class PreviewTooltipSession {
   return SkillTooltipRenderer.Render(d,levels,null);
  }
 }
+

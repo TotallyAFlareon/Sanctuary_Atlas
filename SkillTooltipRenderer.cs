@@ -6,7 +6,7 @@ using System.Text;
 // Source-neutral definitions. Each verified source must specify rounding for each line.
 public sealed class SkillTooltipStat {
  public string Label, Formula, FormulaEnd, Suffix, Template;
- public bool WholeNumber, Signed;
+ public bool WholeNumber, Signed, Boolean;
 }
 public sealed class SkillTooltipDefinition {
  public int Id, RequiredLevel;
@@ -17,7 +17,7 @@ public sealed class SkillTooltipDefinition {
 }
 public static class SkillTooltipRenderer {
  static string Number(decimal d,bool whole){return (whole?Decimal.Truncate(d):d).ToString("0.##",CultureInfo.InvariantCulture);}
- static string SignedNumber(decimal value,SkillTooltipStat stat){return (stat.Signed&&value>0?"+":"")+Number(value,stat.WholeNumber);}
+ static string SignedNumber(decimal value,SkillTooltipStat stat){if(stat.Boolean)return value==0?"No":"Yes";return (stat.Signed&&value>0?"+":"")+Number(value,stat.WholeNumber);}
  static string Show(decimal? start,decimal? end,SkillTooltipStat stat){if(!start.HasValue)return "unavailable";return SignedNumber(start.Value,stat)+(stat.FormulaEnd==null?"":(end.HasValue?"–"+Number(end.Value,stat.WholeNumber):"–unavailable"))+(stat.Suffix??"");}
  static decimal? Evaluate(string formula,int id,SkillLevels state,IDictionary<string,decimal> modifiers){try{return SkillFormula.Evaluate(formula,id,state,modifiers);}catch(FormatException){return null;}catch(ArithmeticException){return null;}}
  static void RenderLines(StringBuilder sb,SkillTooltipDefinition skill,IEnumerable<SkillTooltipStat> stats,SkillLevels state,IDictionary<string,decimal> modifiers){foreach(var stat in stats){decimal? start=Evaluate(stat.Formula,skill.Id,state,modifiers);decimal? end=stat.FormulaEnd==null?null:Evaluate(stat.FormulaEnd,skill.Id,state,modifiers);if(stat.Template!=null&&stat.Template.Contains("{end}")){string first=start.HasValue?SignedNumber(start.Value,stat):"unavailable";string second=end.HasValue?Number(end.Value,stat.WholeNumber):"unavailable";sb.AppendLine(stat.Template.Replace("{value}",first).Replace("{end}",second));}else{string value=Show(start,end,stat);sb.AppendLine(stat.Template==null?stat.Label+": "+value:stat.Template.Replace("{value}",value));}}}
@@ -42,3 +42,4 @@ public static class SkillTooltipRenderer {
   return sb.ToString().TrimEnd();
  }
 }
+
