@@ -1,0 +1,42 @@
+using System;
+
+// Targets are examples for specific bases, not guarantees that an affix will roll.
+public sealed class ShoppingTopic {
+ public readonly string Name, Description;
+ public readonly int ShopLevel, GambleFirst, GambleAll;
+ public ShoppingTopic(string name, string description, int shop, int first, int all){
+  Name=name;Description=description;ShopLevel=shop;GambleFirst=first;GambleAll=all;
+ }
+ public override string ToString(){return Name;}
+ public string Details(int level){
+  string result=Name.ToUpperInvariant();
+  if(ShopLevel>0)result+="\r\n\r\nYOUR LEVEL "+level+"\r\nShop example: "+Status(level,ShopLevel)+" (level "+ShopLevel+"; see act and base restrictions above).";
+  if(GambleFirst>0)result+="\r\n"+(ShopLevel==0?"\r\nYOUR LEVEL "+level+"\r\n":"")+"Gamble: "+Status(level,GambleFirst)+" for a possible qualifying item level (level "+GambleFirst+").\r\nAt level "+GambleAll+", every rolled item level reaches the stated threshold: "+Status(level,GambleAll)+".";
+  if(GambleFirst>0)result+="\r\nThis is eligibility, not a promise of the affix or item quality. Base upgrades can change the result.";
+  return result+"\r\n\r\n"+Description;
+ }
+ static string Status(int level,int target){return level>=target?"reached":"need "+(target-level)+" more level"+(target-level==1?"":"s");}
+}
+public static class ShoppingGuide {
+ const string Sources="\r\n\r\nREFERENCES\r\nclassic.battle.net/diablo2exp/items/magic/suf.shtml\r\nd2r.org/mechanics/item-level-and-affix-level\r\nd2r.org/mechanics/gambling";
+ const string Boots="These examples use the normal base named Boots (also called Light Boots), quality level 3. Other boot bases and exceptional or elite upgrades have different thresholds. Shop stock depends on the vendor and difficulty. Item level is hidden; it is not the level required to equip the item.";
+ public static readonly ShoppingTopic[] Topics={
+  new ShoppingTopic("10% run/walk boots",
+   "EARLY MOVEMENT / MAGIC OR RARE\r\n\r\nLook for Boots of Pacing: 10% faster run/walk, affix level 12. For the normal Boots base the affix needs item level 13. A shop example is character level 8 in Normal Act II or later, if the vendor stocks that base. Normal Act I is capped at item level 12. Gambling can first reach item level 13 at character level 9; level 18 makes all rolled item levels reach 13.\r\n\r\n"+Boots+Sources,8,9,18),
+  new ShoppingTopic("20% run/walk boots",
+   "LEVELING / MAGIC OR RARE\r\n\r\nLook for Boots of Haste: 20% faster run/walk, affix level 22. Normal Boots need item level 23. A shop example is character level 18 in Normal Act III or later, if stocked. Normal Acts I and II have lower shop caps. Gambling can first reach item level 23 at character level 19; level 28 makes all rolled item levels reach 23.\r\n\r\n"+Boots+Sources,18,19,28),
+  new ShoppingTopic("30% run/walk boots",
+   "LEVELING / MAGIC OR RARE\r\n\r\nLook for Boots of Speed: 30% faster run/walk, affix level 37. Normal Boots need item level 38. A shop example is character level 33 in Normal Act V, Nightmare or Hell, if the vendor stocks that base. Normal Act IV's item-level cap is 36. Gambling can first reach item level 38 at character level 34; level 43 makes all rolled item levels reach 38.\r\n\r\nFor rare boots, compare movement with useful fire, lightning and cold resistance, faster hit recovery and magic find. Rare multi-resistance rolls are random.\r\n\r\n"+Boots+Sources,33,34,43),
+  new ShoppingTopic("40% run/walk boots",
+   "HIGHER MOVEMENT / MAGIC AFFIX\r\n\r\nLook for magical Boots of Acceleration: 40% faster run/walk, affix level 51. This suffix is magic-only; it is not a rare-item suffix. Normal Boots need item level 52. A shop example is character level 47 in Nightmare or Hell, if that vendor offers the normal base. Normal Act V is capped at item level 45. Gambling can first reach item level 52 at character level 48; level 57 makes all rolled item levels reach 52.\r\n\r\nCompare a magic pair's movement and single possible prefix against rare boots with more resistance or other bonuses. Some unique or set boots have their own fixed movement bonuses.\r\n\r\n"+Boots+Sources,47,48,57),
+  new ShoppingTopic("+2 class skills amulets",
+   "GAMBLE / ENDGAME\r\n\r\nThe class-specific +2 skill prefix has affix level 90 on amulets. Gambling at character level 86 first allows item level 90; at level 95 every rolled item level is at least 90. The prefix still has to roll, and valuable combinations such as faster cast rate are not guaranteed. Magic and rare items have different possible combinations.\r\n\r\nCheck your actual class, resistances and other stats. This is not the same as a +2 to all skills affix.\r\n\r\nREFERENCES\r\nclassic.battle.net/diablo2exp/items/magic/pre.shtml\r\nclassic.battle.net/diablo2exp/basics/gambling.shtml",0,86,95),
+  new ShoppingTopic("+2 class skills circlets",
+   "GAMBLE / ENDGAME\r\n\r\nThe +2 class skill prefix requires affix level 90. The base Circlet has magic level 3, so item level 87 qualifies. Character level 83 can first gamble item level 87; level 92 makes all rolled item levels reach 87. This example is for the Circlet base: Coronets, upgraded bases and other headgear differ.\r\n\r\nEligibility does not guarantee a +2 prefix, rare quality, or a combination with faster cast rate.\r\n\r\nREFERENCES\r\nclassic.battle.net/diablo2exp/items/circlets.shtml\r\nclassic.battle.net/diablo2exp/items/magic/pre.shtml\r\nd2r.org/mechanics/item-level-and-affix-level",0,83,92),
+  new ShoppingTopic("How gambling works",
+   "SPENDING GOLD\r\n\r\nA gambled item rolls an item level from character level minus 5 through plus 4, with a minimum of 5. Quality and affixes are separate rolls. An eligible item level gives a chance at an affix; it does not guarantee one. A base may upgrade and that changes its affix calculations. Magic Find, act and difficulty do not improve gamble quality.\r\n\r\nCompare rolls against what you already wear. Look for resistances, life, skill bonuses or cast rate that solve your build's actual needs. Reduces All Vendor Prices, such as on an Edge bow, can lower gambling costs while equipped.\r\n\r\nREFERENCES\r\nclassic.battle.net/diablo2exp/basics/gambling.shtml\r\nd2r.org/mechanics/gambling",0,0,0),
+  new ShoppingTopic("How shops work",
+   "VENDOR STOCK\r\n\r\nShop stock generally uses character level +5 for item level. In Normal difficulty the caps are Act I: 12, Act II: 20, Act III: 28, Act IV: 36 and Act V: 45. Nightmare and Hell do not have these Normal caps. The vendor must actually sell the desired base, and base quality level affects which affixes can appear.\r\n\r\nRefresh stock by leaving town and returning; in multiplayer other players in town can affect the refresh. Check boots, gloves, wands and staves as you level. Newly generated shop stock is normal or magic, not rare multi-resistance gear.\r\n\r\nREFERENCES\r\nclassic.battle.net/diablo2exp/basics/vendors.shtml\r\ndiablo2.diablowiki.net/Item_Generation_Tutorial\r\nd2r.org/mechanics/item-level-and-affix-level",0,0,0)
+ };
+}
+
