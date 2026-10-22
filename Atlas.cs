@@ -661,10 +661,29 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
   Header("Character  /  build library","Curated builds","Browse Warlock builds and scroll the guide for progression and equipment. Your build is never changed.");
   content.Controls.Add(LabelAt("WARLOCK BUILDS",32,152,360,24,10,gold,FontStyle.Bold));
   var list=new ListBox{Location=new Point(32,184),Size=new Size(265,410),BackColor=panel,ForeColor=text,BorderStyle=BorderStyle.None,Font=f(11),IntegralHeight=false};
-  var details=new TextBox{Location=new Point(315,184),Size=new Size(530,470),Multiline=true,ReadOnly=true,ScrollBars=ScrollBars.Vertical,BackColor=panel,ForeColor=text,BorderStyle=BorderStyle.FixedSingle,Font=f(10)};
+  var details=new TextBox{Location=new Point(315,236),Size=new Size(530,418),Multiline=true,ReadOnly=true,ScrollBars=ScrollBars.Vertical,BackColor=panel,ForeColor=text,BorderStyle=BorderStyle.FixedSingle,Font=f(10)};
+  var checkpointLabel=LabelAt("LEVELING CHECKPOINT",315,184,150,24,8,gold,FontStyle.Bold);
+  var checkpoints=new ComboBox{Location=new Point(470,183),Size=new Size(135,28),DropDownStyle=ComboBoxStyle.DropDownList,BackColor=panel,ForeColor=text,AccessibleName="Build progression checkpoint"};
+  var guide=Btn("FULL GUIDE",615,181,113,32);
+  var preview=Btn("PREVIEW LEVEL",735,181,110,32);
+  bool showCheckpoint=false;
+  Action refresh=()=>{var selected=list.SelectedItem as CuratedBuild;var point=checkpoints.SelectedItem as BuildCheckpoint;
+   details.Text=selected==null?"":showCheckpoint&&point!=null?CuratedProgression.Preview(point):selected.Details;
+   guide.Enabled=selected!=null;preview.Enabled=point!=null;
+  };
   foreach(var item in CuratedBuilds.Warlock)list.Items.Add(item);
-  list.SelectedIndexChanged+=(s,e)=>{var selected=list.SelectedItem as CuratedBuild;details.Text=selected==null?"":selected.Details;};
-  content.Controls.Add(list);content.Controls.Add(details);if(list.Items.Count>0)list.SelectedIndex=0;
+  list.SelectedIndexChanged+=(s,e)=>{
+   showCheckpoint=false;checkpoints.Items.Clear();
+   foreach(var point in CuratedProgression.For(list.SelectedItem as CuratedBuild))checkpoints.Items.Add(point);
+   checkpoints.Enabled=checkpoints.Items.Count>0;
+   if(checkpoints.Items.Count>0)checkpoints.SelectedIndex=0;
+   refresh();
+  };
+  checkpoints.SelectedIndexChanged+=(s,e)=>{if(showCheckpoint)refresh();};
+  guide.Click+=(s,e)=>{showCheckpoint=false;refresh();};
+  preview.Click+=(s,e)=>{showCheckpoint=true;refresh();};
+  content.Controls.Add(list);content.Controls.Add(details);content.Controls.Add(checkpointLabel);content.Controls.Add(checkpoints);content.Controls.Add(guide);content.Controls.Add(preview);
+  if(list.Items.Count>0)list.SelectedIndex=0;
   content.Controls.Add(LabelAt("More classes and builds can be added over time.",32,606,265,50,9,muted));
  }
 
