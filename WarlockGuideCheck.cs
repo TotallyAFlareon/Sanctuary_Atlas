@@ -37,6 +37,12 @@ class WarlockGuideCheck {
   Need(Breakpoints.For("Warlock","FCR").Describe(74).Contains("11 frames")&&Breakpoints.For("Warlock","FCR").Describe(75).Contains("10 frames"),"Warlock FCR");
   Need(Breakpoints.For("Warlock","FHR").Describe(86).Contains("6 frames")&&Breakpoints.For("Sorceress","FCR").Describe(105).Contains("8 frames"),"Class-specific frames");
   Need(CuratedBuilds.Warlock.Length>=3&&CuratedBuilds.Warlock.All(x=>x.Details.Contains("REFERENCE")&&x.Details.Contains("SKILL PRIORITIES")),"Curated builds");
+  var summoner=CuratedBuilds.Warlock.First(x=>x.Name=="Demon Summoner");
+  var checkpoints=CuratedProgression.For(summoner);
+  Need(checkpoints.Length>=8&&checkpoints[0].Level==6&&checkpoints.Last().Level==90,"Demon Summoner progression coverage");
+  Need(checkpoints.Select(x=>x.Level).Distinct().Count()==checkpoints.Length,"Duplicate progression levels");
+  Need(CuratedProgression.For(CuratedBuilds.Warlock.First(x=>x.Name=="Fire Caster")).Length==0,"Other guides must not inherit summoner progression");
+  Need(CuratedProgression.Preview(checkpoints[0]).Contains("plus quest rewards earned so far"),"Progression point budget should not assume completed quests");
  }
  static void CheckDemonTooltips(List<Skill> skills){
   var b=new Build{Level=99};b.Gear[0]="Test weapon";b.GearSkillBonuses[0]=new ItemSkillBonuses{Lines="Warlock Skills: +10"};
@@ -107,7 +113,7 @@ class WarlockGuideCheck {
     Need(breakpointContent.Controls.OfType<Label>().Any(x=>x.AccessibleName=="FCR breakpoint result"&&x.Text.Contains("Total: 75%")&&x.Text.Contains("10 frames")),"Additional bonus breakpoint result");
     Call(app,"ShowGear");Call(app,"ShowBreakpoints");breakpointContent=(Panel)Field(app,"content");Need(breakpointContent.Controls.OfType<NumericUpDown>().First(x=>x.AccessibleName=="FCR extra percentage").Value==20,"Extra lost while navigating");
     Call(app,"PutSlot",false,1,"");Call(app,"ShowBreakpoints");breakpointContent=(Panel)Field(app,"content");Need(breakpointContent.Controls.OfType<Label>().Any(x=>x.AccessibleName=="FCR breakpoint result"&&x.Text.Contains("Total: 55%")),"Cleared item still counted");
-    Call(app,"ShowCuratedBuilds");var curated=(Panel)Field(app,"content");var buildList=curated.Controls.OfType<ListBox>().Single();var buildDetail=curated.Controls.OfType<TextBox>().Single();Need(buildList.Items.Count==3&&buildDetail.Text.Contains("DEMON SUMMONER"),"Build browser");buildList.SelectedIndex=1;Need(buildDetail.Text.Contains("FIRE CASTER")&&build.Points[0]==1,"Build selection changed points");
+    Call(app,"ShowCuratedBuilds");var curated=(Panel)Field(app,"content");var buildList=curated.Controls.OfType<ListBox>().Single();var buildDetail=curated.Controls.OfType<TextBox>().Single();Need(buildList.Items.Count==3&&buildDetail.Text.Contains("DEMON SUMMONER"),"Build browser");var milestone=curated.Controls.OfType<ComboBox>().Single(x=>x.AccessibleName=="Build progression checkpoint");Need(milestone.Items.Count>=8,"Demon Summoner milestones missing");curated.Controls.OfType<Button>().Single(x=>x.Text=="PREVIEW LEVEL").PerformClick();Need(buildDetail.Text.Contains("PROGRESSION CHECKPOINT")&&build.Points[0]==1,"Milestone preview modified saved build");curated.Controls.OfType<Button>().Single(x=>x.Text=="FULL GUIDE").PerformClick();Need(buildDetail.Text.Contains("DEMON SUMMONER"),"Full guide view not restored");buildList.SelectedIndex=1;Need(buildDetail.Text.Contains("FIRE CASTER")&&!milestone.Enabled&&build.Points[0]==1,"Build selection changed points");
     Call(app,"ShowGuide");Need(GuideBook.Regions.Select(x=>x.Act).Distinct().Count()==5&&GuideBook.Regions.Length>=25,"Guide does not cover all acts and regions");
     Need(GuideBook.Regions.First(x=>x.Name=="Black Marsh & Forgotten Tower").Details().Contains("Key of Terror"),"In-depth guide information missing");
     var content=(Panel)Field(app,"content");var list=content.Controls.OfType<ListBox>().Single();Need(list.Items.Count>0,"Guide region list empty");
