@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <runewords>
   <word name="Ancients' Pledge">
     <group>
@@ -1395,7 +1395,14 @@ Fallen shamans can revive Fallen, so clear the shamans and check dead ends befor
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+YOUR FIRST TRIP
+Stock a few healing potions and open a town portal before clearing the Den. Its entrance is somewhere in the Blood Moor; explore the edges if you miss it. The quest counter appears near the end of the clear. Look in side rooms if one monster remains.
+
+RETURN VISITS
+The skill point is awarded once per difficulty. Do the quest again in Nightmare and Hell. Akara's reset also returns on each difficulty; spending it changes both attributes and skill allocations.
+</details>
     </region>
     <region act="1" name="Cold Plains &amp; Burial Grounds">
       <details>COLD PLAINS &amp; BURIAL GROUNDS
@@ -1420,7 +1427,14 @@ The Mausoleum is a familiar undead-heavy Hell farming stop; check monster immuni
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+WHAT TO DO HERE
+Activate the Cold Plains waypoint as you explore. Follow the route into the Burial Grounds and clear the enemies around Blood Raven before chasing her. Her zombies can keep you occupied while she fires from range.
+
+AFTER THE FIGHT
+Talk to Kashya in town to claim the quest reward and consider equipping your Rogue. Check her resistance and life before bringing her into harder areas. The Crypt and Mausoleum are separate optional entrances in the Burial Grounds.
+</details>
     </region>
     <region act="1" name="Stony Field &amp; Dark Wood">
       <details>STONY FIELD &amp; DARK WOOD
@@ -1445,7 +1459,17 @@ Underground Passage level 2 became a level 85 area on Hell in patch 2.4.
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+CAIN CHECKLIST
+1. Find the Stony Field waypoint and the Underground Passage.
+2. Take the passage through to the Dark Wood and recover the Scroll of Inifuss from the tree.
+3. Have Akara translate it, return to the Cairn Stones, and activate them in the order shown on the scroll.
+4. Enter Tristram and open Cain's cage; speak to Cain and Akara afterward.
+
+WHY RETURN
+Tristram is also where Wirt's body can provide Wirt's Leg for the Secret Cow Level after the relevant difficulty is completed.
+</details>
     </region>
     <region act="1" name="Black Marsh &amp; Forgotten Tower">
       <details>BLACK MARSH &amp; FORGOTTEN TOWER
@@ -1473,7 +1497,14 @@ Maps vary between games; rewards and drops depend on difficulty and game mode.
 Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
 
 RUNEWORD PLANNING
-Use the rune stash and Runeword Library to compare the runes you have with recipes. The stash check does not verify your base item.</details>
+Use the rune stash and Runeword Library to compare the runes you have with recipes. The stash check does not verify your base item.
+
+REPEAT ROUTE
+Start at the Black Marsh waypoint, find the Forgotten Tower and descend to Cellar Level 5. Defeat the Countess, collect your drops, then start a new game for another run. The tower's position changes with the map.
+
+WHAT YOU ARE FARMING
+The Countess has a special rune drop in addition to ordinary monster drops. Hell Countess can also drop a Key of Terror. Neither a particular rune nor a key is guaranteed. A fast, safe clear is more useful than forcing a higher difficulty you cannot comfortably handle.
+</details>
     </region>
     <region act="1" name="Monastery &amp; Catacombs">
       <details>MONASTERY &amp; CATACOMBS
@@ -1498,7 +1529,14 @@ Stock antidote potions, clear nearby packs, and leave room to move around Andari
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+PROGRESSION CHECKLIST
+Find the Monastery and Outer Cloister waypoint, recover the Horadric Malus from the Barracks for Charsi, and continue through the Jail and Inner Cloister. Catacombs Level 2 has the waypoint used for Andariel runs; she is on Level 4.
+
+FIGHT AND FARM
+Clear the room outside her chamber first so you have a safe retreat. Antidote potions can help with poison. Run her for gear suited to your character, but treat every drop as random. Charsi's imbue is a separate, one-time quest reward per difficulty.
+</details>
     </region>
     <region act="2" name="Lut Gholein Sewers">
       <details>LUT GHOLEIN SEWERS
@@ -1523,7 +1561,14 @@ Radament can revive nearby undead; try to clear space and avoid fighting an enti
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+QUEST CHECKLIST
+Find the Sewers Level 2 waypoint, descend to Level 3, and defeat Radament. Pick up and use the Book of Skill; also recover the Horadric Scroll from the nearby chest for Cain.
+
+COMBAT
+Radament can resurrect undead, making a crowded room dangerous. Draw enemies back toward a cleared hallway and watch your health. The point from the book is earned once on each difficulty.
+</details>
     </region>
     <region act="2" name="Halls, Maggot Lair &amp; Viper Temple">
       <details>HALLS, MAGGOT LAIR &amp; VIPER TEMPLE
@@ -1548,7 +1593,16 @@ Narrow Maggot Lair corridors can block your demon's path. Pull monsters into wid
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+ITEM CHECKLIST
+Cube: Halls of the Dead Level 3, reached from Dry Hills.
+Staff of Kings: Maggot Lair Level 3, reached from Far Oasis.
+Amulet of the Viper: Claw Viper Temple Level 2, reached through Lost City and Valley of Snakes.
+
+PUT IT TOGETHER
+Transmute the staff and amulet in the Cube and keep the finished staff for the true tomb. Be patient in the Maggot Lair: narrow passages can prevent a summon or mercenary from reaching enemies. Use doorways and wider rooms to regroup.
+</details>
     </region>
     <region act="2" name="Arcane Sanctuary &amp; Tombs">
       <details>ARCANE SANCTUARY &amp; TOMBS
@@ -1573,7 +1627,14 @@ On Hell the Summoner may drop a Key of Hate. Duriel is dangerous at close range;
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+FINDING THE TRUE TOMB
+From the Arcane Sanctuary waypoint, explore the four branches until you find the Summoner. Read the journal and take its portal to Canyon of the Magi. The quest log shows the correct tomb symbol; match it to an entrance in the canyon.
+
+FIGHT AND REPEAT
+Carry the completed staff to the Orifice in the true tomb. Duriel's room is cramped, so prepare potions and defenses before entering. Hell Summoner runs can also yield a Key of Hate; drops are not guaranteed.
+</details>
     </region>
     <region act="3" name="Spider Forest &amp; Flayer Jungle">
       <details>SPIDER FOREST &amp; FLAYER JUNGLE
@@ -1598,7 +1659,14 @@ Blizzard raised Arachnid Lair and all three Swampy Pit levels to area level 85 o
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+KHALIM CHECKLIST
+The Eye is in Spider Cavern, not Arachnid Lair. The Brain is in Flayer Dungeon Level 3. Search the Flayer Jungle for the Gidbinn while looking for the dungeon; return the blade to Ormus and speak to Asheara afterward.
+
+JUNGLE SURVIVAL
+Waypoints reduce repeated travel through the jungle. Small enemies can arrive in large groups: protect your mercenary or demon and retreat before getting surrounded. Arachnid Lair and Swampy Pit are optional side dungeons.
+</details>
     </region>
     <region act="3" name="Kurast Bazaar &amp; Sewers">
       <details>KURAST BAZAAR &amp; SEWERS
@@ -1623,7 +1691,14 @@ The Ruined Temple and Kurast Sewers level 1 are level 85 on Hell under Blizzard'
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+FIND THE OBJECTIVES
+Lam Esen's Tome is in the Ruined Temple in Kurast Bazaar. Bring it to Alkor for five attribute points per difficulty. Khalim's Heart is in the Kurast Sewers; locate the stairs to its lower level and the chest containing the heart.
+
+EXPLORING TEMPLES
+Temple entrances can contain dense packs immediately inside. Enter prepared to retreat, and distinguish the Ruined Temple from the other optional Kurast temples. The sewers are separate from the temples.
+</details>
     </region>
     <region act="3" name="Travincal &amp; Durance of Hate">
       <details>TRAVINCAL &amp; DURANCE OF HATE
@@ -1648,7 +1723,14 @@ Council runs can yield gold and items; Mephisto is a boss target for gear. Watch
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+OPENING THE WAY
+Collect the Eye, Brain, Heart and the Council's Flail. Transmute them into Khalim's Will, equip it and strike the Compelling Orb. The Durance of Hate Level 2 waypoint is the usual starting point for repeat Mephisto runs.
+
+RUN OPTIONS
+Travincal Council runs can be short but their Hydras and extra monster modifiers are dangerous. Mephisto is a gear target; clear a retreat path and prepare for nearby monsters instead of standing in the middle of the pack. Neither target guarantees a particular item.
+</details>
     </region>
     <region act="4" name="Plains of Despair">
       <details>PLAINS OF DESPAIR
@@ -1673,7 +1755,14 @@ Expect a long fight if your damage is low; leave room to retreat from surroundin
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+FOR THE QUEST
+Leave the Pandemonium Fortress through the Outer Steppes and search the Plains of Despair for Izual. After defeating him, talk to his spirit and then to Tyrael in town. Tyrael grants two skill points on each difficulty.
+
+COMBAT
+Clear surrounding packs first so you have room to dodge. Izual can take time to defeat on a developing build, so bring enough potions rather than committing to a long fight with no retreat.
+</details>
     </region>
     <region act="4" name="River of Flame &amp; Hellforge">
       <details>RIVER OF FLAME &amp; HELLFORGE
@@ -1698,7 +1787,14 @@ The river can contain dangerous mixed packs; do not rush into unexplored areas.
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+QUEST STEPS
+Carry Mephisto's Soulstone from Act III. Find Hephasto in the River of Flame, defeat him and equip the Hellforge Hammer. Place the stone on the forge and strike it to release the reward.
+
+PLAN AHEAD
+The forge is a one-time quest reward per character and difficulty, rather than a repeatable rune farm. The River of Flame waypoint is useful for returning to this area and for reaching the Chaos Sanctuary.
+</details>
     </region>
     <region act="4" name="Chaos Sanctuary">
       <details>CHAOS SANCTUARY
@@ -1723,7 +1819,14 @@ Keep fire and lightning resistance high, and watch for curses and enemy immuniti
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+A COMPLETE RUN
+Use the River of Flame waypoint, travel into the sanctuary, open the five seals and defeat the guardians. Diablo appears after the required seals and guardians are cleared.
+
+SURVIVAL
+Dangerous packs and curses can make the approach harder than Diablo himself. Keep a town portal and escape route ready; watch fire and lightning resistance and your mercenary's health. On Hell, immunity combinations can slow single-element builds.
+</details>
     </region>
     <region act="5" name="Bloody Foothills &amp; Frigid Highlands">
       <details>BLOODY FOOTHILLS &amp; FRIGID HIGHLANDS
@@ -1748,7 +1851,14 @@ Eldritch and Shenk can be combined into a quick repeat run, but do not stand und
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+REWARD CHECKLIST
+After Shenk dies, speak to Larzuk for the socketing quest reward. Find and open all three soldier pens in the Frigid Highlands and return to Qual-Kehk for runes and access to hiring Barbarian mercenaries.
+
+SHORT FARM ROUTE
+From the Frigid Highlands waypoint, players commonly visit Eldritch nearby and Shenk back toward the Bloody Foothills. Watch the area after Shenk's death; falling projectiles can still hurt you.
+</details>
     </region>
     <region act="5" name="Frozen River &amp; Halls of Vaught">
       <details>FROZEN RIVER &amp; HALLS OF VAUGHT
@@ -1773,7 +1883,14 @@ Hell Nihlathak may drop a Key of Destruction. His corpse explosions are a major 
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+RESCUE ANYA
+From the Crystalline Passage, find the Frozen River and Anya. Return to Malah for the potion, use it to free Anya, then speak to Malah and Anya in town. Use the Scroll of Resistance Malah gives you.
+
+KEY RUN
+After the rescue, Anya's portal leads to Nihlathak's Temple; the Halls of Pain waypoint offers another route toward the Halls of Vaught. In Hell, Nihlathak can drop a Key of Destruction. His corpse explosion can be lethal: avoid piles of bodies and retreat when needed.
+</details>
     </region>
     <region act="5" name="Arreat Summit &amp; Worldstone Keep">
       <details>ARREAT SUMMIT &amp; WORLDSTONE KEEP
@@ -1798,7 +1915,14 @@ The waves and Baal are useful repeat targets for experienced characters. Enemy c
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+BEFORE THE SUMMIT
+Take the Ancients' Way waypoint and prepare potions. The Ancients require character level 20 / 40 / 60 for quest credit in Normal / Nightmare / Hell. Their modifiers and immunities can make the encounter difficult; a party member or alternate damage type may help.
+
+BAAL ROUTE
+After the Ancients, enter the Worldstone Keep and activate its Level 2 waypoint. Clear a path to the Throne, defeat Baal's waves and enter the Worldstone Chamber. Baal runs are a common endgame route, but packs and drops vary.
+</details>
     </region>
     <region act="1" name="Tamoe Highland &amp; The Pit">
       <details>TAMOE HIGHLAND &amp; THE PIT
@@ -1814,7 +1938,14 @@ A popular Hell item-farming area with many boss packs. Archers and mixed immunit
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+ROUTE
+Use the Outer Cloister waypoint, leave the monastery for Tamoe Highland, and search for the cave entrance. The Pit has two levels and no waypoint inside.
+
+WHY FARM IT
+Hell Pit is a level 85 area, so its monster packs are a common target for endgame item hunting. Area level is not a promise of a specific drop. Ranged archers and elite modifiers can hurt fragile characters; pull packs apart instead of running into a whole room.
+</details>
     </region>
     <region act="1" name="Secret Cow Level">
       <details>SECRET COW LEVEL
@@ -1830,7 +1961,14 @@ Dense packs make the area a popular target for experience, socketable bases and 
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+OPEN THE PORTAL
+On the difficulty you have completed, collect Wirt's Leg from Tristram. In the Rogue Encampment, place the leg and a Tome of Town Portal in the Horadric Cube and transmute them. If the recipe fails, check the game difficulty and quest completion.
+
+FARMING GOALS
+Large packs are useful for area-damage builds and can yield runes, charms and item bases. Keep moving and avoid being boxed in. Magic find is useful when hunting magic, set and unique items, while base hunting often favors less magic find.
+</details>
     </region>
     <region act="2" name="Rocky Waste &amp; Stony Tomb">
       <details>ROCKY WASTE &amp; STONY TOMB
@@ -1846,7 +1984,14 @@ Both Stony Tomb levels became area level 85 on Hell in patch 2.4. A useful alter
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+ROUTE
+Leave Lut Gholein for the Rocky Waste and find the Stony Tomb entrance. Clear both levels; the dungeon has no waypoint, so the trip to its entrance is part of each run.
+
+HELL FARM
+Both levels were raised to area level 85 in patch 2.4. The advantage is access to strong monster drops, not a guaranteed rare item. Watch for dangerous elite packs and assess whether the route is comfortable for your damage type.
+</details>
     </region>
     <region act="2" name="Lost City &amp; Ancient Tunnels">
       <details>LOST CITY &amp; ANCIENT TUNNELS
@@ -1862,7 +2007,14 @@ A well-known Hell farming area for monster packs and chests. Check resistances o
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+ROUTE
+Take the Lost City waypoint and find the trapdoor to Ancient Tunnels. The entrance location varies by map. Clear the dungeon's packs, check the area for loot, then start a new game to repeat.
+
+WHAT TO EXPECT
+Hell Ancient Tunnels is a popular level 85 farming area. Elite monsters can have different immunities from ordinary enemies, so inspect individual packs before committing. The Lost City also leads onward to the Valley of Snakes.
+</details>
     </region>
     <region act="3" name="Golden Bird &amp; Kurast Docks">
       <details>GOLDEN BIRD &amp; KURAST DOCKS
@@ -1878,7 +2030,14 @@ Complete this while progressing through the jungle; there is no need to stop for
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+QUEST STEPS
+Find the Jade Figurine from a unique monster in Act III and speak to Cain. Take it to Meshif to receive the Golden Bird; continue the town conversation and return to Alkor for the Potion of Life. Use the potion to receive the permanent life reward.
+
+WHEN TO COMPLETE IT
+This is easy to combine with normal Act III progression. Check your quest log if the next conversation does not appear. The reward is available once per difficulty.
+</details>
     </region>
     <region act="3" name="Lower Kurast">
       <details>LOWER KURAST
@@ -1894,7 +2053,14 @@ Players often check the chests and other containers in the huts. Results are ran
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+WHAT TO CHECK
+Use the Lower Kurast waypoint and explore its buildings and containers. Players often make short chest-focused routes here, sometimes combining them with nearby monsters or other Act III stops.
+
+SETTING EXPECTATIONS
+Runs are repetitive and results are random. Map layouts and game conditions affect the route; single-player maps and online games can behave differently. Do not treat a high rune as a guaranteed reward.
+</details>
     </region>
     <region act="5" name="Nihlathak's Temple &amp; Pindleskin">
       <details>NIHLATHAK'S TEMPLE &amp; PINDLESKIN
@@ -1910,7 +2076,14 @@ A short run while the red portal is available. His pack can charge suddenly, so 
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+QUICK ROUTE
+After rescuing Anya, use her red portal to enter Nihlathak's Temple. Pindleskin and his pack are near the entrance to the Halls. Prepare your mercenary or demon before entering and allow space to retreat.
+
+FARMING
+This is a short repeat target for item hunting; rare drops are never guaranteed. For Nihlathak himself, continue through the Halls and consider the Halls of Pain waypoint. Check your game version if portal behavior differs from older Diablo II guides.
+</details>
     </region>
     <region act="5" name="Terror Zones">
       <details>TERROR ZONES
@@ -1926,7 +2099,139 @@ A terrorized area's monster levels can increase with the player level, subject t
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
+
+GETTING STARTED
+Enable Terror Zones where the game allows them and check the in-game announcement or waypoint menu for the active area. Unlocking and availability depend on game progress and difficulty. Online and single-player rotations are separate.
+
+FARMING CHOICES
+Terrorized monster levels scale with character level within difficulty-specific limits. Choose a zone your build can clear safely and watch for immunities and dangerous modifiers. The game is the source of the current zone; this guide does not provide live tracking.
+</details>
+    </region>
+    <region act="1" name="Act I: Quest Reward Checklist">
+      <details>ACT I - QUEST REWARDS
+
+DEN OF EVIL
+Clear the Den and speak to Akara for a skill point and a respecialization. These rewards can be earned on each difficulty.
+
+SISTERS' BURIAL GROUNDS
+Defeat Blood Raven and speak to Kashya for a Rogue mercenary.
+
+THE SEARCH FOR CAIN
+Rescue Cain in Tristram and talk to him and Akara in the Rogue Encampment. Cain provides identification in town.
+
+TOOLS OF THE TRADE
+Recover the Horadric Malus from the Barracks and return it to Charsi for an imbue. Consider the item carefully before using the reward.
+
+SISTERS TO THE SLAUGHTER
+Defeat Andariel and talk to Warriv to travel east.
+
+Source: classic.battle.net/diablo2exp/quests/act1.shtml</details>
+    </region>
+    <region act="2" name="Act II: Quest Reward Checklist">
+      <details>ACT II - PROGRESSION CHECKLIST
+
+RADAMENT'S LAIR
+Defeat Radament in Sewers Level 3 and use the Book of Skill. Recover the Horadric Scroll from the chest for Cain.
+
+THE HORADRIC STAFF
+Find the Cube, Staff of Kings and Viper Amulet; transmute the staff and amulet.
+
+THE TAINTED SUN
+Destroy the altar in Claw Viper Temple and claim the amulet.
+
+ARCANE SANCTUARY AND THE SUMMONER
+Find the Summoner, defeat him and read the journal. Take the portal to the Canyon of the Magi.
+
+THE SEVEN TOMBS
+Use the correct tomb symbol from the quest log, place the completed staff in the Orifice, and defeat Duriel. Speak to the person beyond Duriel before returning to town.
+
+Source: classic.battle.net/diablo2exp/quests/act2.shtml</details>
+    </region>
+    <region act="3" name="Act III: Quest Reward Checklist">
+      <details>ACT III - QUEST REWARDS
+
+THE GOLDEN BIRD
+Find the Jade Figurine and follow the town conversations to Alkor. Use the Potion of Life for a permanent life reward.
+
+BLADE OF THE OLD RELIGION
+Find the Gidbinn in the Flayer Jungle and bring it to Ormus; speak to Asheara as well.
+
+KHALIM'S WILL
+Collect the Eye, Brain, Heart and Flail, transmute them and use Khalim's Will on the Compelling Orb.
+
+LAM ESEN'S TOME
+Recover the tome from the Ruined Temple in Kurast Bazaar. Alkor awards five attribute points per difficulty.
+
+THE BLACKENED TEMPLE AND THE GUARDIAN
+Defeat the Council and Mephisto to complete the act.
+
+Source: classic.battle.net/diablo2exp/quests/act3.shtml</details>
+    </region>
+    <region act="4" name="Act IV: Quest Reward Checklist">
+      <details>ACT IV - QUEST REWARDS
+
+THE FALLEN ANGEL
+Find Izual in the Plains of Despair. After the fight, speak to his spirit and then Tyrael for two skill points per difficulty.
+
+THE HELLFORGE
+Carry Mephisto's Soulstone into the River of Flame. Defeat Hephasto, equip his hammer and use the forge. Its gems and rune are a one-time reward per character and difficulty.
+
+TERROR'S END
+Open the Chaos Sanctuary seals, defeat the guardians and defeat Diablo.
+
+Source: classic.battle.net/diablo2exp/quests/act4.shtml</details>
+    </region>
+    <region act="5" name="Act V: Quest Reward Checklist">
+      <details>ACT V - QUEST REWARDS
+
+SIEGE ON HARROGATH
+Defeat Shenk and talk to Larzuk for a socketing reward. Item type and item level affect the result.
+
+RESCUE ON MOUNT ARREAT
+Free the soldiers from all three pens in the Frigid Highlands. Talk to Qual-Kehk for runes and Barbarian mercenary access.
+
+PRISON OF ICE
+Free Anya, then speak to Malah and use the Scroll of Resistance. Talk to Anya for an additional class-specific item.
+
+BETRAYAL OF HARROGATH
+Defeat Nihlathak and speak to Anya about item personalization.
+
+RITE OF PASSAGE AND EVE OF DESTRUCTION
+Defeat the Ancients, then Baal. The Ancients require level 20 / 40 / 60 for quest credit in Normal / Nightmare / Hell.
+
+Source: classic.battle.net/diablo2exp/quests/act5.shtml</details>
+    </region>
+    <region act="2" name="Arcane Sanctuary: Ghost Farming">
+      <details>ARCANE SANCTUARY - GHOSTS AND SUMMONER
+
+START
+Take the Arcane Sanctuary waypoint. Four paths lead away from it; explore them for the Summoner and monsters. Map layouts and the Summoner's branch vary.
+
+FARMING
+Ghosts can be worthwhile targets for runes. Try to fight them over solid walkways: drops from enemies killed over inaccessible space can be difficult or impossible to collect. Open accessible chests along your route when it is safe.
+
+KEY OF HATE
+In Hell difficulty the Summoner can drop a Key of Hate. It is a chance, not a guaranteed drop. Leave and start a new game to repeat the run.
+
+SAFETY
+Narrow paths make it easy to get surrounded. Pull packs back and watch your mercenary or demon.
+
+Source: classic.battle.net/diablo2exp/quests/act2.shtml</details>
+    </region>
+    <region act="5" name="Hell Keys and Uber Preparation">
+      <details>HELL KEYS - ENDGAME OVERVIEW
+
+KEY SOURCES
+In Hell difficulty, the Countess can drop a Key of Terror, the Summoner a Key of Hate, and Nihlathak a Key of Destruction. Drops are random; you may need many runs.
+
+BEFORE ATTEMPTING UBERS
+This is demanding endgame content. Prepare resistances, sustain, damage and a safe way to deal with powerful bosses. Collect and store keys until you are ready, and research the portal recipe and encounter for your edition before spending a set.
+
+ROUTE IDEAS
+Use Black Marsh for the Countess, Arcane Sanctuary for the Summoner, and Halls of Pain for Nihlathak. Nihlathak's corpse explosions are especially dangerous.
+
+Source: classic.battle.net/diablo2exp/quests/; Blizzard patch notes for your game version.</details>
     </region>
   </guidebook>
 </runewords>
