@@ -37,6 +37,7 @@ public static class VerifiedEquipment {
   new VerifiedEquipmentRecord("Magefist","Light Gauntlets","Gloves",0,1,20,0,0)
  };
  static bool Eq(string a,string b){return String.Equals(a,b,StringComparison.OrdinalIgnoreCase);}
+ public static List<VerifiedEquipmentRecord> All(){return new List<VerifiedEquipmentRecord>(records);}
  public static VerifiedEquipmentRecord Find(string name){foreach(var record in records)if(Eq(record.Name,name))return record;return null;}
  public static bool FitsSlot(VerifiedEquipmentRecord record,string slot){return record!=null&&(Eq(slot,record.Slot)||(Eq(record.Slot,"Ring")&&(Eq(slot,"Ring 1")||Eq(slot,"Ring 2"))));}
  public static List<VerifiedEquipmentRecord> ForSlot(string slot){var result=new List<VerifiedEquipmentRecord>();foreach(var record in records)if(FitsSlot(record,slot))result.Add(record);return result;}
@@ -57,3 +58,4 @@ public static class VerifiedEquipment {
   return EquipmentValidation.ValidTrackedStats;
  }
 }
+
