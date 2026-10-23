@@ -14,7 +14,7 @@ public sealed class SkillDetailView : GothicPanel {
   pin=new CheckBox{Dock=DockStyle.Right,Width=60,Text="PIN",ForeColor=Color.FromArgb(236,224,199),AccessibleName="Pin selected skill",AccessibleDescription="Keep this skill displayed while moving the mouse."};
   top.Controls.Add(heading);top.Controls.Add(pin);
   details=new TextBox{Dock=DockStyle.Fill,Multiline=true,ReadOnly=true,ScrollBars=ScrollBars.Vertical,WordWrap=true,BorderStyle=BorderStyle.FixedSingle,BackColor=Color.FromArgb(35,27,23),ForeColor=Color.FromArgb(236,224,199),Font=new Font("Segoe UI",10),AccessibleName="Skill details",AccessibleDescription="Scrollable skill details. Use the arrow keys or Page Up and Page Down to read."};
-  Controls.Add(details);Controls.Add(top);SetDetails("SKILL DETAILS","Hover over a skill or select DETAIL to see its effects.");
+  Controls.Add(details);Controls.Add(top);SetDetails("SKILL DETAILS","Hover over a skill to see its effects.");
  }
  public bool Pinned {get{return pin.Checked;}set{pin.Checked=value;}}
  public string DetailsText {get{return details.Text;}}
@@ -26,3 +26,4 @@ public sealed class SkillDetailView : GothicPanel {
   if(details.Focused)details.ScrollToCaret();
  }
 }
+

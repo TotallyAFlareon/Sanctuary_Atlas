@@ -10,6 +10,8 @@ try {
  if (-not $tip.OwnerDraw) { throw 'Skill hover is not custom drawn.' }
  $cardPanel = $appType.GetField('skillList', $flags).GetValue($app)
  $card = @($cardPanel.Controls | Where-Object { $_ -is [Windows.Forms.Panel] })[0]
+ if (@($card.Controls | Where-Object { $_ -is [Windows.Forms.Button] -and $_.Text -eq 'DETAIL' }).Count -ne 0) { throw 'Details button is still visible.' }
+ if (@($card.Controls | Where-Object { $_ -is [Windows.Forms.Button] }).Count -ne 2) { throw 'Point controls are missing.' }
  $text = $tip.GetToolTip($card)
  if (-not $text.Contains('Summon Goatman')) { throw 'Skill preview is missing.' }
  $sizeEvent = New-Object Windows.Forms.PopupEventArgs($app, $card, $false, ([Drawing.Size]::new(1,1)))
@@ -35,6 +37,10 @@ try {
  $app.Size = $app.MinimumSize; $app.PerformLayout()
  $appType.GetMethod('LayoutSkills',$flags).Invoke($app,@())
  if (-not $tip.Active) { throw 'Tooltip did not return after narrowing the window.' }
+ $appType.GetMethod('OpenSkillDetail',$flags).Invoke($app,@(0,$false))
+ $window=$appType.GetField('detailWindow',$flags).GetValue($app)
+ if ($null -eq $window -or $window.Visible) { throw 'Full detail fallback could not be created without showing it.' }
+ $appType.GetMethod('CloseSkillDetail',$flags).Invoke($app,@())
  $appType.GetMethod('ShowShoppingGuide',$flags).Invoke($app,@())
  if ($tip.GetToolTip($card)) { throw 'Old skill tooltip remained after leaving the skill page.' }
  Write-Output 'Hover styling, skill text, window sizing and navigation checks passed.'

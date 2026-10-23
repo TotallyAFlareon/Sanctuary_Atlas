@@ -36,7 +36,7 @@ public sealed class SkillHoverTip : ToolTip {
   using(var line=new Pen(Color.FromArgb(100,74,46)))e.Graphics.DrawLine(line,Pad,Header-2,bounds.Width-Pad,Header-2);
   var body=new Rectangle(Pad,Header,bounds.Width-Pad*2,Math.Max(1,bounds.Height-Header-Footer-4));
   TextRenderer.DrawText(e.Graphics,Body(e.ToolTipText),bodyFont,body,TextColor,Wrap|TextFormatFlags.EndEllipsis);
-  TextRenderer.DrawText(e.Graphics,"Select DETAIL to read the full skill.",hintFont,new Rectangle(Pad,bounds.Height-Footer,bounds.Width-Pad*2,20),Gold,TextFormatFlags.EndEllipsis|TextFormatFlags.NoPrefix);
+  TextRenderer.DrawText(e.Graphics,"Click the skill for full details.",hintFont,new Rectangle(Pad,bounds.Height-Footer,bounds.Width-Pad*2,20),Gold,TextFormatFlags.EndEllipsis|TextFormatFlags.NoPrefix);
  }
  protected override void Dispose(bool disposing){if(disposing){titleFont.Dispose();bodyFont.Dispose();hintFont.Dispose();}base.Dispose(disposing);}
 }
