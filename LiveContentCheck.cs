@@ -21,6 +21,8 @@ class LiveContentCheck {
    using(var stream=File.Create(Path.Combine(dir,"build.xml")))new XmlSerializer(typeof(Build)).Serialize(stream,b);
    var legacy=File.ReadAllBytes("runeword-effects.xml");var package=File.ReadAllBytes("SanctuaryAtlasContent.xml");
    Need(GuideContent.Parse(legacy).Count==GuideBook.Regions.Length,"Legacy package fallback");
+   string hash=new string('a',64);string contentOnly="{\"tag_name\":\"v38\",\"assets\":[{\"name\":\"SanctuaryAtlasContent.xml\",\"browser_download_url\":\"https://github.com/TotallyAFlareon/Sanctuary_Atlas/releases/download/v38/SanctuaryAtlasContent.xml\",\"digest\":\"sha256:"+hash+"\",\"size\":1}]}";var contentRelease=AtlasUpdates.ParseRelease(contentOnly,"TotallyAFlareon/Sanctuary_Atlas");Need(contentRelease.Url==null&&contentRelease.ContentUrl!=null&&!AtlasUpdates.IsProgramUpdate(contentRelease),"Content-only release requested a restart");
+   string program="{\"tag_name\":\"v38\",\"assets\":[{\"name\":\"SanctuaryAtlasSetup.exe\",\"browser_download_url\":\"https://github.com/TotallyAFlareon/Sanctuary_Atlas/releases/download/v38/SanctuaryAtlasSetup.exe\",\"digest\":\"sha256:"+hash+"\",\"size\":1}]}";Need(AtlasUpdates.IsProgramUpdate(AtlasUpdates.ParseRelease(program,"TotallyAFlareon/Sanctuary_Atlas")),"Program release did not request a restart");
    using(var app=new Atlas(dir)){
     Call(app,"ShowGuide");var panel=(Panel)Field(app,"content");var list=panel.Controls.OfType<ListBox>().Single();var details=panel.Controls.OfType<TextBox>().Single();
     list.SelectedIndex=1;string selected=((GuideRegion)list.SelectedItem).Name;string oldText=details.Text;
@@ -31,13 +33,17 @@ class LiveContentCheck {
     Need(Object.ReferenceEquals(list,((Panel)Field(app,"content")).Controls.OfType<ListBox>().Single()),"Window was rebuilt");
     Need(((GuideRegion)list.SelectedItem).Name==selected&&details.Text=="UPDATED GUIDE DETAILS"&&details.Text!=oldText,"Selected guide did not refresh");
     Need(list.Items.Cast<GuideRegion>().Any(x=>x.Name=="New test region"),"New region not visible");
-    string path=(string)Call(app,"ContentPath");var saved=File.ReadAllBytes(path);Need(saved.SequenceEqual(update),"Content not persisted");
+    Call(app,"ShowSkills");var skillDocument=new XDocument(document);var goatman=skillDocument.Root.Element("skilltrees").Elements("class").Single(x=>(string)x.Attribute("name")=="Warlock").Elements("skill").Single(x=>(string)x.Attribute("name")=="Summon Goatman");goatman.Element("description").Value="LIVE SKILL DESCRIPTION";byte[] skillUpdate=Bytes(skillDocument);Call(app,"ApplyWordContent",skillUpdate);
+    var liveSkills=(System.Collections.Generic.List<Skill>)Field(app,"skills");Need(liveSkills.Single(x=>x.Name=="Summon Goatman").Desc=="LIVE SKILL DESCRIPTION"&&!app.IsDisposed,"Skill tree did not refresh in place");
+    Call(app,"SwitchClass","Amazon");var amazonSkills=(System.Collections.Generic.List<Skill>)Field(app,"skills");Need(amazonSkills.Single(x=>x.Name=="Magic Arrow").Desc=="Active skill.","Skill content did not apply after changing class");Call(app,"SwitchClass","Warlock");liveSkills=(System.Collections.Generic.List<Skill>)Field(app,"skills");Need(liveSkills.Single(x=>x.Name=="Summon Goatman").Desc=="LIVE SKILL DESCRIPTION","Updated skill content was lost after changing class");
+    string path=(string)Call(app,"ContentPath");var saved=File.ReadAllBytes(path);Need(saved.SequenceEqual(skillUpdate),"Content not persisted");
     var duplicate=new XDocument(document);duplicate.Root.Element("guidebook").Add(new XElement(duplicate.Root.Element("guidebook").Elements("region").First()));
     bool rejected=false;try{Call(app,"ApplyWordContent",Bytes(duplicate));}catch(TargetInvocationException ex){rejected=ex.InnerException is InvalidOperationException;}
-    Need(rejected&&File.ReadAllBytes(path).SequenceEqual(saved)&&details.Text=="UPDATED GUIDE DETAILS","Invalid update changed active or saved content");
+    Need(rejected&&File.ReadAllBytes(path).SequenceEqual(saved)&&liveSkills.Single(x=>x.Name=="Summon Goatman").Desc=="LIVE SKILL DESCRIPTION","Invalid update changed active or saved content");
     var live=(Build)Field(app,"build");Need(live.Points[0]==1&&live.Gear[0]=="Keep my weapon"&&live.Notes=="Keep my journal","Build changed on content update");
    }
    using(var app=new Atlas(dir)){Call(app,"ShowGuide");var list=((Panel)Field(app,"content")).Controls.OfType<ListBox>().Single();var details=((Panel)Field(app,"content")).Controls.OfType<TextBox>().Single();int index=-1;for(int i=0;i<list.Items.Count;i++)if(((GuideRegion)list.Items[i]).Name=="New test region")index=i;Need(index>=0,"Saved region not reloaded");list.SelectedIndex=index;Need(details.Text=="NEW REGION DETAILS","Saved guide details not reloaded");}
   }finally{Directory.Delete(dir,true);}
  }
 }
+

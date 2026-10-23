@@ -13,7 +13,7 @@ public sealed class UpdateRelease {
  public string ContentUrl, ContentHash;
 }
 public static class AtlasUpdates {
- public const int CurrentVersion=36;
+ public const int CurrentVersion=37;
  public const string DefaultRepository="TotallyAFlareon/Sanctuary_Atlas";
  public static bool ValidRepository(string repository){return Regex.IsMatch(repository??"",@"^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})/[A-Za-z0-9_.-]+$");}
  public static UpdateRelease ParseRelease(string json,string repo){
@@ -37,9 +37,10 @@ public static class AtlasUpdates {
    if(!link.StartsWith(prefix,StringComparison.OrdinalIgnoreCase)||!Regex.IsMatch(hash??"",@"^sha256:[a-fA-F0-9]{64}$")||bytes<1||bytes>(assetName=="SanctuaryAtlasContent.xml"?2000000:50000000))throw new InvalidOperationException("The release file details are invalid.");
    if(assetName=="SanctuaryAtlasSetup.exe"){release.Url=link;release.Hash=hash.Substring(7);}else{release.ContentUrl=link;release.ContentHash=hash.Substring(7);}
   }
-  if(version>CurrentVersion&&release.Url==null)throw new InvalidOperationException("The release needs an asset named SanctuaryAtlasSetup.exe.");
+  if(release.Url==null&&release.ContentUrl==null)throw new InvalidOperationException("The release needs an installer or a content package.");
   return release;
  }
+ public static bool IsProgramUpdate(UpdateRelease release){return release!=null&&release.Version>CurrentVersion&&release.Url!=null;}
  static WebClient Client(){var c=new WebClient();c.Headers.Add("User-Agent","Sanctuary-Atlas-Updater");c.Headers.Add("Accept","application/vnd.github+json");return c;}
  public static UpdateRelease Fetch(string repository){ServicePointManager.SecurityProtocol|=(SecurityProtocolType)3072;using(var c=Client())return ParseRelease(c.DownloadString("https://api.github.com/repos/"+repository+"/releases/latest"),repository);}
  public static string Download(UpdateRelease release){

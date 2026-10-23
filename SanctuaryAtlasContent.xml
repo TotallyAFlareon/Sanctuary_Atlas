@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <runewords>
   <word name="Ancients' Pledge">
     <group>
@@ -1395,14 +1395,7 @@ Fallen shamans can revive Fallen, so clear the shamans and check dead ends befor
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-YOUR FIRST TRIP
-Stock a few healing potions and open a town portal before clearing the Den. Its entrance is somewhere in the Blood Moor; explore the edges if you miss it. The quest counter appears near the end of the clear. Look in side rooms if one monster remains.
-
-RETURN VISITS
-The skill point is awarded once per difficulty. Do the quest again in Nightmare and Hell. Akara's reset also returns on each difficulty; spending it changes both attributes and skill allocations.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="1" name="Cold Plains &amp; Burial Grounds">
       <details>COLD PLAINS &amp; BURIAL GROUNDS
@@ -1427,14 +1420,7 @@ The Mausoleum is a familiar undead-heavy Hell farming stop; check monster immuni
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-WHAT TO DO HERE
-Activate the Cold Plains waypoint as you explore. Follow the route into the Burial Grounds and clear the enemies around Blood Raven before chasing her. Her zombies can keep you occupied while she fires from range.
-
-AFTER THE FIGHT
-Talk to Kashya in town to claim the quest reward and consider equipping your Rogue. Check her resistance and life before bringing her into harder areas. The Crypt and Mausoleum are separate optional entrances in the Burial Grounds.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="1" name="Stony Field &amp; Dark Wood">
       <details>STONY FIELD &amp; DARK WOOD
@@ -1459,17 +1445,7 @@ Underground Passage level 2 became a level 85 area on Hell in patch 2.4.
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-CAIN CHECKLIST
-1. Find the Stony Field waypoint and the Underground Passage.
-2. Take the passage through to the Dark Wood and recover the Scroll of Inifuss from the tree.
-3. Have Akara translate it, return to the Cairn Stones, and activate them in the order shown on the scroll.
-4. Enter Tristram and open Cain's cage; speak to Cain and Akara afterward.
-
-WHY RETURN
-Tristram is also where Wirt's body can provide Wirt's Leg for the Secret Cow Level after the relevant difficulty is completed.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="1" name="Black Marsh &amp; Forgotten Tower">
       <details>BLACK MARSH &amp; FORGOTTEN TOWER
@@ -1494,17 +1470,7 @@ Tower packs can be dangerous in tight corridors, and resistances or immunities c
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-RUNEWORD PLANNING
-Use the rune stash and Runeword Library to compare the runes you have with recipes. The stash check does not verify your base item.
-
-REPEAT ROUTE
-Start at the Black Marsh waypoint, find the Forgotten Tower and descend to Cellar Level 5. Defeat the Countess, collect your drops, then start a new game for another run. The tower's position changes with the map.
-
-WHAT YOU ARE FARMING
-The Countess has a special rune drop in addition to ordinary monster drops. Hell Countess can also drop a Key of Terror. Neither a particular rune nor a key is guaranteed. A fast, safe clear is more useful than forcing a higher difficulty you cannot comfortably handle.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="1" name="Monastery &amp; Catacombs">
       <details>MONASTERY &amp; CATACOMBS
@@ -1529,14 +1495,7 @@ Stock antidote potions, clear nearby packs, and leave room to move around Andari
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-PROGRESSION CHECKLIST
-Find the Monastery and Outer Cloister waypoint, recover the Horadric Malus from the Barracks for Charsi, and continue through the Jail and Inner Cloister. Catacombs Level 2 has the waypoint used for Andariel runs; she is on Level 4.
-
-FIGHT AND FARM
-Clear the room outside her chamber first so you have a safe retreat. Antidote potions can help with poison. Run her for gear suited to your character, but treat every drop as random. Charsi's imbue is a separate, one-time quest reward per difficulty.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="2" name="Lut Gholein Sewers">
       <details>LUT GHOLEIN SEWERS
@@ -1561,14 +1520,7 @@ Radament can revive nearby undead; try to clear space and avoid fighting an enti
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-QUEST CHECKLIST
-Find the Sewers Level 2 waypoint, descend to Level 3, and defeat Radament. Pick up and use the Book of Skill; also recover the Horadric Scroll from the nearby chest for Cain.
-
-COMBAT
-Radament can resurrect undead, making a crowded room dangerous. Draw enemies back toward a cleared hallway and watch your health. The point from the book is earned once on each difficulty.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="2" name="Halls, Maggot Lair &amp; Viper Temple">
       <details>HALLS, MAGGOT LAIR &amp; VIPER TEMPLE
@@ -1593,16 +1545,7 @@ Narrow Maggot Lair corridors can block your demon's path. Pull monsters into wid
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-ITEM CHECKLIST
-Cube: Halls of the Dead Level 3, reached from Dry Hills.
-Staff of Kings: Maggot Lair Level 3, reached from Far Oasis.
-Amulet of the Viper: Claw Viper Temple Level 2, reached through Lost City and Valley of Snakes.
-
-PUT IT TOGETHER
-Transmute the staff and amulet in the Cube and keep the finished staff for the true tomb. Be patient in the Maggot Lair: narrow passages can prevent a summon or mercenary from reaching enemies. Use doorways and wider rooms to regroup.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="2" name="Arcane Sanctuary &amp; Tombs">
       <details>ARCANE SANCTUARY &amp; TOMBS
@@ -1627,14 +1570,7 @@ On Hell the Summoner may drop a Key of Hate. Duriel is dangerous at close range;
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-FINDING THE TRUE TOMB
-From the Arcane Sanctuary waypoint, explore the four branches until you find the Summoner. Read the journal and take its portal to Canyon of the Magi. The quest log shows the correct tomb symbol; match it to an entrance in the canyon.
-
-FIGHT AND REPEAT
-Carry the completed staff to the Orifice in the true tomb. Duriel's room is cramped, so prepare potions and defenses before entering. Hell Summoner runs can also yield a Key of Hate; drops are not guaranteed.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="3" name="Spider Forest &amp; Flayer Jungle">
       <details>SPIDER FOREST &amp; FLAYER JUNGLE
@@ -1659,14 +1595,7 @@ Blizzard raised Arachnid Lair and all three Swampy Pit levels to area level 85 o
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-KHALIM CHECKLIST
-The Eye is in Spider Cavern, not Arachnid Lair. The Brain is in Flayer Dungeon Level 3. Search the Flayer Jungle for the Gidbinn while looking for the dungeon; return the blade to Ormus and speak to Asheara afterward.
-
-JUNGLE SURVIVAL
-Waypoints reduce repeated travel through the jungle. Small enemies can arrive in large groups: protect your mercenary or demon and retreat before getting surrounded. Arachnid Lair and Swampy Pit are optional side dungeons.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="3" name="Kurast Bazaar &amp; Sewers">
       <details>KURAST BAZAAR &amp; SEWERS
@@ -1691,14 +1620,7 @@ The Ruined Temple and Kurast Sewers level 1 are level 85 on Hell under Blizzard'
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-FIND THE OBJECTIVES
-Lam Esen's Tome is in the Ruined Temple in Kurast Bazaar. Bring it to Alkor for five attribute points per difficulty. Khalim's Heart is in the Kurast Sewers; locate the stairs to its lower level and the chest containing the heart.
-
-EXPLORING TEMPLES
-Temple entrances can contain dense packs immediately inside. Enter prepared to retreat, and distinguish the Ruined Temple from the other optional Kurast temples. The sewers are separate from the temples.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="3" name="Travincal &amp; Durance of Hate">
       <details>TRAVINCAL &amp; DURANCE OF HATE
@@ -1723,14 +1645,7 @@ Council runs can yield gold and items; Mephisto is a boss target for gear. Watch
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-OPENING THE WAY
-Collect the Eye, Brain, Heart and the Council's Flail. Transmute them into Khalim's Will, equip it and strike the Compelling Orb. The Durance of Hate Level 2 waypoint is the usual starting point for repeat Mephisto runs.
-
-RUN OPTIONS
-Travincal Council runs can be short but their Hydras and extra monster modifiers are dangerous. Mephisto is a gear target; clear a retreat path and prepare for nearby monsters instead of standing in the middle of the pack. Neither target guarantees a particular item.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="4" name="Plains of Despair">
       <details>PLAINS OF DESPAIR
@@ -1755,14 +1670,7 @@ Expect a long fight if your damage is low; leave room to retreat from surroundin
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-FOR THE QUEST
-Leave the Pandemonium Fortress through the Outer Steppes and search the Plains of Despair for Izual. After defeating him, talk to his spirit and then to Tyrael in town. Tyrael grants two skill points on each difficulty.
-
-COMBAT
-Clear surrounding packs first so you have room to dodge. Izual can take time to defeat on a developing build, so bring enough potions rather than committing to a long fight with no retreat.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="4" name="River of Flame &amp; Hellforge">
       <details>RIVER OF FLAME &amp; HELLFORGE
@@ -1787,14 +1695,7 @@ The river can contain dangerous mixed packs; do not rush into unexplored areas.
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-QUEST STEPS
-Carry Mephisto's Soulstone from Act III. Find Hephasto in the River of Flame, defeat him and equip the Hellforge Hammer. Place the stone on the forge and strike it to release the reward.
-
-PLAN AHEAD
-The forge is a one-time quest reward per character and difficulty, rather than a repeatable rune farm. The River of Flame waypoint is useful for returning to this area and for reaching the Chaos Sanctuary.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="4" name="Chaos Sanctuary">
       <details>CHAOS SANCTUARY
@@ -1819,14 +1720,7 @@ Keep fire and lightning resistance high, and watch for curses and enemy immuniti
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-A COMPLETE RUN
-Use the River of Flame waypoint, travel into the sanctuary, open the five seals and defeat the guardians. Diablo appears after the required seals and guardians are cleared.
-
-SURVIVAL
-Dangerous packs and curses can make the approach harder than Diablo himself. Keep a town portal and escape route ready; watch fire and lightning resistance and your mercenary's health. On Hell, immunity combinations can slow single-element builds.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="5" name="Bloody Foothills &amp; Frigid Highlands">
       <details>BLOODY FOOTHILLS &amp; FRIGID HIGHLANDS
@@ -1851,14 +1745,7 @@ Eldritch and Shenk can be combined into a quick repeat run, but do not stand und
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-REWARD CHECKLIST
-After Shenk dies, speak to Larzuk for the socketing quest reward. Find and open all three soldier pens in the Frigid Highlands and return to Qual-Kehk for runes and access to hiring Barbarian mercenaries.
-
-SHORT FARM ROUTE
-From the Frigid Highlands waypoint, players commonly visit Eldritch nearby and Shenk back toward the Bloody Foothills. Watch the area after Shenk's death; falling projectiles can still hurt you.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="5" name="Frozen River &amp; Halls of Vaught">
       <details>FROZEN RIVER &amp; HALLS OF VAUGHT
@@ -1883,14 +1770,7 @@ Hell Nihlathak may drop a Key of Destruction. His corpse explosions are a major 
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-RESCUE ANYA
-From the Crystalline Passage, find the Frozen River and Anya. Return to Malah for the potion, use it to free Anya, then speak to Malah and Anya in town. Use the Scroll of Resistance Malah gives you.
-
-KEY RUN
-After the rescue, Anya's portal leads to Nihlathak's Temple; the Halls of Pain waypoint offers another route toward the Halls of Vaught. In Hell, Nihlathak can drop a Key of Destruction. His corpse explosion can be lethal: avoid piles of bodies and retreat when needed.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="5" name="Arreat Summit &amp; Worldstone Keep">
       <details>ARREAT SUMMIT &amp; WORLDSTONE KEEP
@@ -1915,14 +1795,7 @@ The waves and Baal are useful repeat targets for experienced characters. Enemy c
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-BEFORE THE SUMMIT
-Take the Ancients' Way waypoint and prepare potions. The Ancients require character level 20 / 40 / 60 for quest credit in Normal / Nightmare / Hell. Their modifiers and immunities can make the encounter difficult; a party member or alternate damage type may help.
-
-BAAL ROUTE
-After the Ancients, enter the Worldstone Keep and activate its Level 2 waypoint. Clear a path to the Throne, defeat Baal's waves and enter the Worldstone Chamber. Baal runs are a common endgame route, but packs and drops vary.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="1" name="Tamoe Highland &amp; The Pit">
       <details>TAMOE HIGHLAND &amp; THE PIT
@@ -1938,14 +1811,7 @@ A popular Hell item-farming area with many boss packs. Archers and mixed immunit
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-ROUTE
-Use the Outer Cloister waypoint, leave the monastery for Tamoe Highland, and search for the cave entrance. The Pit has two levels and no waypoint inside.
-
-WHY FARM IT
-Hell Pit is a level 85 area, so its monster packs are a common target for endgame item hunting. Area level is not a promise of a specific drop. Ranged archers and elite modifiers can hurt fragile characters; pull packs apart instead of running into a whole room.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="1" name="Secret Cow Level">
       <details>SECRET COW LEVEL
@@ -1961,14 +1827,7 @@ Dense packs make the area a popular target for experience, socketable bases and 
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-OPEN THE PORTAL
-On the difficulty you have completed, collect Wirt's Leg from Tristram. In the Rogue Encampment, place the leg and a Tome of Town Portal in the Horadric Cube and transmute them. If the recipe fails, check the game difficulty and quest completion.
-
-FARMING GOALS
-Large packs are useful for area-damage builds and can yield runes, charms and item bases. Keep moving and avoid being boxed in. Magic find is useful when hunting magic, set and unique items, while base hunting often favors less magic find.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="2" name="Rocky Waste &amp; Stony Tomb">
       <details>ROCKY WASTE &amp; STONY TOMB
@@ -1984,14 +1843,7 @@ Both Stony Tomb levels became area level 85 on Hell in patch 2.4. A useful alter
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-ROUTE
-Leave Lut Gholein for the Rocky Waste and find the Stony Tomb entrance. Clear both levels; the dungeon has no waypoint, so the trip to its entrance is part of each run.
-
-HELL FARM
-Both levels were raised to area level 85 in patch 2.4. The advantage is access to strong monster drops, not a guaranteed rare item. Watch for dangerous elite packs and assess whether the route is comfortable for your damage type.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="2" name="Lost City &amp; Ancient Tunnels">
       <details>LOST CITY &amp; ANCIENT TUNNELS
@@ -2007,14 +1859,7 @@ A well-known Hell farming area for monster packs and chests. Check resistances o
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-ROUTE
-Take the Lost City waypoint and find the trapdoor to Ancient Tunnels. The entrance location varies by map. Clear the dungeon's packs, check the area for loot, then start a new game to repeat.
-
-WHAT TO EXPECT
-Hell Ancient Tunnels is a popular level 85 farming area. Elite monsters can have different immunities from ordinary enemies, so inspect individual packs before committing. The Lost City also leads onward to the Valley of Snakes.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="3" name="Golden Bird &amp; Kurast Docks">
       <details>GOLDEN BIRD &amp; KURAST DOCKS
@@ -2030,14 +1875,7 @@ Complete this while progressing through the jungle; there is no need to stop for
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-QUEST STEPS
-Find the Jade Figurine from a unique monster in Act III and speak to Cain. Take it to Meshif to receive the Golden Bird; continue the town conversation and return to Alkor for the Potion of Life. Use the potion to receive the permanent life reward.
-
-WHEN TO COMPLETE IT
-This is easy to combine with normal Act III progression. Check your quest log if the next conversation does not appear. The reward is available once per difficulty.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="3" name="Lower Kurast">
       <details>LOWER KURAST
@@ -2053,14 +1891,7 @@ Players often check the chests and other containers in the huts. Results are ran
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-WHAT TO CHECK
-Use the Lower Kurast waypoint and explore its buildings and containers. Players often make short chest-focused routes here, sometimes combining them with nearby monsters or other Act III stops.
-
-SETTING EXPECTATIONS
-Runs are repetitive and results are random. Map layouts and game conditions affect the route; single-player maps and online games can behave differently. Do not treat a high rune as a guaranteed reward.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="5" name="Nihlathak's Temple &amp; Pindleskin">
       <details>NIHLATHAK'S TEMPLE &amp; PINDLESKIN
@@ -2076,14 +1907,7 @@ A short run while the red portal is available. His pack can charge suddenly, so 
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-QUICK ROUTE
-After rescuing Anya, use her red portal to enter Nihlathak's Temple. Pindleskin and his pack are near the entrance to the Halls. Prepare your mercenary or demon before entering and allow space to retreat.
-
-FARMING
-This is a short repeat target for item hunting; rare drops are never guaranteed. For Nihlathak himself, continue through the Halls and consider the Halls of Pain waypoint. Check your game version if portal behavior differs from older Diablo II guides.
-</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
     <region act="5" name="Terror Zones">
       <details>TERROR ZONES
@@ -2099,139 +1923,745 @@ A terrorized area's monster levels can increase with the player level, subject t
 
 Maps vary between games; rewards and drops depend on difficulty and game mode.
 
-Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.
-
-GETTING STARTED
-Enable Terror Zones where the game allows them and check the in-game announcement or waypoint menu for the active area. Unlocking and availability depend on game progress and difficulty. Online and single-player rotations are separate.
-
-FARMING CHOICES
-Terrorized monster levels scale with character level within difficulty-specific limits. Choose a zone your build can clear safely and watch for immunities and dangerous modifiers. The game is the source of the current zone; this guide does not provide live tracking.
-</details>
-    </region>
-    <region act="1" name="Act I: Quest Reward Checklist">
-      <details>ACT I - QUEST REWARDS
-
-DEN OF EVIL
-Clear the Den and speak to Akara for a skill point and a respecialization. These rewards can be earned on each difficulty.
-
-SISTERS' BURIAL GROUNDS
-Defeat Blood Raven and speak to Kashya for a Rogue mercenary.
-
-THE SEARCH FOR CAIN
-Rescue Cain in Tristram and talk to him and Akara in the Rogue Encampment. Cain provides identification in town.
-
-TOOLS OF THE TRADE
-Recover the Horadric Malus from the Barracks and return it to Charsi for an imbue. Consider the item carefully before using the reward.
-
-SISTERS TO THE SLAUGHTER
-Defeat Andariel and talk to Warriv to travel east.
-
-Source: classic.battle.net/diablo2exp/quests/act1.shtml</details>
-    </region>
-    <region act="2" name="Act II: Quest Reward Checklist">
-      <details>ACT II - PROGRESSION CHECKLIST
-
-RADAMENT'S LAIR
-Defeat Radament in Sewers Level 3 and use the Book of Skill. Recover the Horadric Scroll from the chest for Cain.
-
-THE HORADRIC STAFF
-Find the Cube, Staff of Kings and Viper Amulet; transmute the staff and amulet.
-
-THE TAINTED SUN
-Destroy the altar in Claw Viper Temple and claim the amulet.
-
-ARCANE SANCTUARY AND THE SUMMONER
-Find the Summoner, defeat him and read the journal. Take the portal to the Canyon of the Magi.
-
-THE SEVEN TOMBS
-Use the correct tomb symbol from the quest log, place the completed staff in the Orifice, and defeat Duriel. Speak to the person beyond Duriel before returning to town.
-
-Source: classic.battle.net/diablo2exp/quests/act2.shtml</details>
-    </region>
-    <region act="3" name="Act III: Quest Reward Checklist">
-      <details>ACT III - QUEST REWARDS
-
-THE GOLDEN BIRD
-Find the Jade Figurine and follow the town conversations to Alkor. Use the Potion of Life for a permanent life reward.
-
-BLADE OF THE OLD RELIGION
-Find the Gidbinn in the Flayer Jungle and bring it to Ormus; speak to Asheara as well.
-
-KHALIM'S WILL
-Collect the Eye, Brain, Heart and Flail, transmute them and use Khalim's Will on the Compelling Orb.
-
-LAM ESEN'S TOME
-Recover the tome from the Ruined Temple in Kurast Bazaar. Alkor awards five attribute points per difficulty.
-
-THE BLACKENED TEMPLE AND THE GUARDIAN
-Defeat the Council and Mephisto to complete the act.
-
-Source: classic.battle.net/diablo2exp/quests/act3.shtml</details>
-    </region>
-    <region act="4" name="Act IV: Quest Reward Checklist">
-      <details>ACT IV - QUEST REWARDS
-
-THE FALLEN ANGEL
-Find Izual in the Plains of Despair. After the fight, speak to his spirit and then Tyrael for two skill points per difficulty.
-
-THE HELLFORGE
-Carry Mephisto's Soulstone into the River of Flame. Defeat Hephasto, equip his hammer and use the forge. Its gems and rune are a one-time reward per character and difficulty.
-
-TERROR'S END
-Open the Chaos Sanctuary seals, defeat the guardians and defeat Diablo.
-
-Source: classic.battle.net/diablo2exp/quests/act4.shtml</details>
-    </region>
-    <region act="5" name="Act V: Quest Reward Checklist">
-      <details>ACT V - QUEST REWARDS
-
-SIEGE ON HARROGATH
-Defeat Shenk and talk to Larzuk for a socketing reward. Item type and item level affect the result.
-
-RESCUE ON MOUNT ARREAT
-Free the soldiers from all three pens in the Frigid Highlands. Talk to Qual-Kehk for runes and Barbarian mercenary access.
-
-PRISON OF ICE
-Free Anya, then speak to Malah and use the Scroll of Resistance. Talk to Anya for an additional class-specific item.
-
-BETRAYAL OF HARROGATH
-Defeat Nihlathak and speak to Anya about item personalization.
-
-RITE OF PASSAGE AND EVE OF DESTRUCTION
-Defeat the Ancients, then Baal. The Ancients require level 20 / 40 / 60 for quest credit in Normal / Nightmare / Hell.
-
-Source: classic.battle.net/diablo2exp/quests/act5.shtml</details>
-    </region>
-    <region act="2" name="Arcane Sanctuary: Ghost Farming">
-      <details>ARCANE SANCTUARY - GHOSTS AND SUMMONER
-
-START
-Take the Arcane Sanctuary waypoint. Four paths lead away from it; explore them for the Summoner and monsters. Map layouts and the Summoner's branch vary.
-
-FARMING
-Ghosts can be worthwhile targets for runes. Try to fight them over solid walkways: drops from enemies killed over inaccessible space can be difficult or impossible to collect. Open accessible chests along your route when it is safe.
-
-KEY OF HATE
-In Hell difficulty the Summoner can drop a Key of Hate. It is a chance, not a guaranteed drop. Leave and start a new game to repeat the run.
-
-SAFETY
-Narrow paths make it easy to get surrounded. Pull packs back and watch your mercenary or demon.
-
-Source: classic.battle.net/diablo2exp/quests/act2.shtml</details>
-    </region>
-    <region act="5" name="Hell Keys and Uber Preparation">
-      <details>HELL KEYS - ENDGAME OVERVIEW
-
-KEY SOURCES
-In Hell difficulty, the Countess can drop a Key of Terror, the Summoner a Key of Hate, and Nihlathak a Key of Destruction. Drops are random; you may need many runs.
-
-BEFORE ATTEMPTING UBERS
-This is demanding endgame content. Prepare resistances, sustain, damage and a safe way to deal with powerful bosses. Collect and store keys until you are ready, and research the portal recipe and encounter for your edition before spending a set.
-
-ROUTE IDEAS
-Use Black Marsh for the Countess, Arcane Sanctuary for the Summoner, and Halls of Pain for Nihlathak. Nihlathak's corpse explosions are especially dangerous.
-
-Source: classic.battle.net/diablo2exp/quests/; Blizzard patch notes for your game version.</details>
+Sources: classic.battle.net/diablo2exp/quests/ and /maps/; Blizzard D2R patch 2.4 notes.</details>
     </region>
   </guidebook>
+  <skilltrees>
+    <class name="Warlock">
+      <skill tree="Demon" name="Summon Goatman" level="1" requires="">
+        <description>Summons a melee demon ally.</description>
+      </skill>
+      <skill tree="Demon" name="Demonic Mastery" level="1" requires="Summon Goatman">
+        <description>Strengthens summoned and bound demons.</description>
+      </skill>
+      <skill tree="Demon" name="Blood Oath" level="6" requires="Demonic Mastery">
+        <description>Links your protection to your demon.</description>
+      </skill>
+      <skill tree="Demon" name="Death Mark" level="6" requires="Summon Goatman">
+        <description>Directs your demon to an enemy.</description>
+      </skill>
+      <skill tree="Demon" name="Summon Tainted" level="12" requires="Summon Goatman">
+        <description>Summons a ranged demon ally.</description>
+      </skill>
+      <skill tree="Demon" name="Blood Boil" level="18" requires="Death Mark">
+        <description>Erupts your demon's blood to damage nearby enemies.</description>
+      </skill>
+      <skill tree="Demon" name="Summon Defiler" level="18" requires="Summon Tainted">
+        <description>Summons a demon that binds enemy souls.</description>
+      </skill>
+      <skill tree="Demon" name="Engorge" level="24" requires="Blood Boil">
+        <description>Feeds a corpse to heal and empower your demon.</description>
+      </skill>
+      <skill tree="Demon" name="Consume" level="30" requires="Blood Oath">
+        <description>Sacrifices your demon for power.</description>
+      </skill>
+      <skill tree="Demon" name="Bind Demon" level="30" requires="Engorge|Summon Defiler">
+        <description>Turns an injured demon into an ally.</description>
+      </skill>
+      <skill tree="Eldritch" name="Levitation Mastery" level="1" requires="">
+        <description>Improves the use of your levitated weapon.</description>
+      </skill>
+      <skill tree="Eldritch" name="Hex: Bane" level="1" requires="">
+        <description>Hexes your weapon to impair enemies.</description>
+      </skill>
+      <skill tree="Eldritch" name="Cleave" level="6" requires="Levitation Mastery">
+        <description>Attacks enemies in an arc.</description>
+      </skill>
+      <skill tree="Eldritch" name="Echoing Strike" level="12" requires="Levitation Mastery">
+        <description>Creates weapon echoes that pierce enemies.</description>
+      </skill>
+      <skill tree="Eldritch" name="Hex: Purge" level="12" requires="Hex: Bane">
+        <description>Hexes your weapon to make enemies erupt.</description>
+      </skill>
+      <skill tree="Eldritch" name="Blade Warp" level="18" requires="Echoing Strike">
+        <description>Hurls a weapon and teleports you to its impact.</description>
+      </skill>
+      <skill tree="Eldritch" name="Psychic Ward" level="18" requires="Cleave">
+        <description>Creates a protective mental shield.</description>
+      </skill>
+      <skill tree="Eldritch" name="Eldritch Blast" level="24" requires="Psychic Ward">
+        <description>Blasts hexed enemies and refreshes their hex.</description>
+      </skill>
+      <skill tree="Eldritch" name="Hex: Siphon" level="24" requires="Hex: Purge">
+        <description>Hexes your weapon to extract life from slain enemies.</description>
+      </skill>
+      <skill tree="Eldritch" name="Mirrored Blades" level="30" requires="Blade Warp|Eldritch Blast">
+        <description>Attacks using duplicates of your weapon.</description>
+      </skill>
+      <skill tree="Chaos" name="Miasma Bolt" level="1" requires="">
+        <description>Fires a bolt that releases a cloud of entropy.</description>
+      </skill>
+      <skill tree="Chaos" name="Ring of Fire" level="6" requires="">
+        <description>Releases expanding hellfire.</description>
+      </skill>
+      <skill tree="Chaos" name="Sigil: Lethargy" level="6" requires="">
+        <description>Lays a sigil that slows and weakens enemies.</description>
+      </skill>
+      <skill tree="Chaos" name="Sigil: Rancor" level="12" requires="Sigil: Lethargy">
+        <description>Lays a sigil that enrages enemies.</description>
+      </skill>
+      <skill tree="Chaos" name="Miasma Chain" level="12" requires="Miasma Bolt">
+        <description>Summons chains that emit miasma.</description>
+      </skill>
+      <skill tree="Chaos" name="Flame Wave" level="18" requires="Ring of Fire">
+        <description>Unleashes a rolling wall of fire.</description>
+      </skill>
+      <skill tree="Chaos" name="Sigil: Death" level="24" requires="Sigil: Rancor">
+        <description>Lays a sigil that hastens the death of injured enemies.</description>
+      </skill>
+      <skill tree="Chaos" name="Enhanced Entropy" level="24" requires="Miasma Chain">
+        <description>Improves your mastery of shadow magic.</description>
+      </skill>
+      <skill tree="Chaos" name="Apocalypse" level="30" requires="Flame Wave|Sigil: Death">
+        <description>Engulfs enemies in hellfire.</description>
+      </skill>
+      <skill tree="Chaos" name="Abyss" level="30" requires="Enhanced Entropy">
+        <description>Creates a tear that pulls enemies in before collapsing.</description>
+      </skill>
+    </class>
+    <class name="Amazon">
+      <skill tree="Bow and Crossbow Skills" name="Magic Arrow" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Bow and Crossbow Skills" name="Fire Arrow" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Bow and Crossbow Skills" name="Cold Arrow" level="6" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Bow and Crossbow Skills" name="Multiple Shot" level="6" requires="Magic Arrow">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Bow and Crossbow Skills" name="Exploding Arrow" level="12" requires="Fire Arrow|Multiple Shot">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Bow and Crossbow Skills" name="Ice Arrow" level="18" requires="Cold Arrow">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Bow and Crossbow Skills" name="Guided Arrow" level="18" requires="Cold Arrow|Multiple Shot">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Bow and Crossbow Skills" name="Strafe" level="24" requires="Guided Arrow">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Bow and Crossbow Skills" name="Immolation Arrow" level="24" requires="Exploding Arrow">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Bow and Crossbow Skills" name="Freezing Arrow" level="30" requires="Ice Arrow">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Passive and Magic Skills" name="Inner Sight" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Passive and Magic Skills" name="Critical Strike" level="1" requires="">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Passive and Magic Skills" name="Dodge" level="6" requires="">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Passive and Magic Skills" name="Slow Missiles" level="12" requires="Inner Sight">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Passive and Magic Skills" name="Avoid" level="12" requires="Dodge">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Passive and Magic Skills" name="Penetrate" level="18" requires="Critical Strike">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Passive and Magic Skills" name="Decoy" level="24" requires="Slow Missiles">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Passive and Magic Skills" name="Evade" level="24" requires="Avoid">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Passive and Magic Skills" name="Valkyrie" level="30" requires="Decoy|Evade">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Passive and Magic Skills" name="Pierce" level="30" requires="Penetrate">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Javelin and Spear Skills" name="Jab" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Javelin and Spear Skills" name="Power Strike" level="6" requires="Jab">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Javelin and Spear Skills" name="Poison Javelin" level="6" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Javelin and Spear Skills" name="Impale" level="12" requires="Jab">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Javelin and Spear Skills" name="Lightning Bolt" level="12" requires="Poison Javelin">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Javelin and Spear Skills" name="Charged Strike" level="18" requires="Power Strike|Lightning Bolt">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Javelin and Spear Skills" name="Plague Javelin" level="18" requires="Lightning Bolt">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Javelin and Spear Skills" name="Fend" level="24" requires="Impale">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Javelin and Spear Skills" name="Lightning Strike" level="30" requires="Charged Strike">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Javelin and Spear Skills" name="Lightning Fury" level="30" requires="Plague Javelin">
+        <description>Active skill.</description>
+      </skill>
+    </class>
+    <class name="Assassin">
+      <skill tree="Traps" name="Fire Blast" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Traps" name="Shock Web" level="6" requires="Fire Blast">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Traps" name="Blade Sentinel" level="6" requires="">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Traps" name="Charged Bolt Sentry" level="12" requires="Shock Web">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Traps" name="Wake of Fire" level="12" requires="Fire Blast">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Traps" name="Blade Fury" level="18" requires="Blade Sentinel|Wake of Fire">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Traps" name="Lightning Sentry" level="24" requires="Charged Bolt Sentry">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Traps" name="Wake of Inferno" level="24" requires="Wake of Fire">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Traps" name="Death Sentry" level="30" requires="Lightning Sentry">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Traps" name="Blade Shield" level="30" requires="Blade Fury">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Shadow Disciplines" name="Claw Mastery" level="1" requires="">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Shadow Disciplines" name="Psychic Hammer" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Shadow Disciplines" name="Burst of Speed" level="6" requires="Claw Mastery">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Shadow Disciplines" name="Weapon Block" level="12" requires="Claw Mastery">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Shadow Disciplines" name="Cloak of Shadows" level="12" requires="Psychic Hammer">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Shadow Disciplines" name="Fade" level="18" requires="Burst of Speed">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Shadow Disciplines" name="Shadow Warrior" level="18" requires="Cloak of Shadows|Weapon Block">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Shadow Disciplines" name="Mind Blast" level="24" requires="Cloak of Shadows">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Shadow Disciplines" name="Venom" level="30" requires="Fade">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Shadow Disciplines" name="Shadow Master" level="30" requires="Shadow Warrior">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Martial Arts" name="Tiger Strike" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Martial Arts" name="Dragon Talon" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Martial Arts" name="Fists of Fire" level="6" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Martial Arts" name="Dragon Claw" level="6" requires="Dragon Talon">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Martial Arts" name="Cobra Strike" level="12" requires="Tiger Strike">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Martial Arts" name="Claws of Thunder" level="18" requires="Fists of Fire">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Martial Arts" name="Dragon Tail" level="18" requires="Dragon Claw">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Martial Arts" name="Blades of Ice" level="24" requires="Claws of Thunder">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Martial Arts" name="Dragon Flight" level="24" requires="Dragon Tail">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Martial Arts" name="Phoenix Strike" level="30" requires="Cobra Strike|Blades of Ice">
+        <description>Active skill.</description>
+      </skill>
+    </class>
+    <class name="Barbarian">
+      <skill tree="Combat Skills" name="Bash" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Leap" level="6" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Double Swing" level="6" requires="Bash">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Stun" level="12" requires="Bash">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Double Throw" level="12" requires="Double Swing">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Leap Attack" level="18" requires="Leap">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Concentrate" level="18" requires="Stun">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Frenzy" level="24" requires="Double Throw">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Whirlwind" level="30" requires="Leap Attack|Concentrate">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Berserk" level="30" requires="Concentrate">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Masteries" name="Blade Mastery" level="1" requires="">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Masteries" name="Axe Mastery" level="1" requires="">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Masteries" name="Mace Mastery" level="1" requires="">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Masteries" name="Polearm Mastery" level="6" requires="">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Masteries" name="Throwing Mastery" level="6" requires="">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Masteries" name="Spear Mastery" level="6" requires="">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Masteries" name="Increased Stamina" level="12" requires="">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Masteries" name="Iron Skin" level="18" requires="">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Masteries" name="Increased Speed" level="24" requires="Increased Stamina">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Masteries" name="Natural Resistance" level="30" requires="Iron Skin">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Warcries" name="Howl" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Warcries" name="Find Potion" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Warcries" name="Taunt" level="6" requires="Howl">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Warcries" name="Shout" level="6" requires="Howl">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Warcries" name="Find Item" level="12" requires="Find Potion">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Warcries" name="Battle Cry" level="18" requires="Taunt">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Warcries" name="Battle Orders" level="24" requires="Shout">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Warcries" name="Grim Ward" level="24" requires="Find Item">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Warcries" name="War Cry" level="30" requires="Battle Cry|Battle Orders">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Warcries" name="Battle Command" level="30" requires="Battle Orders">
+        <description>Active skill.</description>
+      </skill>
+    </class>
+    <class name="Druid">
+      <skill tree="Summoning Skills" name="Raven" level="1" requires="">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Poison Creeper" level="1" requires="">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Oak Sage" level="6" requires="">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Summon Spirit Wolf" level="6" requires="Raven">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Carrion Vine" level="12" requires="Poison Creeper">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Heart of Wolverine" level="18" requires="Oak Sage">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Summon Dire Wolf" level="18" requires="Oak Sage|Summon Spirit Wolf">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Solar Creeper" level="24" requires="Carrion Vine">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Spirit of Barbs" level="30" requires="Heart of Wolverine">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Summon Grizzly" level="30" requires="Summon Dire Wolf">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Shape Shifting Skills" name="Werewolf" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Shape Shifting Skills" name="Lycanthropy" level="1" requires="Werewolf">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Shape Shifting Skills" name="Werebear" level="6" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Shape Shifting Skills" name="Feral Rage" level="12" requires="Werewolf">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Shape Shifting Skills" name="Maul" level="12" requires="Werebear">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Shape Shifting Skills" name="Rabies" level="18" requires="Feral Rage">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Shape Shifting Skills" name="Fire Claws" level="18" requires="Feral Rage|Maul">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Shape Shifting Skills" name="Hunger" level="24" requires="Fire Claws">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Shape Shifting Skills" name="Shock Wave" level="24" requires="Maul">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Shape Shifting Skills" name="Fury" level="30" requires="Rabies">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Elemental Skills" name="Firestorm" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Elemental Skills" name="Molten Boulder" level="6" requires="Firestorm">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Elemental Skills" name="Arctic Blast" level="6" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Elemental Skills" name="Fissure" level="12" requires="Molten Boulder">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Elemental Skills" name="Cyclone Armor" level="12" requires="Arctic Blast">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Elemental Skills" name="Twister" level="18" requires="Cyclone Armor">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Elemental Skills" name="Volcano" level="24" requires="Fissure">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Elemental Skills" name="Tornado" level="24" requires="Twister">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Elemental Skills" name="Armageddon" level="30" requires="Volcano">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Elemental Skills" name="Hurricane" level="30" requires="Tornado">
+        <description>Active skill.</description>
+      </skill>
+    </class>
+    <class name="Necromancer">
+      <skill tree="Curses" name="Amplify Damage" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Curses" name="Dim Vision" level="6" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Curses" name="Weaken" level="6" requires="Amplify Damage">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Curses" name="Iron Maiden" level="12" requires="Amplify Damage">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Curses" name="Terror" level="12" requires="Weaken">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Curses" name="Confuse" level="18" requires="Dim Vision">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Curses" name="Life Tap" level="18" requires="Iron Maiden">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Curses" name="Attract" level="24" requires="Confuse">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Curses" name="Decrepify" level="24" requires="Terror">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Curses" name="Lower Resist" level="30" requires="Life Tap|Decrepify">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Poison and Bone Skills" name="Teeth" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Poison and Bone Skills" name="Bone Armor" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Poison and Bone Skills" name="Poison Dagger" level="6" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Poison and Bone Skills" name="Corpse Explosion" level="6" requires="Teeth">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Poison and Bone Skills" name="Bone Wall" level="12" requires="Bone Armor">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Poison and Bone Skills" name="Poison Explosion" level="18" requires="Poison Dagger|Corpse Explosion">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Poison and Bone Skills" name="Bone Spear" level="18" requires="Corpse Explosion">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Poison and Bone Skills" name="Bone Prison" level="24" requires="Bone Wall|Bone Spear">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Poison and Bone Skills" name="Poison Nova" level="30" requires="Poison Explosion">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Poison and Bone Skills" name="Bone Spirit" level="30" requires="Bone Spear">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Skeleton Mastery" level="1" requires="Raise Skeleton">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Raise Skeleton" level="1" requires="">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Clay Golem" level="6" requires="">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Golem Mastery" level="12" requires="Clay Golem">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Raise Skeletal Mage" level="12" requires="Raise Skeleton">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Blood Golem" level="18" requires="Clay Golem">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Summon Resist" level="24" requires="Golem Mastery">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Iron Golem" level="24" requires="Blood Golem">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Fire Golem" level="30" requires="Iron Golem">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Summoning Skills" name="Revive" level="30" requires="Raise Skeletal Mage|Iron Golem">
+        <description>Active skill.</description>
+      </skill>
+    </class>
+    <class name="Paladin">
+      <skill tree="Combat Skills" name="Sacrifice" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Smite" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Holy Bolt" level="6" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Zeal" level="12" requires="Sacrifice">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Charge" level="12" requires="Smite">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Vengeance" level="18" requires="Zeal">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Blessed Hammer" level="18" requires="Holy Bolt">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Conversion" level="24" requires="Vengeance">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Holy Shield" level="24" requires="Charge|Blessed Hammer">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Combat Skills" name="Fist of the Heavens" level="30" requires="Blessed Hammer|Conversion">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Offensive Auras" name="Might" level="1" requires="">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Offensive Auras" name="Holy Fire" level="6" requires="Might">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Offensive Auras" name="Thorns" level="6" requires="">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Offensive Auras" name="Blessed Aim" level="12" requires="Might">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Offensive Auras" name="Concentration" level="18" requires="Blessed Aim">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Offensive Auras" name="Holy Freeze" level="18" requires="Holy Fire">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Offensive Auras" name="Holy Shock" level="24" requires="Holy Freeze">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Offensive Auras" name="Sanctuary" level="24" requires="Thorns|Holy Freeze">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Offensive Auras" name="Fanaticism" level="30" requires="Concentration">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Offensive Auras" name="Conviction" level="30" requires="Sanctuary">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Defensive Auras" name="Prayer" level="1" requires="">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Defensive Auras" name="Resist Fire" level="1" requires="">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Defensive Auras" name="Defiance" level="6" requires="">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Defensive Auras" name="Resist Cold" level="6" requires="">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Defensive Auras" name="Cleansing" level="12" requires="Prayer">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Defensive Auras" name="Resist Lightning" level="12" requires="">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Defensive Auras" name="Vigor" level="18" requires="Cleansing|Defiance">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Defensive Auras" name="Meditation" level="24" requires="Cleansing">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Defensive Auras" name="Redemption" level="30" requires="Vigor">
+        <description>Aura skill.</description>
+      </skill>
+      <skill tree="Defensive Auras" name="Salvation" level="30" requires="">
+        <description>Aura skill.</description>
+      </skill>
+    </class>
+    <class name="Sorceress">
+      <skill tree="Fire Skills" name="Fire Bolt" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Fire Skills" name="Warmth" level="1" requires="">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Fire Skills" name="Inferno" level="6" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Fire Skills" name="Blaze" level="12" requires="Inferno">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Fire Skills" name="Fire Ball" level="12" requires="Fire Bolt">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Fire Skills" name="Fire Wall" level="18" requires="Blaze">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Fire Skills" name="Enchant" level="18" requires="Warmth|Fire Ball">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Fire Skills" name="Meteor" level="24" requires="Fire Ball|Fire Wall">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Fire Skills" name="Fire Mastery" level="30" requires="">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Fire Skills" name="Hydra" level="30" requires="Enchant">
+        <description>Summon skill.</description>
+      </skill>
+      <skill tree="Lightning Skills" name="Charged Bolt" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Lightning Skills" name="Static Field" level="6" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Lightning Skills" name="Telekinesis" level="6" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Lightning Skills" name="Nova" level="12" requires="Static Field">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Lightning Skills" name="Lightning" level="12" requires="Charged Bolt">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Lightning Skills" name="Chain Lightning" level="18" requires="Lightning">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Lightning Skills" name="Teleport" level="18" requires="Telekinesis">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Lightning Skills" name="Thunder Storm" level="24" requires="Nova|Chain Lightning">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Lightning Skills" name="Energy Shield" level="24" requires="Teleport|Chain Lightning">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Lightning Skills" name="Lightning Mastery" level="30" requires="">
+        <description>Passive skill.</description>
+      </skill>
+      <skill tree="Cold Skills" name="Ice Bolt" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Cold Skills" name="Frozen Armor" level="1" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Cold Skills" name="Frost Nova" level="6" requires="">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Cold Skills" name="Ice Blast" level="6" requires="Ice Bolt">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Cold Skills" name="Shiver Armor" level="12" requires="Ice Blast|Frozen Armor">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Cold Skills" name="Glacial Spike" level="18" requires="Ice Blast">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Cold Skills" name="Blizzard" level="24" requires="Frost Nova|Glacial Spike">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Cold Skills" name="Chilling Armor" level="24" requires="Shiver Armor">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Cold Skills" name="Frozen Orb" level="30" requires="Blizzard">
+        <description>Active skill.</description>
+      </skill>
+      <skill tree="Cold Skills" name="Cold Mastery" level="30" requires="">
+        <description>Passive skill.</description>
+      </skill>
+    </class>
+  </skilltrees>
 </runewords>
