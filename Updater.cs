@@ -13,7 +13,7 @@ public sealed class UpdateRelease {
  public string ContentUrl, ContentHash;
 }
 public static class AtlasUpdates {
- public const int CurrentVersion=39;
+ public const int CurrentVersion=40;
  public const string DefaultRepository="TotallyAFlareon/Sanctuary_Atlas";
  public static bool ValidRepository(string repository){return Regex.IsMatch(repository??"",@"^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})/[A-Za-z0-9_.-]+$");}
  public static UpdateRelease ParseRelease(string json,string repo){
@@ -60,5 +60,4 @@ public static class AtlasUpdates {
   return data;
  }
 }
-
 

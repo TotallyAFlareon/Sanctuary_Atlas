@@ -76,7 +76,7 @@ public class Atlas : Form {
  string dataDir=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"SanctuaryAtlas"); string save; string className="Warlock"; static string[] classes={"Warlock","Amazon","Assassin","Barbarian","Druid","Necromancer","Paladin","Sorceress"};
  Build build=new Build(); List<Skill> skills=new List<Skill>(); List<Word> words=new List<Word>(); Panel content; Label budget; NumericUpDown level,quests; SkillTreePanel skillList; ComboBox tree; ListBox results; TextBox search,detail; ToolTip slotTip=new ToolTip(); SkillHoverTip skillTip=new SkillHoverTip(); bool loading=false; int selectedSlot=-1; bool selectedInventory=false, moving=false; CheckBox craftable; List<Cube> cubes=new List<Cube>(); static string[] runeNames="El Eld Tir Nef Eth Ith Tal Ral Ort Thul Amn Sol Shael Dol Hel Io Lum Ko Fal Lem Pul Um Mal Ist Gul Vex Ohm Lo Sur Ber Jah Cham Zod".Split(' ');
  static Font f(float s,FontStyle st=FontStyle.Regular){return new Font("Segoe UI",s,st);} 
- public Atlas():this(null){} public Atlas(string testDataDir){ if(!String.IsNullOrEmpty(testDataDir))dataDir=testDataDir; Icon=Icon.ExtractAssociatedIcon(Application.ExecutablePath); Text="Sanctuary Atlas | D2R companion | Update 39"; Size=new Size(1150,790); MinimumSize=new Size(950,680); BackColor=bg; ForeColor=text; Font=f(10); StartPosition=FormStartPosition.CenterScreen; save=Path.Combine(dataDir,"build.xml"); InitData(); LoadBuild(); MakeShell(); ShowSkills(); }
+ public Atlas():this(null){} public Atlas(string testDataDir){ if(!String.IsNullOrEmpty(testDataDir))dataDir=testDataDir; Icon=Icon.ExtractAssociatedIcon(Application.ExecutablePath); Text="Sanctuary Atlas | D2R companion | Update 40"; Size=new Size(1150,790); MinimumSize=new Size(950,680); BackColor=bg; ForeColor=text; Font=f(10); StartPosition=FormStartPosition.CenterScreen; save=Path.Combine(dataDir,"build.xml"); InitData(); LoadBuild(); MakeShell(); ShowSkills(); }
  protected override void Dispose(bool disposing){if(disposing){skillTip.Dispose();slotTip.Dispose();}base.Dispose(disposing);}
  void Add(string t,string n,int l,string r,string d){skills.Add(new Skill(t,n,l,r,d));}
  void InitWarlockSkills(){
@@ -414,7 +414,10 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
  }
  string contentHash; int contentVersion; Dictionary<string,SkillContentEntry> skillContent=new Dictionary<string,SkillContentEntry>(StringComparer.Ordinal);
  List<GuideRegion> guideRegions=new List<GuideRegion>(GuideBook.Regions);
- ListBox guideList;
+ List<FarmingRoute> farmingRoutes=new List<FarmingRoute>(FarmingPlanner.Routes);
+ ListBox guideList,farmingList;
+ TextBox farmingDetails;
+ Button farmingGuideButton;
  string ContentPath(){return Path.Combine(dataDir,"SanctuaryAtlasContent.xml");}
  string ContentVersionPath(){return Path.Combine(dataDir,"SanctuaryAtlasContent.version");}
  int ReadContentVersion(){try{int value;return File.Exists(ContentVersionPath())&&Int32.TryParse(File.ReadAllText(ContentVersionPath()).Trim(),out value)&&value>0&&value<100000?value:0;}catch{return 0;}}
@@ -433,16 +436,16 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
  }
  static string ContentDigest(byte[] data){using(var sha=System.Security.Cryptography.SHA256.Create())return BitConverter.ToString(sha.ComputeHash(data)).Replace("-","");}
  void ApplySkillContent(){SkillContent.Apply(skills,className,skillContent);}
- void SetWordEffects(Dictionary<string,string> effects,List<GuideRegion> guides,Dictionary<string,SkillContentEntry> skillUpdates,byte[] data){foreach(var word in words)word.Effects=effects[word.Name];guideRegions=guides;skillContent=skillUpdates;ApplySkillContent();contentHash=ContentDigest(data);}
+ void SetWordEffects(Dictionary<string,string> effects,List<GuideRegion> guides,Dictionary<string,SkillContentEntry> skillUpdates,List<FarmingRoute> routes,byte[] data){foreach(var word in words)word.Effects=effects[word.Name];guideRegions=guides;skillContent=skillUpdates;farmingRoutes=routes;ApplySkillContent();contentHash=ContentDigest(data);}
  void LoadWordEffects(){
-  byte[] data=null;try{if(File.Exists(ContentPath())){data=File.ReadAllBytes(ContentPath());SetWordEffects(ParseWordEffects(data),GuideContent.Parse(data),SkillContent.Parse(data),data);contentVersion=ReadContentVersion();return;}}catch{}
+  byte[] data=null;try{if(File.Exists(ContentPath())){data=File.ReadAllBytes(ContentPath());SetWordEffects(ParseWordEffects(data),GuideContent.Parse(data),SkillContent.Parse(data),FarmingContent.Parse(data),data);contentVersion=ReadContentVersion();return;}}catch{}
   using(var stream=Assembly.GetExecutingAssembly().GetManifestResourceStream("RunewordEffects")){if(stream==null)throw new InvalidOperationException("Runeword effects data is missing.");using(var ms=new MemoryStream()){stream.CopyTo(ms);data=ms.ToArray();}}
-  SetWordEffects(ParseWordEffects(data),GuideContent.Parse(data),SkillContent.Parse(data),data);contentVersion=AtlasUpdates.CurrentVersion;
+  SetWordEffects(ParseWordEffects(data),GuideContent.Parse(data),SkillContent.Parse(data),FarmingContent.Parse(data),data);contentVersion=AtlasUpdates.CurrentVersion;
  }
  void ApplyWordContent(byte[] data,int version){
-  var effects=ParseWordEffects(data);var guides=GuideContent.Parse(data);var skillUpdates=SkillContent.Parse(data);Directory.CreateDirectory(dataDir);string path=ContentPath(),temp=path+"."+Guid.NewGuid().ToString("N")+".tmp";
+  var effects=ParseWordEffects(data);var guides=GuideContent.Parse(data);var skillUpdates=SkillContent.Parse(data);var routes=FarmingContent.Parse(data);Directory.CreateDirectory(dataDir);string path=ContentPath(),temp=path+"."+Guid.NewGuid().ToString("N")+".tmp";
   try{File.WriteAllBytes(temp,data);if(File.Exists(path))File.Replace(temp,path,null);else File.Move(temp,path);}finally{if(File.Exists(temp))File.Delete(temp);}
-  SetWordEffects(effects,guides,skillUpdates,data);SaveContentVersion(version);if(search!=null&&!search.IsDisposed&&search.Parent==content){string selected=results.SelectedItem as string;FilterWords();if(selected!=null&&results.Items.Contains(selected))results.SelectedItem=selected;}if(guideList!=null&&!guideList.IsDisposed&&guideList.Parent==content){string selected=(guideList.SelectedItem as GuideRegion)==null?null:((GuideRegion)guideList.SelectedItem).Name;RefreshGuideList(selected);}if(skillList!=null&&!skillList.IsDisposed&&skillList.Parent==content){string selected=tree==null?null:tree.SelectedItem as string;ShowSkills();if(selected!=null&&tree.Items.Contains(selected))tree.SelectedItem=selected;}
+  SetWordEffects(effects,guides,skillUpdates,routes,data);SaveContentVersion(version);if(search!=null&&!search.IsDisposed&&search.Parent==content){string selected=results.SelectedItem as string;FilterWords();if(selected!=null&&results.Items.Contains(selected))results.SelectedItem=selected;}if(guideList!=null&&!guideList.IsDisposed&&guideList.Parent==content){string selected=(guideList.SelectedItem as GuideRegion)==null?null:((GuideRegion)guideList.SelectedItem).Name;RefreshGuideList(selected);}if(farmingList!=null&&!farmingList.IsDisposed&&farmingList.Parent==content){string selected=(farmingList.SelectedItem as FarmingRoute)==null?null:((FarmingRoute)farmingList.SelectedItem).Name;RefreshFarmingPlannerList(selected);}if(skillList!=null&&!skillList.IsDisposed&&skillList.Parent==content){string selected=tree==null?null:tree.SelectedItem as string;ShowSkills();if(selected!=null&&tree.Items.Contains(selected))tree.SelectedItem=selected;}
  }
  void W(string n,string r,string b,string a){words.Add(new Word(n,r,b,a));}
  Label LabelAt(string s,int x,int y,int w,int h,float size,Color c,FontStyle st=FontStyle.Regular){var a=new Label{Text=s,Location=new Point(x,y),Size=new Size(w,h),ForeColor=c,Font=f(size,st),AutoEllipsis=true,BackColor=Color.Transparent};return a;}
@@ -782,22 +785,27 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
  }
  void ShowCube(){Header("The horadric archive  /  "+cubes.Count+" entries","Cube recipes","Search by material or result. Read each recipe's restrictions before transmuting.");var q=new TextBox{Location=new Point(32,155),Width=390,BackColor=panel,ForeColor=text,BorderStyle=BorderStyle.FixedSingle};var list=new ListBox{Location=new Point(32,190),Size=new Size(390,440),BackColor=panel,ForeColor=text,BorderStyle=BorderStyle.None,Font=f(10),IntegralHeight=false};var info=new TextBox{Location=new Point(450,190),Size=new Size(400,440),Multiline=true,ReadOnly=true,BackColor=panel,ForeColor=text,BorderStyle=BorderStyle.None,Font=f(11),ScrollBars=ScrollBars.Vertical};content.Controls.Add(q);content.Controls.Add(list);content.Controls.Add(info);Action filter=()=>{list.Items.Clear();foreach(var c in cubes.Where(x=>(x.Name+" "+x.Formula).ToLowerInvariant().Contains(q.Text.ToLowerInvariant())))list.Items.Add(c.Name);if(list.Items.Count>0)list.SelectedIndex=0;else info.Text="No matching recipes.";};list.SelectedIndexChanged+=(s,e)=>{if(list.SelectedItem==null)return;var c=cubes.Find(x=>x.Name==(string)list.SelectedItem);info.Text=c.Name.ToUpper()+"\r\n\r\nINGREDIENTS\r\n"+c.Formula+"\r\n\r\n"+c.Note;};q.TextChanged+=(s,e)=>filter();filter();}
  int farmingAct=0; string farmingGoal="Any goal"; int farmingSafety=1;
+ void RefreshFarmingPlannerList(string selected){
+  if(farmingList==null||farmingList.IsDisposed||farmingDetails==null||farmingDetails.IsDisposed)return;
+  farmingList.BeginUpdate();farmingList.Items.Clear();foreach(var route in FarmingPlanner.Find(farmingRoutes,farmingAct,farmingGoal,farmingSafety))farmingList.Items.Add(route);farmingList.EndUpdate();
+  int index=-1;for(int i=0;i<farmingList.Items.Count;i++)if(((FarmingRoute)farmingList.Items[i]).Name==selected){index=i;break;}
+  if(farmingList.Items.Count>0)farmingList.SelectedIndex=index<0?0:index;else {farmingDetails.Text="No route matches this combination. Raise the comfort level or choose another target.";if(farmingGuideButton!=null)farmingGuideButton.Enabled=false;}
+ }
  void ShowFarmingPlanner(){
-  Header("Sanctuary  /  route planning","Farming planner","Pick an act, target and comfort level. Routes are ranked by relative risk and travel time; they never promise a drop.");
+  Header("Sanctuary  /  route planning","Farming planner","Pick an act, target and comfort level. Each route includes a suggested stage, notable targets and practical loot goals; no run promises a drop.");
   string[] acts={"ALL ACTS","ACT I","ACT II","ACT III","ACT IV","ACT V"};
   for(int i=0;i<acts.Length;i++){int act=i;var tab=Btn(acts[i],32+i*91,150,85,34);if(act==farmingAct)tab.BackColor=Color.FromArgb(94,67,40);tab.Click+=(s,e)=>{farmingAct=act;ShowFarmingPlanner();};content.Controls.Add(tab);}
   content.Controls.Add(LabelAt("TARGET",32,204,190,20,9,gold,FontStyle.Bold));content.Controls.Add(LabelAt("COMFORT LEVEL",252,204,190,20,9,gold,FontStyle.Bold));
   var goal=new ComboBox{Location=new Point(32,229),Size=new Size(195,28),DropDownStyle=ComboBoxStyle.DropDownList,AccessibleName="Farming planner target"};goal.Items.AddRange(new object[]{"Any goal","Experience","Items","Runes","Boss loot","Keys"});StyleCombo(goal);
   var safety=new ComboBox{Location=new Point(252,229),Size=new Size(195,28),DropDownStyle=ComboBoxStyle.DropDownList,AccessibleName="Farming planner comfort level"};safety.Items.AddRange(new object[]{"Safer / short","Balanced","High-risk endgame"});StyleCombo(safety);
   content.Controls.Add(goal);content.Controls.Add(safety);content.Controls.Add(LabelAt("ROUTES",32,274,350,20,9,gold,FontStyle.Bold));
-  var list=new ListBox{Location=new Point(32,298),Size=new Size(350,350),BackColor=panel,ForeColor=text,BorderStyle=BorderStyle.FixedSingle,Font=f(10),IntegralHeight=false,AccessibleName="Farming planner routes"};
-  var details=new TextBox{Location=new Point(400,298),Size=new Size(450,350),Multiline=true,ReadOnly=true,ScrollBars=ScrollBars.Vertical,BackColor=panel,ForeColor=text,BorderStyle=BorderStyle.FixedSingle,Font=f(10),AccessibleName="Farming planner details"};
-  var guide=Btn("OPEN GUIDE ENTRY",400,662,180,34);guide.Enabled=false;content.Controls.Add(list);content.Controls.Add(details);content.Controls.Add(guide);
-  Action refresh=()=>{farmingGoal=goal.SelectedItem as string;farmingSafety=safety.SelectedIndex+1;list.BeginUpdate();list.Items.Clear();foreach(var route in FarmingPlanner.Find(farmingAct,farmingGoal,farmingSafety))list.Items.Add(route);list.EndUpdate();if(list.Items.Count>0)list.SelectedIndex=0;else details.Text="No route matches this combination. Raise the comfort level or choose another target.";};
-  list.SelectedIndexChanged+=(s,e)=>{var route=list.SelectedItem as FarmingRoute;details.Text=route==null?"":route.Details();guide.Enabled=route!=null;};
-  guide.Click+=(s,e)=>{var route=list.SelectedItem as FarmingRoute;if(route==null)return;guideAct=route.Act;ShowGuide();for(int i=0;i<guideList.Items.Count;i++)if(((GuideRegion)guideList.Items[i]).Name==route.GuideEntry){guideList.SelectedIndex=i;break;}};
-  goal.SelectedIndexChanged+=(s,e)=>refresh();safety.SelectedIndexChanged+=(s,e)=>refresh();goal.SelectedItem=farmingGoal;safety.SelectedIndex=Math.Max(0,Math.Min(2,farmingSafety-1));
-  content.Controls.Add(LabelAt("Safer routes emphasize a short retreat path and a clean reset. Balanced routes need more gear or attention; high-risk routes are endgame targets, not required progression.",32,682,818,38,9,muted));
+  farmingList=new ListBox{Location=new Point(32,298),Size=new Size(350,350),BackColor=panel,ForeColor=text,BorderStyle=BorderStyle.FixedSingle,Font=f(10),IntegralHeight=false,AccessibleName="Farming planner routes"};
+  farmingDetails=new TextBox{Location=new Point(400,298),Size=new Size(450,350),Multiline=true,ReadOnly=true,ScrollBars=ScrollBars.Vertical,BackColor=panel,ForeColor=text,BorderStyle=BorderStyle.FixedSingle,Font=f(10),AccessibleName="Farming planner details"};
+  farmingGuideButton=Btn("OPEN GUIDE ENTRY",400,662,180,34);farmingGuideButton.Enabled=false;content.Controls.Add(farmingList);content.Controls.Add(farmingDetails);content.Controls.Add(farmingGuideButton);
+  farmingList.SelectedIndexChanged+=(s,e)=>{var route=farmingList.SelectedItem as FarmingRoute;farmingDetails.Text=route==null?"":route.Details();farmingGuideButton.Enabled=route!=null;};
+  farmingGuideButton.Click+=(s,e)=>{var route=farmingList.SelectedItem as FarmingRoute;if(route==null)return;guideAct=route.Act;ShowGuide();for(int i=0;i<guideList.Items.Count;i++)if(((GuideRegion)guideList.Items[i]).Name==route.GuideEntry){guideList.SelectedIndex=i;break;}};
+  goal.SelectedIndexChanged+=(s,e)=>{farmingGoal=goal.SelectedItem as string;RefreshFarmingPlannerList(null);};safety.SelectedIndexChanged+=(s,e)=>{farmingSafety=safety.SelectedIndex+1;RefreshFarmingPlannerList(null);};goal.SelectedItem=farmingGoal;safety.SelectedIndex=Math.Max(0,Math.Min(2,farmingSafety-1));
+  content.Controls.Add(LabelAt("Suggested levels are practical starting points, not requirements. Safer routes favor a short retreat path; balanced routes need more gear or attention; high-risk routes are endgame targets, not required progression.",32,682,818,38,9,muted));
  }
  int guideAct=1;
  void RefreshGuideList(string selected){if(guideList==null||guideList.IsDisposed)return;guideList.Items.Clear();foreach(var region in guideRegions)if(region.Act==guideAct)guideList.Items.Add(region);int index=-1;for(int i=0;i<guideList.Items.Count;i++)if(((GuideRegion)guideList.Items[i]).Name==selected){index=i;break;}if(guideList.Items.Count>0)guideList.SelectedIndex=index<0?0:index;}
@@ -831,4 +839,3 @@ W("Zephyr","Ort + Eth","2-socket Missile Weapons","Minimum level 21. Reign of th
   var app=new Atlas();app.Shown+=(sender,e)=>app.CheckForUpdates(false);Application.Run(app);
  }
 }
-

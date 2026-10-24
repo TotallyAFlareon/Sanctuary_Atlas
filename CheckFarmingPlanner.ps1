@@ -4,7 +4,8 @@ $assembly = [Reflection.Assembly]::LoadFrom((Resolve-Path 'Sanctuary Atlas.exe')
 $planner = $assembly.GetType('FarmingPlanner')
 $routes = $planner.GetField('Routes').GetValue($null)
 if ($routes.Length -lt 15) { throw 'Farming planner routes are incomplete.' }
-$find = $planner.GetMethod('Find')
+$find = @($planner.GetMethods() | Where-Object { $_.Name -eq 'Find' -and $_.GetParameters().Count -eq 3 })[0]
+if($null -eq $find){throw 'The standard farming-route filter is missing.'}
 foreach($act in 1..5){
  $matches=@($find.Invoke($null,@($act,'Any goal',3)))
  if($matches.Count -eq 0){throw "Act $act has no farming route."}
@@ -23,7 +24,7 @@ try {
  $details=@($panel.Controls | Where-Object { $_.AccessibleName -eq 'Farming planner details' })[0]
  if($null -eq $list -or $null -eq $details -or $list.Items.Count -eq 0){throw 'Farming planner UI did not render.'}
  $list.SelectedIndex=0
- if(-not $details.Text.Contains('START') -or -not $details.Text.Contains('SAFETY')){throw 'Route details are missing.'}
+ if(-not $details.Text.Contains('WHEN TO RUN') -or -not $details.Text.Contains('NOTABLE TARGETS') -or -not $details.Text.Contains('WHAT TO LOOK FOR') -or -not $details.Text.Contains('SAFETY')){throw 'Route details are incomplete.'}
  $app.Size=$app.MinimumSize;$app.PerformLayout()
  $side=@($app.Controls | Where-Object { $_.Dock -eq [Windows.Forms.DockStyle]::Left })[0]
  $footer=@($side.Controls | Where-Object { $_.Dock -eq [Windows.Forms.DockStyle]::Bottom })[0]
@@ -31,4 +32,3 @@ try {
  if($null -eq $nav -or $nav.Bounds.IntersectsWith($footer.Bounds)){throw 'Farming planner navigation overlaps update controls at minimum size.'}
  Write-Output 'Farming planner routes, filters and navigation passed.'
 } finally {$app.Dispose()}
-
