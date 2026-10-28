@@ -17,7 +17,7 @@ class BuildContentPackage {
   if(found.Count!=8||found.Values.Any(x=>x.Count!=30))throw new InvalidOperationException("Expected 30 skill entries for each class: "+String.Join(", ",found.Select(x=>x.Key+"="+x.Value.Count).ToArray()));return found;
  }
  static void Main(string[] args){
-  if(args.Length!=3)throw new ArgumentException("Supply source XML, output XML and skill source paths.");
+  if(args.Length!=4)throw new ArgumentException("Supply source XML, output XML, skill source and ESR archive paths.");
   var doc=new XmlDocument{XmlResolver=null};doc.Load(args[0]);
   if(doc.DocumentElement==null||doc.DocumentElement.Name!="runewords"||doc.SelectSingleNode("/runewords/guidebook")!=null)throw new InvalidOperationException("Expected runeword-only source.");
   var book=doc.CreateElement("guidebook");doc.DocumentElement.AppendChild(book);
@@ -25,6 +25,7 @@ class BuildContentPackage {
   var planner=doc.CreateElement("farmingplanner");doc.DocumentElement.AppendChild(planner);
   foreach(var route in FarmingPlanner.Routes){var entry=doc.CreateElement("route");entry.SetAttribute("act",route.Act.ToString());entry.SetAttribute("safety",route.Safety.ToString());entry.SetAttribute("rank",route.Rank.ToString());entry.SetAttribute("name",route.Name);entry.SetAttribute("goals",route.Goals);entry.SetAttribute("difficulty",route.Difficulty);entry.SetAttribute("level",route.SuggestedLevel);entry.SetAttribute("start",route.Start);entry.SetAttribute("targets",route.Targets);entry.SetAttribute("lookFor",route.LookFor);entry.SetAttribute("focus",route.Focus);entry.SetAttribute("caution",route.Caution);entry.SetAttribute("guide",route.GuideEntry);planner.AppendChild(entry);}
   var trees=doc.CreateElement("skilltrees");doc.DocumentElement.AppendChild(trees);foreach(var classPair in ReadSkills(args[2])){var classNode=doc.CreateElement("class");classNode.SetAttribute("name",classPair.Key);trees.AppendChild(classNode);foreach(var row in classPair.Value){var skill=doc.CreateElement("skill");skill.SetAttribute("tree",row.Tree);skill.SetAttribute("name",row.Name);skill.SetAttribute("level",row.Level.ToString());skill.SetAttribute("requires",row.Requires);var description=doc.CreateElement("description");description.InnerText=row.Description;skill.AppendChild(description);classNode.AppendChild(skill);}}
+  var esr=new XmlDocument{XmlResolver=null};esr.Load(args[3]);if(esr.DocumentElement==null||esr.DocumentElement.Name!="esrarchive"||esr.SelectNodes("/esrarchive/runewords/word").Count<100||esr.SelectNodes("/esrarchive/recipes/recipe").Count<100)throw new InvalidOperationException("The ESR archive is incomplete.");doc.DocumentElement.AppendChild(doc.ImportNode(esr.DocumentElement,true));
   var settings=new XmlWriterSettings{Indent=true,Encoding=new System.Text.UTF8Encoding(false)};using(var writer=XmlWriter.Create(args[1],settings))doc.Save(writer);
  }
 }

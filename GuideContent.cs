@@ -7,7 +7,7 @@ using System.Xml;
 // A content package is a complete snapshot. Omitted guide entries fall back to the bundled guide.
 public static class GuideContent {
  public static List<GuideRegion> Parse(byte[] data){
-  var settings=new XmlReaderSettings{DtdProcessing=DtdProcessing.Prohibit,XmlResolver=null,MaxCharactersInDocument=2000000};
+  var settings=new XmlReaderSettings{DtdProcessing=DtdProcessing.Prohibit,XmlResolver=null,MaxCharactersInDocument=12000000};
   var doc=new XmlDocument{XmlResolver=null};using(var stream=new MemoryStream(data))using(var reader=XmlReader.Create(stream,settings))doc.Load(reader);
   if(doc.DocumentElement==null||doc.DocumentElement.Name!="runewords")throw new InvalidOperationException("Invalid content package.");
   var result=new List<GuideRegion>(GuideBook.Regions);var sections=doc.SelectNodes("/runewords/guidebook");if(sections.Count>1)throw new InvalidOperationException("Duplicate guide book section.");

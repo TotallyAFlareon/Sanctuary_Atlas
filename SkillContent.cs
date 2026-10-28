@@ -14,7 +14,7 @@ public static class SkillContent {
  static string Key(string className,string name){return className+"\u001f"+name;}
  static string Attribute(XmlNode node,string name,int max,bool allowEmpty){var attr=node.Attributes[name];string value=attr==null?null:attr.Value.Trim();if(value==null||(!allowEmpty&&value.Length==0)||value.Length>max)throw new InvalidOperationException("Invalid skill content.");return value;}
  public static Dictionary<string,SkillContentEntry> Parse(byte[] data){
-  var settings=new XmlReaderSettings{DtdProcessing=DtdProcessing.Prohibit,XmlResolver=null,MaxCharactersInDocument=2000000};var doc=new XmlDocument{XmlResolver=null};using(var stream=new MemoryStream(data))using(var reader=XmlReader.Create(stream,settings))doc.Load(reader);
+  var settings=new XmlReaderSettings{DtdProcessing=DtdProcessing.Prohibit,XmlResolver=null,MaxCharactersInDocument=12000000};var doc=new XmlDocument{XmlResolver=null};using(var stream=new MemoryStream(data))using(var reader=XmlReader.Create(stream,settings))doc.Load(reader);
   if(doc.DocumentElement==null||doc.DocumentElement.Name!="runewords")throw new InvalidOperationException("Invalid content package.");
   var sections=doc.SelectNodes("/runewords/skilltrees");if(sections.Count>1)throw new InvalidOperationException("Duplicate skill tree section.");var result=new Dictionary<string,SkillContentEntry>(StringComparer.Ordinal);
   if(sections.Count==0)return result;var classNodes=sections[0].SelectNodes("class");if(classNodes.Count>Classes.Count)throw new InvalidOperationException("Too many skill classes.");
@@ -24,4 +24,3 @@ public static class SkillContent {
  }
  public static void Apply(List<Skill> skills,string className,Dictionary<string,SkillContentEntry> updates){foreach(var skill in skills){SkillContentEntry value;if(updates.TryGetValue(Key(className,skill.Name),out value)){skill.Tree=value.Tree;skill.Level=value.Level;skill.Requires=value.Requires;skill.Desc=value.Description;}}}
 }
-

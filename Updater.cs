@@ -13,7 +13,7 @@ public sealed class UpdateRelease {
  public string ContentUrl, ContentHash;
 }
 public static class AtlasUpdates {
- public const int CurrentVersion=41;
+ public const int CurrentVersion=42;
  public const string DefaultRepository="TotallyAFlareon/Sanctuary_Atlas";
  public static bool ValidRepository(string repository){return Regex.IsMatch(repository??"",@"^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})/[A-Za-z0-9_.-]+$");}
  public static UpdateRelease ParseRelease(string json,string repo){
@@ -34,7 +34,7 @@ public static class AtlasUpdates {
    if(!asset.TryGetValue("browser_download_url",out url)||!asset.TryGetValue("digest",out digest)||!asset.TryGetValue("size",out size))throw new InvalidOperationException("The release installer is missing its download link or checksum.");
    string link=Convert.ToString(url),hash=Convert.ToString(digest);long bytes=Convert.ToInt64(size);
    string prefix="https://github.com/"+repo+"/releases/download/";
-   if(!link.StartsWith(prefix,StringComparison.OrdinalIgnoreCase)||!Regex.IsMatch(hash??"",@"^sha256:[a-fA-F0-9]{64}$")||bytes<1||bytes>(assetName=="SanctuaryAtlasContent.xml"?2000000:50000000))throw new InvalidOperationException("The release file details are invalid.");
+   if(!link.StartsWith(prefix,StringComparison.OrdinalIgnoreCase)||!Regex.IsMatch(hash??"",@"^sha256:[a-fA-F0-9]{64}$")||bytes<1||bytes>(assetName=="SanctuaryAtlasContent.xml"?12000000:50000000))throw new InvalidOperationException("The release file details are invalid.");
    if(assetName=="SanctuaryAtlasSetup.exe"){release.Url=link;release.Hash=hash.Substring(7);}else{release.ContentUrl=link;release.ContentHash=hash.Substring(7);}
   }
   if(release.Url==null&&release.ContentUrl==null)throw new InvalidOperationException("The release needs an installer or a content package.");
@@ -53,9 +53,9 @@ public static class AtlasUpdates {
  public static byte[] DownloadContent(UpdateRelease release){
   if(release.ContentUrl==null||release.ContentHash==null)throw new InvalidOperationException("No content update is available.");
   byte[] data;using(var c=Client())using(var input=c.OpenRead(release.ContentUrl))using(var output=new MemoryStream()){
-   byte[] buffer=new byte[8192];int read;while((read=input.Read(buffer,0,buffer.Length))>0){if(output.Length+read>2000000)throw new InvalidOperationException("The content update is too large.");output.Write(buffer,0,read);}data=output.ToArray();
+   byte[] buffer=new byte[8192];int read;while((read=input.Read(buffer,0,buffer.Length))>0){if(output.Length+read>12000000)throw new InvalidOperationException("The content update is too large.");output.Write(buffer,0,read);}data=output.ToArray();
   }
-  if(data.Length==0||data.Length>2000000)throw new InvalidOperationException("The content update has an invalid size.");
+  if(data.Length==0||data.Length>12000000)throw new InvalidOperationException("The content update has an invalid size.");
   using(var sha=SHA256.Create()){string actual=BitConverter.ToString(sha.ComputeHash(data)).Replace("-","");if(!String.Equals(actual,release.ContentHash,StringComparison.OrdinalIgnoreCase))throw new InvalidOperationException("The content update did not match its checksum.");}
   return data;
  }
